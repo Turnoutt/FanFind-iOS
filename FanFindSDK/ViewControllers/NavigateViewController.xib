@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigateViewController" customModule="FanFindDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="closeBarButton" destination="6ak-Gs-aM8" id="UGQ-Or-Vh8"/>
+                <outlet property="navigationBar" destination="IuC-VM-rSJ" id="N9G-vZ-adK"/>
+                <outlet property="view" destination="iN0-l3-epB" id="CDD-8L-rwk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="center" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IuC-VM-rSJ">
+                    <rect key="frame" x="0.0" y="64" width="414" height="44"/>
+                    <items>
+                        <navigationItem title="Navigate" id="eLY-rZ-XkR">
+                            <barButtonItem key="rightBarButtonItem" title="Close" id="6ak-Gs-aM8"/>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJc-E7-eIJ" userLabel="Apple View" customClass="UIButton">
+                    <rect key="frame" x="0.0" y="113" width="240" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple-maps" translatesAutoresizingMaskIntoConstraints="NO" id="yWq-zE-urb">
+                            <rect key="frame" x="5" y="5" width="16" height="16"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlF-61-dLI">
+                            <rect key="frame" x="26" y="15" width="91" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="8fw-zZ-iRf"/>
+                        <constraint firstItem="NlF-61-dLI" firstAttribute="leading" secondItem="yWq-zE-urb" secondAttribute="trailing" constant="5" id="K0P-nm-huN"/>
+                        <constraint firstItem="yWq-zE-urb" firstAttribute="top" secondItem="IJc-E7-eIJ" secondAttribute="top" constant="5" id="OWv-7j-sJf"/>
+                        <constraint firstItem="yWq-zE-urb" firstAttribute="leading" secondItem="IJc-E7-eIJ" secondAttribute="leading" constant="5" id="jyt-8y-aSp"/>
+                        <constraint firstItem="NlF-61-dLI" firstAttribute="centerY" secondItem="IJc-E7-eIJ" secondAttribute="centerY" id="lnL-v7-kqI"/>
+                        <constraint firstAttribute="height" constant="50" id="x2S-dh-cjY"/>
+                    </constraints>
+                    <connections>
+                        <action selector="appleTapped:" destination="-1" eventType="touchUpInside" id="mct-FU-a9r"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83X-I8-UoR" userLabel="Google View" customClass="UIButton">
+                    <rect key="frame" x="0.0" y="163" width="240" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google-maps-1" translatesAutoresizingMaskIntoConstraints="NO" id="2Ls-Y6-O1G">
+                            <rect key="frame" x="5" y="0.0" width="16" height="16"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okz-Ae-SoV" userLabel="Google Maps">
+                            <rect key="frame" x="26" y="14.5" width="101.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="2Ls-Y6-O1G" firstAttribute="top" secondItem="83X-I8-UoR" secondAttribute="top" id="2ZX-BY-URn"/>
+                        <constraint firstItem="Okz-Ae-SoV" firstAttribute="centerY" secondItem="83X-I8-UoR" secondAttribute="centerY" id="BJ3-CW-iwD"/>
+                        <constraint firstAttribute="width" constant="240" id="G11-Fk-Krp"/>
+                        <constraint firstItem="Okz-Ae-SoV" firstAttribute="leading" secondItem="2Ls-Y6-O1G" secondAttribute="trailing" constant="5" id="Nl1-nn-s0D"/>
+                        <constraint firstItem="2Ls-Y6-O1G" firstAttribute="leading" secondItem="83X-I8-UoR" secondAttribute="leading" constant="5" id="uqP-wj-p48"/>
+                        <constraint firstAttribute="height" constant="50" id="zsU-dP-NZa"/>
+                    </constraints>
+                    <connections>
+                        <action selector="googleTapped:" destination="-1" eventType="touchUpInside" id="tUf-iw-wbc"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTT-V2-hCk" userLabel="Lyft View" customClass="UIButton">
+                    <rect key="frame" x="0.0" y="213" width="240" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lyft-1" translatesAutoresizingMaskIntoConstraints="NO" id="Qul-OS-du3">
+                            <rect key="frame" x="5" y="12" width="16" height="16"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lyft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyh-gr-oS0" userLabel="Lyft">
+                            <rect key="frame" x="26" y="15" width="28.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Qul-OS-du3" firstAttribute="leading" secondItem="iTT-V2-hCk" secondAttribute="leading" constant="5" id="3Of-91-kmt"/>
+                        <constraint firstAttribute="height" constant="50" id="OhA-Oo-TaW"/>
+                        <constraint firstItem="iyh-gr-oS0" firstAttribute="leading" secondItem="Qul-OS-du3" secondAttribute="trailing" constant="5" id="ae8-bK-soI"/>
+                        <constraint firstItem="Qul-OS-du3" firstAttribute="top" secondItem="iTT-V2-hCk" secondAttribute="top" constant="12" id="ugP-Cn-Mfg"/>
+                        <constraint firstItem="iyh-gr-oS0" firstAttribute="centerY" secondItem="iTT-V2-hCk" secondAttribute="centerY" id="vnN-47-Pvx"/>
+                        <constraint firstAttribute="width" constant="240" id="yAD-G6-bnM"/>
+                    </constraints>
+                    <connections>
+                        <action selector="lyftTapped:" destination="-1" eventType="touchUpInside" id="ilZ-NB-MO8"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4G-r7-cgU" userLabel="Uber View" customClass="UIButton">
+                    <rect key="frame" x="0.0" y="263" width="240" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uber-1" translatesAutoresizingMaskIntoConstraints="NO" id="o0x-Vq-FBj">
+                            <rect key="frame" x="5" y="5" width="16" height="16"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPL-vr-sz6" userLabel="Uber">
+                            <rect key="frame" x="26" y="15" width="38" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="zPL-vr-sz6" firstAttribute="leading" secondItem="o0x-Vq-FBj" secondAttribute="trailing" constant="5" id="dGD-wC-cmv"/>
+                        <constraint firstAttribute="height" constant="50" id="eyu-hq-BPv"/>
+                        <constraint firstAttribute="width" constant="240" id="g8n-YH-s9K"/>
+                        <constraint firstItem="zPL-vr-sz6" firstAttribute="centerY" secondItem="O4G-r7-cgU" secondAttribute="centerY" id="m1t-Rp-m66"/>
+                        <constraint firstItem="o0x-Vq-FBj" firstAttribute="top" secondItem="O4G-r7-cgU" secondAttribute="top" constant="5" id="r2M-Zo-DKJ"/>
+                        <constraint firstItem="o0x-Vq-FBj" firstAttribute="leading" secondItem="O4G-r7-cgU" secondAttribute="leading" constant="5" id="zI4-xK-JfO"/>
+                    </constraints>
+                    <connections>
+                        <action selector="uberTapped:" destination="-1" eventType="touchUpInside" id="RkB-77-izY"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="IJc-E7-eIJ" firstAttribute="top" secondItem="IuC-VM-rSJ" secondAttribute="bottom" constant="5" id="0bu-Fk-z6T"/>
+                <constraint firstItem="83X-I8-UoR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="KI6-Og-HqH"/>
+                <constraint firstItem="iTT-V2-hCk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Lht-RP-eLg"/>
+                <constraint firstItem="83X-I8-UoR" firstAttribute="top" secondItem="IJc-E7-eIJ" secondAttribute="bottom" id="Rhb-bx-egu"/>
+                <constraint firstItem="IuC-VM-rSJ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Tjs-Cw-K4g"/>
+                <constraint firstItem="O4G-r7-cgU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="VOB-Uo-ScC"/>
+                <constraint firstItem="O4G-r7-cgU" firstAttribute="top" secondItem="iTT-V2-hCk" secondAttribute="bottom" id="a2q-qh-1Li"/>
+                <constraint firstItem="iTT-V2-hCk" firstAttribute="top" secondItem="83X-I8-UoR" secondAttribute="bottom" id="bDZ-cz-SgW"/>
+                <constraint firstItem="IJc-E7-eIJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="csg-zI-3hD"/>
+                <constraint firstItem="IuC-VM-rSJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rEY-zX-3nc"/>
+                <constraint firstItem="IuC-VM-rSJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="t9J-bu-YxO"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="apple-maps" width="40" height="40"/>
+        <image name="google-maps-1" width="39" height="40"/>
+        <image name="lyft-1" width="40" height="30"/>
+        <image name="uber-1" width="40" height="40"/>
+    </resources>
+</document>
