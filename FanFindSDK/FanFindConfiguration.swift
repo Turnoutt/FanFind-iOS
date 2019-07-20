@@ -9,12 +9,18 @@
 import Foundation
 
 public enum FanFindConfiguration {
+    enum Themes: String{
+        case Light = "Light"
+        case Dark = "Dark"
+    }
+    
     // MARK: - Keys
     enum Keys {
         enum Plist {
             static let primaryColor = "FANFIND_PRIMARY_COLOR"
             static let secondaryColor = "FANFIND_SECONDARY_COLOR"
             static let apiKey = "FANFIND_API_KEY"
+            static let theme = "FANFIND_THEME"
         }
     }
     
@@ -50,6 +56,28 @@ public enum FanFindConfiguration {
         }
         
         return UIColor(hexString: secondaryColor)!
+    }()
+    
+    static let theme: Themes = {
+         let theme = FanFindConfiguration.infoDictionary[Keys.Plist.theme] as? String
+        
+        return (theme == nil) ? Themes.Light : Themes(rawValue: theme!)!
+    }()
+    
+    static let textColor : UIColor = {
+        if FanFindConfiguration.theme == Themes.Dark {
+            return UIColor(named: "TextPrimaryDark", in: Bundle(for: PlacesCell.self), compatibleWith: nil)!
+        }
+        
+        return UIColor(named: "TextPrimary", in: Bundle(for: PlacesCell.self), compatibleWith: nil)!
+    }()
+    
+    static let backgroundColor : UIColor = {
+        if FanFindConfiguration.theme == Themes.Dark {
+            return UIColor(named: "ViewBackgroundDark", in: Bundle(for: PlacesCell.self), compatibleWith: nil)!
+        }
+        
+        return UIColor.white
     }()
 }
 

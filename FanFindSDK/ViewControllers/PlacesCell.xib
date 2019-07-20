@@ -153,6 +153,7 @@
                 <outlet property="pointOfInterestLabel" destination="UDc-Mx-BXM" id="hxg-6X-Oy6"/>
                 <outlet property="poweredBy" destination="1yJ-IM-VHD" id="iOE-SH-ZgJ"/>
             </connections>
+            <point key="canvasLocation" x="133" y="155"/>
         </collectionViewCell>
     </objects>
     <resources>

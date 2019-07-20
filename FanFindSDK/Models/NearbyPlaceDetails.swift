@@ -10,23 +10,45 @@ import Foundation
 
 import Foundation
 
-public class NearByPlaceDetails: Decodable {
-
-    public init(address1: String, address2: String?, cityName: String, phoneNumber: String, postalCode: String, stateCode: String, primaryCategory: String){
-        self.address1 = address1
-        self.address2 = address2
-        self.cityName = cityName
-        self.stateCode = stateCode
-        self.postalCode = postalCode
+internal class NearByPlaceDetails: Decodable {
+    
+    public init(
+        phoneNumber: String,
+        deals: Array<PlaceDeal>,
+        events: Array<PlaceEvent>,
+        hours: Array<BusinessHour>
+        ){
+        
         self.phoneNumber = phoneNumber
-        self.primaryCategory = primaryCategory
+        self.events = events
+        self.deals = deals
+        self.hours = hours
     }
     
-    public let address1: String
-    public let address2: String?
-    public let cityName: String
+    
     public let phoneNumber: String
-    public let postalCode: String
-    public let stateCode: String
-    public let primaryCategory: String
+    public let deals: Array<PlaceDeal>
+    public let events: Array<PlaceEvent>
+    public let hours: Array<BusinessHour>
+    
+    var formattedPhoneNumber: String {
+        get{
+            
+            
+            let cleanPhoneNumber = self.phoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+            let mask = "(XXX) XXX-XXXX"
+            
+            var result = ""
+            var index = cleanPhoneNumber.startIndex
+            for ch in mask where index < cleanPhoneNumber.endIndex {
+                if ch == "X" {
+                    result.append(cleanPhoneNumber[index])
+                    index = cleanPhoneNumber.index(after: index)
+                } else {
+                    result.append(ch)
+                }
+            }
+            return result
+        }
+    }
 }

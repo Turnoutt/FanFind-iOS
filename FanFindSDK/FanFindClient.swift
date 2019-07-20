@@ -25,6 +25,7 @@ public class FanFindClient: NSObject {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // The accuracy of the location data
         locationManager.distanceFilter = 20 // The minimum distance (measured in meters) a device must move horizontally before an update event is generated.
         locationManager.delegate = self
+        
     }
     
    
@@ -174,8 +175,9 @@ public class FanFindClient: NSObject {
                     do {
                         let response = try JSONDecoder().decode(T.Response.self, from: data)
                         completion(.success(response))
-                    } catch {
-                        completion(.failure(error))
+                    } catch let jsonError {
+                        print(jsonError)
+                        completion(.failure(jsonError))
                     }
                 } else if let error = error {
                     completion(.failure(error))

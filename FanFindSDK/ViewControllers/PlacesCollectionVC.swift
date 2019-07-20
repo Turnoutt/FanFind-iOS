@@ -81,6 +81,11 @@ class PlacesCollectionVC: UIViewController, UIPopoverPresentationControllerDeleg
         swipeUpGesture.addTarget(self, action: #selector(growCollectionView(sender:)))
         swipeUpGesture.direction = .up
         collectionView.addGestureRecognizer(swipeUpGesture)
+        
+        let tapGesture = UITapGestureRecognizer()
+        tapGesture.addTarget(self, action: #selector(selectPlace(sender:)))
+       
+        collectionView.addGestureRecognizer(tapGesture)
     }
 
     @objc func incredibleShrinkingAct() {
@@ -127,6 +132,20 @@ class PlacesCollectionVC: UIViewController, UIPopoverPresentationControllerDeleg
                 animateCellGrowth()
             }
         }
+    }
+    
+    @objc func selectPlace(sender: UITapGestureRecognizer) {
+        if let indexPath = self.collectionView?.indexPathForItem(at: sender.location(in: self.collectionView)) {
+            let cell = self.collectionView?.cellForItem(at: indexPath) as? PlacesCell
+            if let placeId=cell?.place?.placeId{
+                FanFindClient.shared.getPlaceDetails(placeId: placeId) { (placeDetails, err) in
+                    DispatchQueue.main.async {
+                        self.present(PlaceDetailsViewController(place: cell!.place!.nearByPlace!, placeDetails: placeDetails!), animated: true)
+                    }
+                }
+            }
+        }
+        
     }
 
     func animateCellGrowth() {

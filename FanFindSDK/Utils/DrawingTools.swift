@@ -79,4 +79,49 @@ class DrawingTools {
             text.draw(in: rect, withAttributes: attributes)
         }
     }
+    
+    static func drawSponsoredPlace(wholeColor: UIColor?, diameter: Int = 60, isSelected: Bool, count: Int = 0) -> UIImage {
+        
+        var blackColorAdjusted = UIColor.black
+        var whiteColorAdjusted = UIColor.white
+        let drarkGrayColorAdjusted = UIColor.darkGray
+        
+        if isSelected {
+            whiteColorAdjusted = FanFindConfiguration.primaryColor
+            blackColorAdjusted = FanFindConfiguration.secondaryColor
+        }
+        
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: diameter + 4, height: diameter + 44))
+        return renderer.image { ctx in
+            
+            // Draw the rectangle first
+            let rectangle = CGRect(x: ((diameter-42)/2) + 2, y: 0, width: 42, height: 40)
+            
+            ctx.cgContext.setFillColor(whiteColorAdjusted.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.lightGray.cgColor)
+            ctx.cgContext.setLineWidth(0.5)
+            
+            let roundRect = UIBezierPath(roundedRect: rectangle, byRoundingCorners:.allCorners, cornerRadii: CGSize(width: 4, height: 4))
+            
+            ctx.cgContext.addPath(roundRect.cgPath)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            ctx.cgContext.setShadow(offset: .zero, blur: 1, color: drarkGrayColorAdjusted.cgColor)
+            
+            // Fill inner circle with white color
+            let circle = UIBezierPath(ovalIn: CGRect(x: 3, y: 20, width: diameter - 2, height: diameter - 2))
+            circle.lineWidth = 0
+            
+            circle.fill()
+            circle.stroke()
+            
+            let attributes = [NSAttributedString.Key.foregroundColor: blackColorAdjusted,
+                              NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)]
+            
+            let text = NumberAbbreviator().formatPoints(num: Double(count))
+            let size = text.size(withAttributes: attributes)
+            let rect = CGRect(x: CGFloat(diameter / 2) + 1.5 - size.width / 2, y: 0, width: size.width, height: size.height)
+            text.draw(in: rect, withAttributes: attributes)
+        }
+    }
 }

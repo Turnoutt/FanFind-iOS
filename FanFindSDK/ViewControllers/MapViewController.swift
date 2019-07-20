@@ -46,6 +46,7 @@ public class MapViewController: UIViewController {
     
     public init() {
         super.init(nibName: "MapViewController", bundle: Bundle(for: MapViewController.self))
+        
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -153,14 +154,15 @@ public class MapViewController: UIViewController {
                         //self.map.addAnnotations(self.placeArray!)
                         self.map.showAnnotations(self.placeArray!, animated: true)
                         self.showPlacesViewWith(places: mappedPlaces)
-                        
-                        ProgressView.shared.hideProgressView()
-                        
                     }
                     
                     if places.count == 0{
                         // self.view.makeToast("No results were returned.")
                     }
+                }
+                
+                DispatchQueue.main.async {
+                    ProgressView.shared.hideProgressView()
                 }
             })
         }

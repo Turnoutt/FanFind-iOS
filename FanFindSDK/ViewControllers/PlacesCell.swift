@@ -72,25 +72,22 @@ class PlacesCell: UICollectionViewCell, UIScrollViewDelegate {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
 
-        guard let placeId = self.place?.place_Id else { return }
-
-        FanFindClient.shared.getPlaceDetails(placeId: placeId) { (place, err) in
+        guard let place = self.place?.nearByPlace else { return }
+        DispatchQueue.main.async {
+            let address1 = place.address1 ?? ""
+            let address2 = place.address2
+            self.addressLabel.text = address1 + " " + address2 + " " + place.cityName + ", " + place.stateCode
             
-            guard let place = place else { return }
-            DispatchQueue.main.async {
-                let address2 = place.address2 ?? ""
-                self.addressLabel.text = place.address1 + " " + address2 + " " + place.cityName + ", " + place.stateCode
-                
-                if(place.primaryCategory == "Full-Service Restaurants"){
-                    self.imageView.image = UIImage(named: "restaurant", in: self.bundle, compatibleWith: nil)
-                }else{
-                    self.imageView.image = UIImage(named: "bar", in: self.bundle, compatibleWith: nil)
-                }
-                
-                self.categoryLabel.text = place.primaryCategory
-                
+            if(place.primaryCategory == "Full-Service Restaurants"){
+                self.imageView.image = UIImage(named: "restaurant", in: self.bundle, compatibleWith: nil)
+            }else{
+                self.imageView.image = UIImage(named: "bar", in: self.bundle, compatibleWith: nil)
             }
+            
+            self.categoryLabel.text = place.primaryCategory
+            
         }
+        
     }
 
     func shrinkCollectionView() {

@@ -12,9 +12,14 @@ import MapKit
 class Place: PeopleLocationAnnotation {
     var name: String = ""
     var address: String = ""
-    var place_Id: String = ""
+    var placeId: String = ""
+    var nearByPlace: NearByPlace?
+    var isSponsoredPlace: Bool = false
+    var logoUrl: String?
     
     init(object: NearByPlace) {
+        self.nearByPlace = object
+        
         super.init(
             maleCount: 0,
             femaleCount: 0,
@@ -27,7 +32,7 @@ class Place: PeopleLocationAnnotation {
         self.name = object.name ?? ""
         
         guard let placeId = object.placeId else { return }
-        place_Id = placeId
+        self.placeId = placeId
     }
 }
 

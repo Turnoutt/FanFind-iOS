@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0428338922E0B4A80089E7AB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428338822E0B4A80089E7AB /* DateExtensions.swift */; };
+		043AD5D722E0F5A70080D67A /* ThemedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AD5D622E0F5A70080D67A /* ThemedUILabel.swift */; };
+		043AD5D922E276560080D67A /* UIIMageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AD5D822E276560080D67A /* UIIMageViewExtensions.swift */; };
+		0464488122DE343500EA9504 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464488022DE343500EA9504 /* ThemedButton.swift */; };
+		0464488722DE4F2500EA9504 /* DealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464488522DE4F2500EA9504 /* DealsTableViewCell.swift */; };
+		0464488822DE4F2500EA9504 /* DealsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0464488622DE4F2500EA9504 /* DealsTableViewCell.xib */; };
+		0464488B22DE4FA200EA9504 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464488922DE4FA200EA9504 /* EventsTableViewCell.swift */; };
+		0464488C22DE4FA200EA9504 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0464488A22DE4FA200EA9504 /* EventsTableViewCell.xib */; };
+		0464488E22DFADEF00EA9504 /* PlaceDeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464488D22DFADEF00EA9504 /* PlaceDeal.swift */; };
+		0464489022DFAEC700EA9504 /* PlaceEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464488F22DFAEC700EA9504 /* PlaceEvent.swift */; };
+		0464489222DFE19B00EA9504 /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464489122DFE19B00EA9504 /* SelfSizedTableView.swift */; };
+		0464489722DFF87600EA9504 /* HoursHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464489522DFF87600EA9504 /* HoursHeaderTableViewCell.swift */; };
+		0464489822DFF87600EA9504 /* HoursHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0464489622DFF87600EA9504 /* HoursHeaderTableViewCell.xib */; };
+		0464489B22DFFCDD00EA9504 /* StandardHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464489922DFFCDD00EA9504 /* StandardHeaderTableViewCell.swift */; };
+		0464489C22DFFCDD00EA9504 /* StandardHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0464489A22DFFCDD00EA9504 /* StandardHeaderTableViewCell.xib */; };
+		0464489E22E0080D00EA9504 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0464489D22E0080D00EA9504 /* Colors.xcassets */; };
+		046448A222E00F5900EA9504 /* HoursTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046448A022E00F5900EA9504 /* HoursTableViewCell.swift */; };
+		046448A322E00F5900EA9504 /* HoursTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046448A122E00F5900EA9504 /* HoursTableViewCell.xib */; };
+		046448A522E0109600EA9504 /* BusinessHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046448A422E0109600EA9504 /* BusinessHour.swift */; };
 		047CF22C22D5471500953CC1 /* FanFindSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 047CF22A22D5471500953CC1 /* FanFindSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		047CF2E322D63C2B00953CC1 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2B722D63C2A00953CC1 /* UIViewControllerExtensions.swift */; };
 		047CF2E422D63C2B00953CC1 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2B822D63C2A00953CC1 /* UIViewExtensions.swift */; };
@@ -48,6 +67,8 @@
 		047CF30822D63C2B00953CC1 /* PeopleCountNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2E122D63C2B00953CC1 /* PeopleCountNumbers.swift */; };
 		047CF30922D63C2B00953CC1 /* FanFindConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2E222D63C2B00953CC1 /* FanFindConfiguration.swift */; };
 		047CF30B22D6D37300953CC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047CF30A22D6D37300953CC1 /* Images.xcassets */; };
+		0482A46622DE29B70018ABDB /* PlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482A46522DE29B70018ABDB /* PlaceDetailsViewController.swift */; };
+		0482A46822DE29C70018ABDB /* PlaceDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0482A46722DE29C70018ABDB /* PlaceDetailsViewController.xib */; };
 		04A3511322D6E89700A1ACCD /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3511222D6E89700A1ACCD /* UIColorExtensions.swift */; };
 		04A3511722D79F6700A1ACCD /* GoogleMapsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3511622D79F6700A1ACCD /* GoogleMapsStyle.swift */; };
 		04A3511922D79F8A00A1ACCD /* GoogleMapsTileOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3511822D79F8A00A1ACCD /* GoogleMapsTileOverlay.swift */; };
@@ -57,9 +78,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0428338822E0B4A80089E7AB /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		043AD5D622E0F5A70080D67A /* ThemedUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedUILabel.swift; sourceTree = "<group>"; };
+		043AD5D822E276560080D67A /* UIIMageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIMageViewExtensions.swift; sourceTree = "<group>"; };
 		0461742422D7B67200B56E95 /* FanFind.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FanFind.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0461742622D7BA6000B56E95 /* build-universal-framework.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-universal-framework.sh"; sourceTree = "<group>"; };
 		0461742722D7BA6000B56E95 /* release-pod.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "release-pod.sh"; sourceTree = "<group>"; };
+		0464488022DE343500EA9504 /* ThemedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedButton.swift; sourceTree = "<group>"; };
+		0464488522DE4F2500EA9504 /* DealsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsTableViewCell.swift; sourceTree = "<group>"; };
+		0464488622DE4F2500EA9504 /* DealsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DealsTableViewCell.xib; sourceTree = "<group>"; };
+		0464488922DE4FA200EA9504 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		0464488A22DE4FA200EA9504 /* EventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
+		0464488D22DFADEF00EA9504 /* PlaceDeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDeal.swift; sourceTree = "<group>"; };
+		0464488F22DFAEC700EA9504 /* PlaceEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceEvent.swift; sourceTree = "<group>"; };
+		0464489122DFE19B00EA9504 /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
+		0464489522DFF87600EA9504 /* HoursHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		0464489622DFF87600EA9504 /* HoursHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HoursHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		0464489922DFFCDD00EA9504 /* StandardHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		0464489A22DFFCDD00EA9504 /* StandardHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandardHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		0464489D22E0080D00EA9504 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		046448A022E00F5900EA9504 /* HoursTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursTableViewCell.swift; sourceTree = "<group>"; };
+		046448A122E00F5900EA9504 /* HoursTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HoursTableViewCell.xib; sourceTree = "<group>"; };
+		046448A422E0109600EA9504 /* BusinessHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessHour.swift; sourceTree = "<group>"; };
 		047CF22722D5471500953CC1 /* FanFindSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FanFindSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		047CF22A22D5471500953CC1 /* FanFindSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FanFindSDK.h; sourceTree = "<group>"; };
 		047CF29122D5487000953CC1 /* FanFindLocal.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FanFindLocal.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -104,6 +144,8 @@
 		047CF2E122D63C2B00953CC1 /* PeopleCountNumbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleCountNumbers.swift; sourceTree = "<group>"; };
 		047CF2E222D63C2B00953CC1 /* FanFindConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanFindConfiguration.swift; sourceTree = "<group>"; };
 		047CF30A22D6D37300953CC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0482A46522DE29B70018ABDB /* PlaceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewController.swift; sourceTree = "<group>"; };
+		0482A46722DE29C70018ABDB /* PlaceDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceDetailsViewController.xib; sourceTree = "<group>"; };
 		04A3511222D6E89700A1ACCD /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		04A3511622D79F6700A1ACCD /* GoogleMapsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsStyle.swift; sourceTree = "<group>"; };
 		04A3511822D79F8A00A1ACCD /* GoogleMapsTileOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlay.swift; sourceTree = "<group>"; };
@@ -123,6 +165,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0464488222DE4EB800EA9504 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				0464488522DE4F2500EA9504 /* DealsTableViewCell.swift */,
+				0464488622DE4F2500EA9504 /* DealsTableViewCell.xib */,
+				0464488922DE4FA200EA9504 /* EventsTableViewCell.swift */,
+				0464488A22DE4FA200EA9504 /* EventsTableViewCell.xib */,
+				0464489522DFF87600EA9504 /* HoursHeaderTableViewCell.swift */,
+				0464489622DFF87600EA9504 /* HoursHeaderTableViewCell.xib */,
+				0464489922DFFCDD00EA9504 /* StandardHeaderTableViewCell.swift */,
+				0464489A22DFFCDD00EA9504 /* StandardHeaderTableViewCell.xib */,
+				046448A022E00F5900EA9504 /* HoursTableViewCell.swift */,
+				046448A122E00F5900EA9504 /* HoursTableViewCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		047CF21D22D5471500953CC1 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +217,7 @@
 				047CF2B522D54E0200953CC1 /* Info.plist */,
 				047CF22A22D5471500953CC1 /* FanFindSDK.h */,
 				047CF30A22D6D37300953CC1 /* Images.xcassets */,
+				0464489D22E0080D00EA9504 /* Colors.xcassets */,
 			);
 			path = FanFindSDK;
 			sourceTree = "<group>";
@@ -169,6 +229,8 @@
 				047CF2B822D63C2A00953CC1 /* UIViewExtensions.swift */,
 				047CF2B922D63C2A00953CC1 /* MkMapViewExtension.swift */,
 				04A3511222D6E89700A1ACCD /* UIColorExtensions.swift */,
+				0428338822E0B4A80089E7AB /* DateExtensions.swift */,
+				043AD5D822E276560080D67A /* UIIMageViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -198,6 +260,9 @@
 				047CF2C922D63C2A00953CC1 /* APIRequest.swift */,
 				047CF2CA22D63C2A00953CC1 /* NoReply.swift */,
 				047CF2CB22D63C2A00953CC1 /* NearbyPlaceDetails.swift */,
+				0464488D22DFADEF00EA9504 /* PlaceDeal.swift */,
+				0464488F22DFAEC700EA9504 /* PlaceEvent.swift */,
+				046448A422E0109600EA9504 /* BusinessHour.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,6 +292,8 @@
 				047CF2D922D63C2B00953CC1 /* PlacesCollectionVC.swift */,
 				047CF2DA22D63C2B00953CC1 /* NavigateViewController.swift */,
 				047CF2DC22D63C2B00953CC1 /* NavigateViewController.xib */,
+				0482A46522DE29B70018ABDB /* PlaceDetailsViewController.swift */,
+				0482A46722DE29C70018ABDB /* PlaceDetailsViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -234,10 +301,14 @@
 		047CF2DD22D63C2B00953CC1 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				0464488222DE4EB800EA9504 /* TableViewCells */,
 				047CF2DE22D63C2B00953CC1 /* ProgressView.swift */,
 				047CF2DF22D63C2B00953CC1 /* PlacesAnnotationView.swift */,
 				047CF2E022D63C2B00953CC1 /* PeopleCountNumbers.xib */,
 				047CF2E122D63C2B00953CC1 /* PeopleCountNumbers.swift */,
+				0464488022DE343500EA9504 /* ThemedButton.swift */,
+				0464489122DFE19B00EA9504 /* SelfSizedTableView.swift */,
+				043AD5D622E0F5A70080D67A /* ThemedUILabel.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -324,13 +395,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0464488C22DE4FA200EA9504 /* EventsTableViewCell.xib in Resources */,
+				0464489C22DFFCDD00EA9504 /* StandardHeaderTableViewCell.xib in Resources */,
+				0464489E22E0080D00EA9504 /* Colors.xcassets in Resources */,
+				046448A322E00F5900EA9504 /* HoursTableViewCell.xib in Resources */,
 				047CF2FB22D63C2B00953CC1 /* PlacesCollectionVC.xib in Resources */,
+				0482A46822DE29C70018ABDB /* PlaceDetailsViewController.xib in Resources */,
 				047CF30B22D6D37300953CC1 /* Images.xcassets in Resources */,
 				047CF2FA22D63C2B00953CC1 /* PlacesShortenedCell.xib in Resources */,
+				0464488822DE4F2500EA9504 /* DealsTableViewCell.xib in Resources */,
 				047CF30722D63C2B00953CC1 /* PeopleCountNumbers.xib in Resources */,
 				047CF30422D63C2B00953CC1 /* NavigateViewController.xib in Resources */,
 				047CF30022D63C2B00953CC1 /* MapViewController.xib in Resources */,
 				047CF2FC22D63C2B00953CC1 /* PlacesCell.xib in Resources */,
+				0464489822DFF87600EA9504 /* HoursHeaderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,12 +426,19 @@
 				047CF2F222D63C2B00953CC1 /* PeopleLocationAnnotation.swift in Sources */,
 				047CF30622D63C2B00953CC1 /* PlacesAnnotationView.swift in Sources */,
 				047CF2E622D63C2B00953CC1 /* NumberAbbreviator.swift in Sources */,
+				0464489722DFF87600EA9504 /* HoursHeaderTableViewCell.swift in Sources */,
+				0464489222DFE19B00EA9504 /* SelfSizedTableView.swift in Sources */,
 				047CF2E722D63C2B00953CC1 /* HTTPParameter.swift in Sources */,
 				04A3511D22D79FC000A1ACCD /* GoogleMapsURLStyleConverter.swift in Sources */,
+				0464489B22DFFCDD00EA9504 /* StandardHeaderTableViewCell.swift in Sources */,
 				047CF30322D63C2B00953CC1 /* PlacesCell.swift in Sources */,
 				047CF2F122D63C2B00953CC1 /* FanFindError.swift in Sources */,
 				047CF2E522D63C2B00953CC1 /* MkMapViewExtension.swift in Sources */,
+				043AD5D722E0F5A70080D67A /* ThemedUILabel.swift in Sources */,
+				046448A522E0109600EA9504 /* BusinessHour.swift in Sources */,
+				046448A222E00F5900EA9504 /* HoursTableViewCell.swift in Sources */,
 				047CF30222D63C2B00953CC1 /* NavigateViewController.swift in Sources */,
+				043AD5D922E276560080D67A /* UIIMageViewExtensions.swift in Sources */,
 				047CF2FD22D63C2B00953CC1 /* MapViewController.swift in Sources */,
 				047CF2EA22D63C2B00953CC1 /* URLQueryItemEncoder.swift in Sources */,
 				047CF2EC22D63C2B00953CC1 /* FanFindClient.swift in Sources */,
@@ -366,11 +451,16 @@
 				047CF2EB22D63C2B00953CC1 /* LocationHelper.swift in Sources */,
 				047CF2E922D63C2B00953CC1 /* DrawingTools.swift in Sources */,
 				047CF30922D63C2B00953CC1 /* FanFindConfiguration.swift in Sources */,
+				0464488122DE343500EA9504 /* ThemedButton.swift in Sources */,
 				047CF2F722D63C2B00953CC1 /* GetPlaces.swift in Sources */,
+				0464488722DE4F2500EA9504 /* DealsTableViewCell.swift in Sources */,
+				0482A46622DE29B70018ABDB /* PlaceDetailsViewController.swift in Sources */,
 				04A3511722D79F6700A1ACCD /* GoogleMapsStyle.swift in Sources */,
+				0428338922E0B4A80089E7AB /* DateExtensions.swift in Sources */,
 				04A3511322D6E89700A1ACCD /* UIColorExtensions.swift in Sources */,
 				047CF2F022D63C2B00953CC1 /* ValidationProblemDetails.swift in Sources */,
 				04A3511922D79F8A00A1ACCD /* GoogleMapsTileOverlay.swift in Sources */,
+				0464488E22DFADEF00EA9504 /* PlaceDeal.swift in Sources */,
 				047CF2F322D63C2B00953CC1 /* APIRequest.swift in Sources */,
 				047CF2F622D63C2B00953CC1 /* TrackLocation.swift in Sources */,
 				047CF2EE22D63C2B00953CC1 /* TokenResponse.swift in Sources */,
@@ -379,7 +469,9 @@
 				047CF30822D63C2B00953CC1 /* PeopleCountNumbers.swift in Sources */,
 				04A3511B22D79FAF00A1ACCD /* GoogleMapsTileOverlayError.swift in Sources */,
 				047CF2F522D63C2B00953CC1 /* NearbyPlaceDetails.swift in Sources */,
+				0464489022DFAEC700EA9504 /* PlaceEvent.swift in Sources */,
 				047CF2E322D63C2B00953CC1 /* UIViewControllerExtensions.swift in Sources */,
+				0464488B22DE4FA200EA9504 /* EventsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
