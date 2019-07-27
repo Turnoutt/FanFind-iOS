@@ -25,7 +25,10 @@ steps:
     gitHubConnection: 'stasdemir'
     repositoryName: 'Turnoutt/FanFind-iOS'
     action: 'create'
-    target: '$(Build.SourceVersion)'
+    target: '$(Version)'
     tagSource: 'manual'
     tag: '$(Version)'
     title: 'FanFind-iOS $(Version)'
+    releaseNotesSource: 'input'
+    releaseNotes: 'None'
+    addChangeLog: false
