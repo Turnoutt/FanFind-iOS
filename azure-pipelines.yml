@@ -10,10 +10,22 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: Bash@3
+  inputs:
+    filePath: 'build-universal-framework.sh'
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: 'build'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+- task: GitHubRelease@0
+  inputs:
+    gitHubConnection: 'stasdemir'
+    repositoryName: 'Turnoutt/FanFind-iOS'
+    action: 'create'
+    target: '$(Build.SourceVersion)'
+    tagSource: 'manual'
+    tag: '$(Version)'
+    title: 'FanFind-iOS $(Version)'
