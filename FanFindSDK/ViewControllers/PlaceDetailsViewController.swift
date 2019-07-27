@@ -7,20 +7,33 @@
 //
 
 import Foundation
+import MapKit
 
 class PlaceDetailsViewController : UIViewController{
     @IBOutlet var dealsEventsView: SelfSizedTableView!
     @IBOutlet var hoursTableView: SelfSizedTableView!
     @IBOutlet var logo: UIImageView!
     @IBOutlet var fanCount: PeopleCountNumbers!
-    @IBOutlet var name: UILabel!
-    @IBOutlet var address: UILabel!
-    @IBOutlet var phone: UILabel!
-    @IBOutlet var website: UILabel!
+    @IBOutlet var placeInfoHeader: PlaceInfoHeaderView!
+    
     @IBOutlet var websiteButton: UIButton!
     
     @IBAction func goBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func navigate(_ sender: Any) {
+        let locationCoords = CLLocationCoordinate2D(
+            latitude: (self.place!.latitude)!,
+            longitude: (self.place!.longitude)!
+        )
+        
+        if let place = place{
+            
+            let location = NavigatorLocation(coords: locationCoords, name: place.name ?? "", address: place.fullAddress)
+            
+            Navigator.presentPicker(destination: location, presentOn: self)
+        }
     }
     
     @IBAction func callPlace(_ sender: Any) {
@@ -40,7 +53,13 @@ class PlaceDetailsViewController : UIViewController{
         self.place = place
         self.placeDetails = placeDetails
         
-        self.hours = placeDetails.hours
+        self.hours = placeDetails.hours.sorted(by: { (prev, next) -> Bool in
+            if(prev.dayNumberOfWeek == next.dayNumberOfWeek){
+                return prev.startTime < next.startTime
+            }
+            
+            return prev.dayNumberOfWeek < next.dayNumberOfWeek
+        })
         self.deals = placeDetails.deals
         self.events = placeDetails.events
         
@@ -51,52 +70,42 @@ class PlaceDetailsViewController : UIViewController{
         super.init(nibName: "PlaceDetailsViewController", bundle: Bundle(for: PlaceDetailsViewController.self))
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.placeInfoHeader.showExtendedDetails = true
+        
         self.view.backgroundColor = FanFindConfiguration.backgroundColor
-        
-        deals.append(PlaceDeal(startDate: Date.init(), endDate: Date.init(), dealText: "$5 Coors Light draft during Rockets games"))
-        deals.append(PlaceDeal(startDate: Date.init(), endDate: Date.init(), dealText: "$0.50 Wings during Rockets games"))
-        
-        events.append(PlaceEvent(startDate: Date.init(), endDate: Date.init(), eventText: "Rockets vs. Warriors viewing party"))
-        events.append(PlaceEvent(startDate: Date.init(), endDate: Date.init(), eventText: "Rockets Player Meet and Greet"))
-        
-        hours.append(BusinessHour(dayOfWeek: "Monday", startTime: "09:00:00", endTime: "17:30:00", dayNumberOfWeek: 1))
-        hours.append(BusinessHour(dayOfWeek: "Tuesday", startTime: "09:00:00", endTime: "17:30:00", dayNumberOfWeek: 2))
-        hours.append(BusinessHour(dayOfWeek: "Wednesday", startTime: "09:00:00", endTime: "17:30:00", dayNumberOfWeek: 3))
-        hours.append(BusinessHour(dayOfWeek: "Thursday", startTime: "09:00:00", endTime: "17:30:00", dayNumberOfWeek: 4))
-        hours.append(BusinessHour(dayOfWeek: "Friday", startTime: "09:00:00", endTime: "17:30:00", dayNumberOfWeek: 5))
         
         dealsEventsView.delegate = self
         dealsEventsView.dataSource = self
         dealsEventsView.allowsSelection = false
-        dealsEventsView.separatorColor = UIColor.clear
+        dealsEventsView.separatorStyle = .none
         
         hoursTableView.delegate = self
         hoursTableView.dataSource = self
         hoursTableView.allowsSelection = false
-        hoursTableView.separatorColor = UIColor.clear
+        hoursTableView.separatorStyle = .none
+        
+        if(self.hours.count == 0){
+            hoursTableView.isHidden = true
+        }
         
         DispatchQueue.main.async {
-            self.name.text = self.place?.name
-            self.address.text = self.place?.address1
-            self.phone.text = self.placeDetails?.formattedPhoneNumber
-            
-            self.website.isHidden = true
+            self.placeInfoHeader.setPlace(place: self.place!)
+            self.placeInfoHeader.setPlaceDetails(place: self.placeDetails!)
+        
             self.websiteButton.isHidden = true
-            
-            self.dealsEventsView.maxHeight = 300
-            self.hoursTableView.maxHeight = 300
         }
         
         dealsEventsView.register(UINib(nibName: "EventsTableViewCell", bundle: Bundle(for: EventsTableViewCell.self)), forCellReuseIdentifier: "eventsTableViewCell")
         
         dealsEventsView.register(UINib(nibName: "DealsTableViewCell", bundle: Bundle(for: DealsTableViewCell.self)), forCellReuseIdentifier: "dealsTableViewCell")
         
-        dealsEventsView.register(UINib(nibName: "StandardHeaderTableViewCell", bundle: Bundle(for: StandardHeaderTableViewCell.self)), forCellReuseIdentifier: "standardHeaderTableViewCell")
+        dealsEventsView.register(UINib(nibName: "StandardHeaderTableViewCell", bundle: Bundle(for: StandardHeaderTableViewCell.self)), forHeaderFooterViewReuseIdentifier: "standardHeaderTableViewCell")
         
-        hoursTableView.register(UINib(nibName: "HoursHeaderTableViewCell", bundle: Bundle(for: HoursHeaderTableViewCell.self)), forCellReuseIdentifier: "hoursHeaderTableViewCell")
+        hoursTableView.register(UINib(nibName: "HoursHeaderTableViewCell", bundle: Bundle(for: HoursHeaderTableViewCell.self)), forHeaderFooterViewReuseIdentifier: "hoursHeaderTableViewCell")
         
         hoursTableView.register(UINib(nibName: "HoursTableViewCell", bundle: Bundle(for: HoursTableViewCell.self)), forCellReuseIdentifier: "hoursTableViewCell")
     }
@@ -106,6 +115,14 @@ class PlaceDetailsViewController : UIViewController{
 extension PlaceDetailsViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         if(tableView == self.hoursTableView){
+            return 1
+        }
+        
+        if deals.count == 0 {
+            if events.count == 0 {
+                return 0
+            }
+            
             return 1
         }
         
@@ -133,11 +150,11 @@ extension PlaceDetailsViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if(tableView == self.hoursTableView){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "hoursHeaderTableViewCell") as! HoursHeaderTableViewCell
+            let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "hoursHeaderTableViewCell") as! HoursHeaderTableViewCell
             cell.setHours(hours: hours)
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "standardHeaderTableViewCell") as! StandardHeaderTableViewCell
+            let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "standardHeaderTableViewCell") as! StandardHeaderTableViewCell
             
             switch section {
             case 0:
@@ -157,10 +174,7 @@ extension PlaceDetailsViewController: UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "hoursTableViewCell") as! HoursTableViewCell
             
             cell.dayOfWeek.text = hours[indexPath.row].dayOfWeek
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "h:mma"
-            
-            cell.hours.text = dateFormatter.string(from: hours[indexPath.row].startTime) + " - " + dateFormatter.string(from: hours[indexPath.row].endTime)
+            cell.setTime(startTime: hours[indexPath.row].startTime, endTime: hours[indexPath.row].endTime)
             
             return cell
         } else {

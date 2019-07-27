@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HoursHeaderTableViewCell: UITableViewCell {
+class HoursHeaderTableViewCell: UITableViewHeaderFooterView {
     @IBOutlet private var openClosed: UILabel!
     @IBOutlet private var openUntil: UILabel!
     
@@ -21,19 +21,17 @@ class HoursHeaderTableViewCell: UITableViewCell {
         nextDateFormatter.dateFormat = "EEEE, MMM d h:mma"
         closesDateFormatter.dateFormat = "h:mma"
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     fileprivate func processClosed(_ hours: [BusinessHour], _ nextIndex: Int) {
-        openClosed.text = "CLOSED"
-        
-        let nextHours = hours[nextIndex]
-
-        openUntil.text = "Opens " + nextDateFormatter.string(from: nextHours.startTime)
+        DispatchQueue.main.async {
+            self.openClosed.text = "CLOSED"
+            self.openClosed.textColor = FanFindConfiguration.closedColor
+            
+            let nextHours = hours[nextIndex]
+            
+            
+            self.openUntil.text = "Opens " + self.nextDateFormatter.string(from: nextHours.startTime)
+        }
     }
     
     func setHours(hours: Array<BusinessHour>){
@@ -41,30 +39,17 @@ class HoursHeaderTableViewCell: UITableViewCell {
             return
         }
         
-        // Need to offset this since the API returns 0 as Sunday
         let todaysDate = Date.init()
-        let dayNumberOfWeek = Date.init().dayNumberOfWeek()! - 1
+        let dayNumberOfWeek = Date.init().dayNumberOfWeek()!
         
         if let hoursForCurrentDay = hours.first(where: { (hour) -> Bool in
             hour.dayNumberOfWeek == dayNumberOfWeek
         }) {
-            let calendar = Calendar.current
-            
-            // Build Start Time
-            let startHour = calendar.component(.hour, from: hoursForCurrentDay.startTime)
-            let startMinutes = calendar.component(.minute, from: hoursForCurrentDay.startTime)
-            
-            let startDate = Calendar.current.date(bySettingHour: startHour, minute: startMinutes, second: 0, of: Date())!
-            
-            // Build End Time
-            let endHour = calendar.component(.hour, from: hoursForCurrentDay.endTime)
-            let endMinutes = calendar.component(.minute, from: hoursForCurrentDay.endTime)
-            
-            let endDate = Calendar.current.date(bySettingHour: endHour, minute: endMinutes, second: 0, of: Date())!
-            
-            if(todaysDate>startDate && todaysDate<endDate ){
-                openClosed.text = "OPEN"
-                openUntil.text = "Closes " + closesDateFormatter.string(from: endDate)
+            if(todaysDate>hoursForCurrentDay.startTime && todaysDate<hoursForCurrentDay.endTime ){
+                DispatchQueue.main.async {
+                    self.openClosed.text = "OPEN"
+                    self.openUntil.text = "Closes " + self.closesDateFormatter.string(from: hoursForCurrentDay.endTime)
+                }
             }else{
                 let currentIndex = hours.firstIndex { (hour) -> Bool in
                     hour.dayNumberOfWeek == hoursForCurrentDay.dayNumberOfWeek && hour.startTime == hoursForCurrentDay.startTime

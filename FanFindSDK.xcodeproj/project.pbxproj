@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0428338922E0B4A80089E7AB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428338822E0B4A80089E7AB /* DateExtensions.swift */; };
+		042927BF22EB7AA10057F759 /* RoundedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042927BE22EB7AA10057F759 /* RoundedCollectionViewCell.swift */; };
+		042927C522ECB47D0057F759 /* NavigationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042927C422ECB47D0057F759 /* NavigationApp.swift */; };
+		042927C722ECB4D90057F759 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042927C622ECB4D90057F759 /* Navigator.swift */; };
+		042927C922ECB5780057F759 /* LocationRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042927C822ECB5780057F759 /* LocationRepresentable.swift */; };
+		042927CB22ECB5AC0057F759 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042927CA22ECB5AC0057F759 /* Location.swift */; };
+		042927CD22ECB5D60057F759 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042927CC22ECB5D60057F759 /* Mode.swift */; };
+		042927CF22ECB6D90057F759 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042927CE22ECB6D90057F759 /* Error.swift */; };
+		042927D122ECB7180057F759 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042927D022ECB7180057F759 /* Extensions.swift */; };
 		043AD5D722E0F5A70080D67A /* ThemedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AD5D622E0F5A70080D67A /* ThemedUILabel.swift */; };
 		043AD5D922E276560080D67A /* UIIMageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AD5D822E276560080D67A /* UIIMageViewExtensions.swift */; };
 		0464488122DE343500EA9504 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464488022DE343500EA9504 /* ThemedButton.swift */; };
@@ -58,9 +66,7 @@
 		047CF2FF22D63C2B00953CC1 /* PlacesShortenedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2D722D63C2B00953CC1 /* PlacesShortenedCell.swift */; };
 		047CF30022D63C2B00953CC1 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047CF2D822D63C2B00953CC1 /* MapViewController.xib */; };
 		047CF30122D63C2B00953CC1 /* PlacesCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2D922D63C2B00953CC1 /* PlacesCollectionVC.swift */; };
-		047CF30222D63C2B00953CC1 /* NavigateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2DA22D63C2B00953CC1 /* NavigateViewController.swift */; };
 		047CF30322D63C2B00953CC1 /* PlacesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2DB22D63C2B00953CC1 /* PlacesCell.swift */; };
-		047CF30422D63C2B00953CC1 /* NavigateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047CF2DC22D63C2B00953CC1 /* NavigateViewController.xib */; };
 		047CF30522D63C2B00953CC1 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2DE22D63C2B00953CC1 /* ProgressView.swift */; };
 		047CF30622D63C2B00953CC1 /* PlacesAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2DF22D63C2B00953CC1 /* PlacesAnnotationView.swift */; };
 		047CF30722D63C2B00953CC1 /* PeopleCountNumbers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047CF2E022D63C2B00953CC1 /* PeopleCountNumbers.xib */; };
@@ -69,6 +75,8 @@
 		047CF30B22D6D37300953CC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047CF30A22D6D37300953CC1 /* Images.xcassets */; };
 		0482A46622DE29B70018ABDB /* PlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482A46522DE29B70018ABDB /* PlaceDetailsViewController.swift */; };
 		0482A46822DE29C70018ABDB /* PlaceDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0482A46722DE29C70018ABDB /* PlaceDetailsViewController.xib */; };
+		0487D20B22EA14DB006AB20F /* PlaceInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0487D20A22EA14DB006AB20F /* PlaceInfoHeaderView.swift */; };
+		048EBFE622E902670095ADB5 /* DealsEventsIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EBFE522E902670095ADB5 /* DealsEventsIndicator.swift */; };
 		04A3511322D6E89700A1ACCD /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3511222D6E89700A1ACCD /* UIColorExtensions.swift */; };
 		04A3511722D79F6700A1ACCD /* GoogleMapsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3511622D79F6700A1ACCD /* GoogleMapsStyle.swift */; };
 		04A3511922D79F8A00A1ACCD /* GoogleMapsTileOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3511822D79F8A00A1ACCD /* GoogleMapsTileOverlay.swift */; };
@@ -79,6 +87,14 @@
 
 /* Begin PBXFileReference section */
 		0428338822E0B4A80089E7AB /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		042927BE22EB7AA10057F759 /* RoundedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCollectionViewCell.swift; sourceTree = "<group>"; };
+		042927C422ECB47D0057F759 /* NavigationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationApp.swift; sourceTree = "<group>"; };
+		042927C622ECB4D90057F759 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		042927C822ECB5780057F759 /* LocationRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepresentable.swift; sourceTree = "<group>"; };
+		042927CA22ECB5AC0057F759 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		042927CC22ECB5D60057F759 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		042927CE22ECB6D90057F759 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		042927D022ECB7180057F759 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		043AD5D622E0F5A70080D67A /* ThemedUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedUILabel.swift; sourceTree = "<group>"; };
 		043AD5D822E276560080D67A /* UIIMageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIMageViewExtensions.swift; sourceTree = "<group>"; };
 		0461742422D7B67200B56E95 /* FanFind.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FanFind.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -135,9 +151,7 @@
 		047CF2D722D63C2B00953CC1 /* PlacesShortenedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesShortenedCell.swift; sourceTree = "<group>"; };
 		047CF2D822D63C2B00953CC1 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		047CF2D922D63C2B00953CC1 /* PlacesCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesCollectionVC.swift; sourceTree = "<group>"; };
-		047CF2DA22D63C2B00953CC1 /* NavigateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigateViewController.swift; sourceTree = "<group>"; };
 		047CF2DB22D63C2B00953CC1 /* PlacesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesCell.swift; sourceTree = "<group>"; };
-		047CF2DC22D63C2B00953CC1 /* NavigateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigateViewController.xib; sourceTree = "<group>"; };
 		047CF2DE22D63C2B00953CC1 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		047CF2DF22D63C2B00953CC1 /* PlacesAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesAnnotationView.swift; sourceTree = "<group>"; };
 		047CF2E022D63C2B00953CC1 /* PeopleCountNumbers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleCountNumbers.xib; sourceTree = "<group>"; };
@@ -146,6 +160,8 @@
 		047CF30A22D6D37300953CC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0482A46522DE29B70018ABDB /* PlaceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewController.swift; sourceTree = "<group>"; };
 		0482A46722DE29C70018ABDB /* PlaceDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceDetailsViewController.xib; sourceTree = "<group>"; };
+		0487D20A22EA14DB006AB20F /* PlaceInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoHeaderView.swift; sourceTree = "<group>"; };
+		048EBFE522E902670095ADB5 /* DealsEventsIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsEventsIndicator.swift; sourceTree = "<group>"; };
 		04A3511222D6E89700A1ACCD /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		04A3511622D79F6700A1ACCD /* GoogleMapsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsStyle.swift; sourceTree = "<group>"; };
 		04A3511822D79F8A00A1ACCD /* GoogleMapsTileOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlay.swift; sourceTree = "<group>"; };
@@ -165,6 +181,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042927C322ECB46B0057F759 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				042927C422ECB47D0057F759 /* NavigationApp.swift */,
+				042927C622ECB4D90057F759 /* Navigator.swift */,
+				042927C822ECB5780057F759 /* LocationRepresentable.swift */,
+				042927CA22ECB5AC0057F759 /* Location.swift */,
+				042927CC22ECB5D60057F759 /* Mode.swift */,
+				042927CE22ECB6D90057F759 /* Error.swift */,
+				042927D022ECB7180057F759 /* Extensions.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		0464488222DE4EB800EA9504 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,8 +320,6 @@
 				047CF2D522D63C2B00953CC1 /* MapViewController.swift */,
 				047CF2D322D63C2B00953CC1 /* PlacesCollectionVC.xib */,
 				047CF2D922D63C2B00953CC1 /* PlacesCollectionVC.swift */,
-				047CF2DA22D63C2B00953CC1 /* NavigateViewController.swift */,
-				047CF2DC22D63C2B00953CC1 /* NavigateViewController.xib */,
 				0482A46522DE29B70018ABDB /* PlaceDetailsViewController.swift */,
 				0482A46722DE29C70018ABDB /* PlaceDetailsViewController.xib */,
 			);
@@ -301,6 +329,7 @@
 		047CF2DD22D63C2B00953CC1 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				042927C322ECB46B0057F759 /* Navigation */,
 				0464488222DE4EB800EA9504 /* TableViewCells */,
 				047CF2DE22D63C2B00953CC1 /* ProgressView.swift */,
 				047CF2DF22D63C2B00953CC1 /* PlacesAnnotationView.swift */,
@@ -309,6 +338,9 @@
 				0464488022DE343500EA9504 /* ThemedButton.swift */,
 				0464489122DFE19B00EA9504 /* SelfSizedTableView.swift */,
 				043AD5D622E0F5A70080D67A /* ThemedUILabel.swift */,
+				048EBFE522E902670095ADB5 /* DealsEventsIndicator.swift */,
+				0487D20A22EA14DB006AB20F /* PlaceInfoHeaderView.swift */,
+				042927BE22EB7AA10057F759 /* RoundedCollectionViewCell.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -405,7 +437,6 @@
 				047CF2FA22D63C2B00953CC1 /* PlacesShortenedCell.xib in Resources */,
 				0464488822DE4F2500EA9504 /* DealsTableViewCell.xib in Resources */,
 				047CF30722D63C2B00953CC1 /* PeopleCountNumbers.xib in Resources */,
-				047CF30422D63C2B00953CC1 /* NavigateViewController.xib in Resources */,
 				047CF30022D63C2B00953CC1 /* MapViewController.xib in Resources */,
 				047CF2FC22D63C2B00953CC1 /* PlacesCell.xib in Resources */,
 				0464489822DFF87600EA9504 /* HoursHeaderTableViewCell.xib in Resources */,
@@ -431,15 +462,18 @@
 				047CF2E722D63C2B00953CC1 /* HTTPParameter.swift in Sources */,
 				04A3511D22D79FC000A1ACCD /* GoogleMapsURLStyleConverter.swift in Sources */,
 				0464489B22DFFCDD00EA9504 /* StandardHeaderTableViewCell.swift in Sources */,
+				042927CF22ECB6D90057F759 /* Error.swift in Sources */,
 				047CF30322D63C2B00953CC1 /* PlacesCell.swift in Sources */,
 				047CF2F122D63C2B00953CC1 /* FanFindError.swift in Sources */,
 				047CF2E522D63C2B00953CC1 /* MkMapViewExtension.swift in Sources */,
+				042927CD22ECB5D60057F759 /* Mode.swift in Sources */,
 				043AD5D722E0F5A70080D67A /* ThemedUILabel.swift in Sources */,
 				046448A522E0109600EA9504 /* BusinessHour.swift in Sources */,
 				046448A222E00F5900EA9504 /* HoursTableViewCell.swift in Sources */,
-				047CF30222D63C2B00953CC1 /* NavigateViewController.swift in Sources */,
+				048EBFE622E902670095ADB5 /* DealsEventsIndicator.swift in Sources */,
 				043AD5D922E276560080D67A /* UIIMageViewExtensions.swift in Sources */,
 				047CF2FD22D63C2B00953CC1 /* MapViewController.swift in Sources */,
+				042927CB22ECB5AC0057F759 /* Location.swift in Sources */,
 				047CF2EA22D63C2B00953CC1 /* URLQueryItemEncoder.swift in Sources */,
 				047CF2EC22D63C2B00953CC1 /* FanFindClient.swift in Sources */,
 				047CF2F922D63C2B00953CC1 /* Authenticate.swift in Sources */,
@@ -455,19 +489,25 @@
 				047CF2F722D63C2B00953CC1 /* GetPlaces.swift in Sources */,
 				0464488722DE4F2500EA9504 /* DealsTableViewCell.swift in Sources */,
 				0482A46622DE29B70018ABDB /* PlaceDetailsViewController.swift in Sources */,
+				042927C922ECB5780057F759 /* LocationRepresentable.swift in Sources */,
 				04A3511722D79F6700A1ACCD /* GoogleMapsStyle.swift in Sources */,
 				0428338922E0B4A80089E7AB /* DateExtensions.swift in Sources */,
 				04A3511322D6E89700A1ACCD /* UIColorExtensions.swift in Sources */,
+				042927C522ECB47D0057F759 /* NavigationApp.swift in Sources */,
 				047CF2F022D63C2B00953CC1 /* ValidationProblemDetails.swift in Sources */,
 				04A3511922D79F8A00A1ACCD /* GoogleMapsTileOverlay.swift in Sources */,
+				042927BF22EB7AA10057F759 /* RoundedCollectionViewCell.swift in Sources */,
 				0464488E22DFADEF00EA9504 /* PlaceDeal.swift in Sources */,
 				047CF2F322D63C2B00953CC1 /* APIRequest.swift in Sources */,
+				0487D20B22EA14DB006AB20F /* PlaceInfoHeaderView.swift in Sources */,
 				047CF2F622D63C2B00953CC1 /* TrackLocation.swift in Sources */,
 				047CF2EE22D63C2B00953CC1 /* TokenResponse.swift in Sources */,
 				04A3511F22D79FE100A1ACCD /* GoogleMapsStyle+ConvertedValues.swift in Sources */,
 				047CF2F822D63C2B00953CC1 /* GetPlaceDetails.swift in Sources */,
+				042927D122ECB7180057F759 /* Extensions.swift in Sources */,
 				047CF30822D63C2B00953CC1 /* PeopleCountNumbers.swift in Sources */,
 				04A3511B22D79FAF00A1ACCD /* GoogleMapsTileOverlayError.swift in Sources */,
+				042927C722ECB4D90057F759 /* Navigator.swift in Sources */,
 				047CF2F522D63C2B00953CC1 /* NearbyPlaceDetails.swift in Sources */,
 				0464489022DFAEC700EA9504 /* PlaceEvent.swift in Sources */,
 				047CF2E322D63C2B00953CC1 /* UIViewControllerExtensions.swift in Sources */,
@@ -482,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BITCODE_GENERATION_MODE = marker;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -534,6 +575,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-fembed-bitcode-marker";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -546,6 +588,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BITCODE_GENERATION_MODE = bitcode;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -591,6 +634,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = "-fembed-bitcode";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -622,7 +666,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -648,7 +692,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = turnoutt.FanFindSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

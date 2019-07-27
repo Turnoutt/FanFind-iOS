@@ -8,19 +8,13 @@
 
 import UIKit
 
-class StandardHeaderTableViewCell: UITableViewCell {
+class StandardHeaderTableViewCell: UITableViewHeaderFooterView {
     @IBOutlet var label: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         addBottomBorderWithColor(color: UIColor.init(hex: 0xD3D2D2, alpha: 1.0), width: 1.0)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func addBottomBorderWithColor(color: UIColor, width: CGFloat) {

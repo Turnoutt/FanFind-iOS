@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14810.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.15"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +28,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                         </mapView>
                         <searchBar contentMode="redraw" placeholder="Find places to go..." translatesAutoresizingMaskIntoConstraints="NO" id="IbR-RQ-OGD">
-                            <rect key="frame" x="20" y="54" width="374" height="40"/>
+                            <rect key="frame" x="10" y="54" width="394" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="Akx-AF-xAf"/>
                             </constraints>
@@ -52,10 +50,10 @@
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="5NN-2E-xOY" firstAttribute="leading" secondItem="h0R-uB-r9h" secondAttribute="leading" id="7ZL-dE-sEy"/>
-                        <constraint firstItem="IbR-RQ-OGD" firstAttribute="leading" secondItem="p2M-YL-P8c" secondAttribute="leading" constant="20" id="7dS-oF-Emx"/>
+                        <constraint firstItem="IbR-RQ-OGD" firstAttribute="leading" secondItem="p2M-YL-P8c" secondAttribute="leading" constant="10" id="7dS-oF-Emx"/>
                         <constraint firstItem="p2M-YL-P8c" firstAttribute="bottom" secondItem="5NN-2E-xOY" secondAttribute="bottom" id="Fis-Su-ZqT"/>
                         <constraint firstItem="rfi-Fn-28c" firstAttribute="centerX" secondItem="p2M-YL-P8c" secondAttribute="centerX" id="LVr-Bz-B5F"/>
-                        <constraint firstItem="IbR-RQ-OGD" firstAttribute="trailing" secondItem="p2M-YL-P8c" secondAttribute="trailing" constant="-20" id="Ow9-9T-xCZ"/>
+                        <constraint firstItem="IbR-RQ-OGD" firstAttribute="trailing" secondItem="p2M-YL-P8c" secondAttribute="trailing" constant="-10" id="Ow9-9T-xCZ"/>
                         <constraint firstItem="IbR-RQ-OGD" firstAttribute="top" secondItem="p2M-YL-P8c" secondAttribute="top" constant="10" id="Ugg-mb-d5E"/>
                         <constraint firstItem="5NN-2E-xOY" firstAttribute="leading" secondItem="p2M-YL-P8c" secondAttribute="leading" id="W3L-pK-wPB"/>
                         <constraint firstItem="5NN-2E-xOY" firstAttribute="top" secondItem="h0R-uB-r9h" secondAttribute="top" id="WZD-36-bRV"/>
@@ -75,6 +73,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="h0R-uB-r9h" secondAttribute="trailing" id="r0o-ao-EiY"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="28" y="150"/>
         </view>
     </objects>
 </document>

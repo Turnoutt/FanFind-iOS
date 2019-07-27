@@ -23,7 +23,10 @@ struct LocationHelper {
             locationDistanceArray.append(LocationDistance(place: place, distance: distance))
         }
         
-        let sorted = locationDistanceArray.sorted(by: { $0.distance < $1.distance })
+        let sorted = locationDistanceArray.sorted(by:
+            { ($0.place.isSponsoredPlace ? 1 : 0) > ($1.place.isSponsoredPlace ? 1 : 0) && $0.distance < $1.distance }
+        )
+        
         return sorted.map({ $0.place })
     }
 }

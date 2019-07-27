@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14810.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.15"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceDetailsViewController" customModule="FanFindSDK" customModuleProvider="target">
             <connections>
-                <outlet property="address" destination="tSg-eq-ULl" id="rml-BQ-tzY"/>
                 <outlet property="dealsEventsView" destination="Ig6-F9-Cka" id="mrd-6I-xfu"/>
                 <outlet property="fanCount" destination="YQu-mB-6Mj" id="5BY-ZX-CF5"/>
                 <outlet property="hoursTableView" destination="ipg-74-G3x" id="z6P-aX-Bf0"/>
                 <outlet property="logo" destination="dME-EI-ujq" id="LA8-5G-Hii"/>
-                <outlet property="name" destination="dLL-B4-OR9" id="ASe-e4-4fB"/>
-                <outlet property="phone" destination="Mcn-mf-I8j" id="FmH-eI-MuA"/>
+                <outlet property="placeInfoHeader" destination="cKe-h1-bOl" id="eAT-50-NOG"/>
                 <outlet property="view" destination="iN0-l3-epB" id="b0m-rh-6u2"/>
-                <outlet property="website" destination="8Zp-4f-Ag0" id="k2h-Jf-hbd"/>
                 <outlet property="websiteButton" destination="GAV-cV-46o" id="Shy-OK-2UD"/>
             </connections>
         </placeholder>
@@ -35,13 +33,13 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qy7-2z-URs">
-                    <rect key="frame" x="0.0" y="44" width="60" height="30"/>
+                    <rect key="frame" x="0.0" y="54" width="100" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="CBN-Bq-mA6"/>
-                        <constraint firstAttribute="width" constant="60" id="kJq-hu-wn4"/>
+                        <constraint firstAttribute="width" constant="100" id="kJq-hu-wn4"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <state key="normal" title="BACK" image="back-arrow">
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="〈 BACK">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -55,52 +53,14 @@
                         <constraint firstAttribute="height" constant="20" id="Ois-X6-Lnv"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8Q-DL-a1T" userLabel="Details View">
-                    <rect key="frame" x="27" y="254" width="360" height="80"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLL-B4-OR9" userLabel="Name" customClass="ThemedUILabel" customModule="FanFindSDK" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="360" height="19.5"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                            <color key="textColor" name="TextPrimary"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSg-eq-ULl" userLabel="Address" customClass="ThemedUILabel" customModule="FanFindSDK" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="19.5" width="360" height="17"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" name="TextPrimary"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcn-mf-I8j" userLabel="Phone" customClass="ThemedUILabel" customModule="FanFindSDK" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="36.5" width="360" height="17"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" name="TextPrimary"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zp-4f-Ag0" userLabel="Website" customClass="ThemedUILabel" customModule="FanFindSDK" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="53.5" width="360" height="17"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" name="TextPrimary"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="8Zp-4f-Ag0" firstAttribute="top" secondItem="Mcn-mf-I8j" secondAttribute="bottom" id="DLf-Ir-dbJ"/>
-                        <constraint firstAttribute="trailing" secondItem="tSg-eq-ULl" secondAttribute="trailing" id="QbY-vH-blU"/>
-                        <constraint firstItem="Mcn-mf-I8j" firstAttribute="top" secondItem="tSg-eq-ULl" secondAttribute="bottom" id="XOH-BX-7Am"/>
-                        <constraint firstItem="tSg-eq-ULl" firstAttribute="leading" secondItem="N8Q-DL-a1T" secondAttribute="leading" id="YG2-Ne-ggQ"/>
-                        <constraint firstItem="dLL-B4-OR9" firstAttribute="leading" secondItem="N8Q-DL-a1T" secondAttribute="leading" id="cn2-Mc-uNC"/>
-                        <constraint firstAttribute="trailing" secondItem="Mcn-mf-I8j" secondAttribute="trailing" id="fpI-GE-WTt"/>
-                        <constraint firstAttribute="trailing" secondItem="8Zp-4f-Ag0" secondAttribute="trailing" id="gBP-ZI-bzH"/>
-                        <constraint firstAttribute="trailing" secondItem="dLL-B4-OR9" secondAttribute="trailing" id="nNz-58-Rc8"/>
-                        <constraint firstItem="dLL-B4-OR9" firstAttribute="top" secondItem="N8Q-DL-a1T" secondAttribute="top" id="nva-Lf-ELT"/>
-                        <constraint firstItem="8Zp-4f-Ag0" firstAttribute="leading" secondItem="N8Q-DL-a1T" secondAttribute="leading" id="p44-V2-ON0"/>
-                        <constraint firstItem="Mcn-mf-I8j" firstAttribute="leading" secondItem="N8Q-DL-a1T" secondAttribute="leading" id="qfP-lm-mGq"/>
-                        <constraint firstItem="tSg-eq-ULl" firstAttribute="top" secondItem="dLL-B4-OR9" secondAttribute="bottom" id="zub-AO-emb"/>
-                    </constraints>
-                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="360" placeholderIntrinsicHeight="200" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cKe-h1-bOl" userLabel="Place Info" customClass="PlaceInfoHeaderView" customModule="FanFindSDK" customModuleProvider="target">
+                    <rect key="frame" x="27" y="258" width="360" height="200"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="showExtendedDetails" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9V-zD-bDh" userLabel="Buttons Wrapper">
-                    <rect key="frame" x="27" y="334" width="360" height="30"/>
+                    <rect key="frame" x="27" y="462" width="360" height="30"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HWr-2Z-OZA" userLabel="Buttons Stack View">
                             <rect key="frame" x="0.0" y="0.0" width="360" height="30"/>
@@ -134,6 +94,9 @@
                                             <real key="value" value="5"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="navigate:" destination="-1" eventType="touchUpInside" id="jkY-EA-WkW"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -150,32 +113,31 @@
                         <constraint firstAttribute="bottom" secondItem="HWr-2Z-OZA" secondAttribute="bottom" id="zdQ-Hu-t32"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="128" style="plain" separatorStyle="default" rowHeight="23" estimatedRowHeight="-1" sectionHeaderHeight="40" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ipg-74-G3x" userLabel="Hours Table View" customClass="SelfSizedTableView" customModule="FanFindSDK" customModuleProvider="target">
-                    <rect key="frame" x="27" y="374" width="360" height="128"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="128" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="40" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ipg-74-G3x" userLabel="Hours Table View" customClass="SelfSizedTableView" customModule="FanFindSDK" customModuleProvider="target">
+                    <rect key="frame" x="27" y="502" width="360" height="128"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="500" style="plain" separatorStyle="default" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="20" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ig6-F9-Cka" userLabel="Deals/Events View" customClass="SelfSizedTableView" customModule="FanFindSDK" customModuleProvider="target">
-                    <rect key="frame" x="27" y="502" width="360" height="500"/>
+                    <rect key="frame" x="27" y="630" width="360" height="500"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="cKe-h1-bOl" secondAttribute="trailing" constant="27" id="0ul-OY-P9f"/>
                 <constraint firstItem="YQu-mB-6Mj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="22" id="2E9-nP-zF1"/>
                 <constraint firstItem="ipg-74-G3x" firstAttribute="top" secondItem="T9V-zD-bDh" secondAttribute="bottom" constant="10" id="93B-IZ-qJm"/>
                 <constraint firstAttribute="trailing" secondItem="dME-EI-ujq" secondAttribute="trailing" id="9tT-U8-cHQ"/>
-                <constraint firstItem="qy7-2z-URs" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="9yG-9C-ZLt"/>
-                <constraint firstItem="T9V-zD-bDh" firstAttribute="top" secondItem="N8Q-DL-a1T" secondAttribute="bottom" id="BhI-Jd-ek1"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="N8Q-DL-a1T" secondAttribute="trailing" constant="27" id="D1d-bE-4zl"/>
-                <constraint firstItem="N8Q-DL-a1T" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="27" id="Igt-jN-K29"/>
+                <constraint firstItem="qy7-2z-URs" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="9yG-9C-ZLt"/>
+                <constraint firstItem="cKe-h1-bOl" firstAttribute="top" secondItem="YQu-mB-6Mj" secondAttribute="bottom" constant="4" id="AGx-Sm-vrn"/>
+                <constraint firstItem="cKe-h1-bOl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="27" id="AYV-XQ-Y5G"/>
                 <constraint firstItem="YQu-mB-6Mj" firstAttribute="top" secondItem="dME-EI-ujq" secondAttribute="bottom" constant="10" id="JY0-u2-gCh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="T9V-zD-bDh" secondAttribute="trailing" constant="27" id="OJb-Cy-31b"/>
                 <constraint firstItem="qy7-2z-URs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="a6d-F9-p4U"/>
                 <constraint firstItem="dME-EI-ujq" firstAttribute="centerX" secondItem="YQu-mB-6Mj" secondAttribute="centerX" id="e0R-Cc-mDd"/>
                 <constraint firstItem="dME-EI-ujq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="eVy-5l-lcu"/>
-                <constraint firstItem="T9V-zD-bDh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="334" id="iK3-qK-Q36"/>
+                <constraint firstItem="T9V-zD-bDh" firstAttribute="top" secondItem="cKe-h1-bOl" secondAttribute="bottom" constant="4" id="iK3-qK-Q36"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ipg-74-G3x" secondAttribute="trailing" constant="27" id="kNl-jH-DWl"/>
-                <constraint firstItem="N8Q-DL-a1T" firstAttribute="top" secondItem="YQu-mB-6Mj" secondAttribute="bottom" id="lwi-jw-1TF"/>
                 <constraint firstItem="Ig6-F9-Cka" firstAttribute="top" secondItem="ipg-74-G3x" secondAttribute="bottom" id="nqx-8f-xdF"/>
                 <constraint firstItem="T9V-zD-bDh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="27" id="nxM-PY-VyZ"/>
                 <constraint firstItem="ipg-74-G3x" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="27" id="o9p-C6-eKM"/>
@@ -188,10 +150,6 @@
         </view>
     </objects>
     <resources>
-        <image name="back-arrow" width="3.5" height="5.5"/>
         <image name="restaurant" width="298" height="156.5"/>
-        <namedColor name="TextPrimary">
-            <color red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

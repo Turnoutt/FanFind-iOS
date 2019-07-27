@@ -22,18 +22,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TlY-0N-2pI" userLabel="totalBox">
-                    <rect key="frame" x="4" y="8" width="40" height="15"/>
+                    <rect key="frame" x="4" y="5.5" width="40" height="20"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FANS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4q-Gx-YYh" userLabel="totalLabel">
-                            <rect key="frame" x="6" y="1.5" width="28" height="12"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                            <rect key="frame" x="3.5" y="3" width="33" height="14.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                             <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="15" id="632-wj-Njk"/>
+                        <constraint firstAttribute="height" constant="20" id="632-wj-Njk"/>
                         <constraint firstAttribute="width" constant="40" id="BqJ-wF-TWR"/>
                         <constraint firstItem="t4q-Gx-YYh" firstAttribute="centerX" secondItem="TlY-0N-2pI" secondAttribute="centerX" id="imL-Vl-7rJ"/>
                         <constraint firstItem="t4q-Gx-YYh" firstAttribute="centerY" secondItem="TlY-0N-2pI" secondAttribute="centerY" id="nKC-Fu-Lhi"/>
@@ -45,8 +45,8 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgT-oD-6Ip" userLabel="totalCountLabel" customClass="ThemedUILabel" customModule="FanFindSDK" customModuleProvider="target">
-                    <rect key="frame" x="48" y="9.5" width="7" height="12"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                    <rect key="frame" x="48" y="8.5" width="8" height="14.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>

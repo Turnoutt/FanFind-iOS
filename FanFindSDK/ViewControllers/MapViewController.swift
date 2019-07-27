@@ -101,18 +101,25 @@ public class MapViewController: UIViewController {
     override public func viewDidAppear(_ animated: Bool) {
         if(!hasLoaded){
             DispatchQueue.global(qos: .background).async {
-                self.fanFindClient.signIn(userId: "") { err in
-                    let center = CLLocationCoordinate2D(latitude: 34.0430, longitude: -118.2673)
-                    let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-                    
-                    DispatchQueue.main.async {
-                        self.map.setRegion(region, animated: true)
-                    }
-                    
-                    self.loadPlaces(center)
-                    
-                    self.hasLoaded = true
+                let center = CLLocationCoordinate2D(latitude: 34.0430, longitude: -118.2673)
+                let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                
+                DispatchQueue.main.async {
+                    self.map.setRegion(region, animated: true)
                 }
+                
+                let span = region.span
+                
+                let loc1 = CLLocation(latitude: center.latitude - span.latitudeDelta * 0.5, longitude: center.longitude)
+                let loc2 = CLLocation(latitude: center.latitude + span.latitudeDelta * 0.5, longitude: center.longitude)
+                
+                
+                let metersInLatitude = loc1.distance(from: loc2)
+                
+                self.loadPlaces(center, metersInLatitude)
+                
+                self.hasLoaded = true
+                
             }
         }
     }
@@ -131,7 +138,7 @@ public class MapViewController: UIViewController {
         }
     }
     
-    func loadPlaces(_ location: CLLocationCoordinate2D? = nil){
+    func loadPlaces(_ location: CLLocationCoordinate2D? = nil, _ distance: Double? = nil){
         let coord = location ?? self.map.centerCoordinate
         hasSearched = true
         
@@ -139,8 +146,15 @@ public class MapViewController: UIViewController {
             self.redoSearchButton.isHidden = true
             ProgressView.shared.showProgressView()
             
+            var radius = distance
             
-            self.fanFindClient.getNearbyPlaces(latitude: Float(coord.latitude), longitude: Float(coord.longitude), radius: Int(self.map.currentRadius()*1000), query: self.searchBar?.text, completion: { (places, innerErr) in
+            if( radius == nil){
+                radius = self.map.currentRadius()
+            }
+            
+            print(Int(radius!))
+            
+            self.fanFindClient.getNearbyPlaces(latitude: Float(coord.latitude), longitude: Float(coord.longitude), radius: Int(radius!), query: self.searchBar?.text, completion: { (places, innerErr) in
                 if let places = places{
                     
                     let mappedPlaces = places.map({ (place) -> Place in
@@ -149,10 +163,10 @@ public class MapViewController: UIViewController {
                     
                     self.placeArray = LocationHelper().sort(places: mappedPlaces, byDistanceFrom: coord)
                     
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.sync {
                         self.map.removeAnnotations(self.map.annotations)
-                        //self.map.addAnnotations(self.placeArray!)
                         self.map.showAnnotations(self.placeArray!, animated: true)
+                        
                         self.showPlacesViewWith(places: mappedPlaces)
                     }
                     
@@ -172,7 +186,7 @@ public class MapViewController: UIViewController {
         if isLocationShowing == false {
             isLocationShowing = true
             if placesVC == nil {
-                let placesHeight = CGFloat(250)
+                let placesHeight = CGFloat(280)
                 placesVC = PlacesCollectionVC(height: placesHeight)
                 placesVC?.placeArray = places
                 placesVC?.delegate = self
@@ -182,6 +196,7 @@ public class MapViewController: UIViewController {
                                               width: view.frame.width,
                                               height: placesHeight)
                 placesVC?.view.backgroundColor = UIColor.clear
+                placesVC?.view.clipsToBounds = false
                 
                 addChild(placesVC!)
                 didMove(toParent: self)

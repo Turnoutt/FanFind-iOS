@@ -3,7 +3,7 @@ import CoreLocation
 
 public class FanFindClient: NSObject {
     
-    internal static var shared = FanFindClient()
+    public static var shared = FanFindClient()
     
     private static var baseEndpointUrl = URL(string: "https://findfans.turnoutt.com/")!
     private static let apiKey = FanFindConfiguration.apiKey
@@ -127,6 +127,11 @@ public class FanFindClient: NSObject {
         
         let task = session.uploadTask(with: postRequest, from: uploadData) { data, response, error in
             
+            guard let response = response else {
+                completion(.failure(error!))
+                return
+            }
+            
             let statusCode = (response as! HTTPURLResponse).statusCode
             
             if statusCode == 401 {
@@ -173,6 +178,7 @@ public class FanFindClient: NSObject {
                 
                 if let data = data {
                     do {
+                        
                         let response = try JSONDecoder().decode(T.Response.self, from: data)
                         completion(.success(response))
                     } catch let jsonError {

@@ -18,10 +18,7 @@ class PlacesAnnotationView: MKAnnotationView {
         
         guard let place = annotation as? Place
             else { return }
-        
-        
-        place.logoUrl = "https://banner2.kisspng.com/20180713/jq/kisspng-bubba-gump-shrimp-company-bubba-gump-shrimp-co-re-forest-gump-5b48eb72147cc4.2970315615315055220839.jpg"
-        
+         
         if(place.isSponsoredPlace){
             if let logoUrl = place.logoUrl {
                 DispatchQueue.main.async {
@@ -40,7 +37,7 @@ class PlacesAnnotationView: MKAnnotationView {
     fileprivate func redrawCircle(_ selected: Bool) {
         if let place = annotation as? Place{
             if(place.isSponsoredPlace){
-                image = DrawingTools.drawSponsoredPlace(wholeColor: UIColor.white, isSelected: false, count: Int(place.totalCount))
+                image = DrawingTools.drawSponsoredPlace(wholeColor: UIColor.white, isSelected: selected, count: Int(place.totalCount))
                 
             } else{
                 image = DrawingTools.setupGradientLayer(unspecifiedCount: place.totalCount , isSelected: selected)

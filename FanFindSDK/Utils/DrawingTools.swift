@@ -111,7 +111,7 @@ class DrawingTools {
             // Fill inner circle with white color
             let circle = UIBezierPath(ovalIn: CGRect(x: 3, y: 20, width: diameter - 2, height: diameter - 2))
             circle.lineWidth = 0
-            
+            UIColor.white.setFill()
             circle.fill()
             circle.stroke()
             

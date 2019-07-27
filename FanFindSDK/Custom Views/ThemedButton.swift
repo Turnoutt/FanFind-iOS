@@ -8,6 +8,7 @@
 
 import Foundation
 
+@IBDesignable
 class ThemedButton : UIButton{
 
     required init?(coder aDecoder: NSCoder) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 protocol PlacesCenterCellDelegate {
     func collectionViewStoppedAt(place: Place)
@@ -14,7 +15,7 @@ protocol PlacesCenterCellDelegate {
     func collectionViewChangedHeight()
 }
 
-class PlacesCollectionVC: UIViewController, UIPopoverPresentationControllerDelegate, NavigateDelegate {
+class PlacesCollectionVC: UIViewController, UIPopoverPresentationControllerDelegate {
     func closeView() {
         dismiss(animated: false)
     }
@@ -27,14 +28,13 @@ class PlacesCollectionVC: UIViewController, UIPopoverPresentationControllerDeleg
 
     var delegate: PlacesCenterCellDelegate?
     var placeArray = [Place]()
-    var navigateVC: NavigateViewController?
 
     // MARK: - Init
 
     init(height: CGFloat) {
         super.init(nibName: "PlacesCollectionVC", bundle: Bundle(for: PlacesCollectionVC.self))
         
-        self.height = height
+        self.height = height - 30
         cellWidth = height * 1.02
         isCellFullHeight = true
     }
@@ -138,10 +138,19 @@ class PlacesCollectionVC: UIViewController, UIPopoverPresentationControllerDeleg
         if let indexPath = self.collectionView?.indexPathForItem(at: sender.location(in: self.collectionView)) {
             let cell = self.collectionView?.cellForItem(at: indexPath) as? PlacesCell
             if let placeId=cell?.place?.placeId{
+                DispatchQueue.main.async {
+                    ProgressView.shared.showProgressView()
+                    
+                }
+                
                 FanFindClient.shared.getPlaceDetails(placeId: placeId) { (placeDetails, err) in
                     DispatchQueue.main.async {
                         self.present(PlaceDetailsViewController(place: cell!.place!.nearByPlace!, placeDetails: placeDetails!), animated: true)
+                        
+                        ProgressView.shared.hideProgressView()
                     }
+                    
+                    
                 }
             }
         }
@@ -160,20 +169,8 @@ class PlacesCollectionVC: UIViewController, UIPopoverPresentationControllerDeleg
         })
     }
 
-    func showGenderRequiredModal(_ frame: CGRect, _ view: UIView) {
-        let navigateVC = NavigateViewController(nibName: "Navigate", bundle: self.nibBundle)
-        navigateVC.delegate = self
-        
-        navigateVC.preferredContentSize = CGSize(width: 200, height: 300)
-        navigateVC.modalPresentationStyle = .popover
-        navigateVC.popoverPresentationController?.sourceRect = frame
-        navigateVC.popoverPresentationController?.sourceView = view
-        navigateVC.popoverPresentationController?.delegate = self
-        self.navigateVC = navigateVC
-        
-        present(navigateVC, animated: true) {
-            // The popover is visible.
-        }
+    func showNavigationModal(_ frame: CGRect, _ view: UIView, location: LocationRepresentable) {
+        Navigator.presentPicker(destination: location, presentOn: self.parent!)
     }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle {
@@ -199,7 +196,23 @@ extension PlacesCollectionVC: UICollectionViewDelegate, UICollectionViewDataSour
         if isCellFullHeight {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "placesCell", for: indexPath) as! PlacesCell
             cell.delegate = self
-            return cell.configureWith(place: placeArray[indexPath.row])
+            let currentPlace = placeArray[indexPath.row]
+            
+            cell.contentView.layer.cornerRadius = 10
+            cell.contentView.layer.borderWidth = 1.0
+            
+            cell.contentView.layer.borderColor = UIColor.clear.cgColor
+            cell.contentView.layer.masksToBounds = true
+            
+            if currentPlace.isSponsoredPlace{
+                cell.layer.shadowColor = FanFindConfiguration.primaryColor.cgColor
+                cell.layer.shadowOffset = CGSize(width: 0, height: 10.0)
+                cell.layer.shadowRadius = 10.0
+                cell.layer.shadowOpacity = 1.0
+                cell.layer.masksToBounds = false
+                cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+            }
+            return cell.configureWith(place: currentPlace)
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shortPlacesCell", for: indexPath) as! PlacesShortenedCell
             return cell.configureWith(place: placeArray[indexPath.row])

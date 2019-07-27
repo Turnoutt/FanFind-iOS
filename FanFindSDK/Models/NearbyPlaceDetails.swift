@@ -13,7 +13,7 @@ import Foundation
 internal class NearByPlaceDetails: Decodable {
     
     public init(
-        phoneNumber: String,
+        phoneNumber: String?,
         deals: Array<PlaceDeal>,
         events: Array<PlaceEvent>,
         hours: Array<BusinessHour>
@@ -26,16 +26,22 @@ internal class NearByPlaceDetails: Decodable {
     }
     
     
-    public let phoneNumber: String
+    public var phoneNumber: String?
     public let deals: Array<PlaceDeal>
     public let events: Array<PlaceEvent>
     public let hours: Array<BusinessHour>
     
     var formattedPhoneNumber: String {
         get{
+            guard var phoneNumber = phoneNumber else{
+                return ""
+            }
             
+            if(phoneNumber.count == 11){
+                phoneNumber.remove(at: phoneNumber.startIndex)
+            }
             
-            let cleanPhoneNumber = self.phoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+            let cleanPhoneNumber = phoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
             let mask = "(XXX) XXX-XXXX"
             
             var result = ""

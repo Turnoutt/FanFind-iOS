@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@IBDesignable
 class SelfSizedTableView: UITableView {
     var maxHeight: CGFloat = UIScreen.main.bounds.size.height
     

@@ -22,6 +22,35 @@ public class NearByPlace: Decodable {
     public var stateCode: String
     public var postalCode: String
     public var primaryCategory: String
+    public var logoUrl: String?
+    public var hasDeals: Bool?
+    public var hasEvents: Bool?
+    
+    public var fullAddress: String{
+        var fullAddress = ""
+        
+        if let address1 = address1 {
+            fullAddress += address1
+        }
+        
+        if !address2.isEmpty {
+            fullAddress += " " + address2
+        }
+        
+        if !cityName.isEmpty {
+            fullAddress += " " + cityName
+        }
+        
+        if !stateCode.isEmpty {
+            fullAddress += ", " + stateCode
+        }
+        
+        if !postalCode.isEmpty {
+            fullAddress += " " + postalCode
+        }
+        
+        return fullAddress
+    }
     
     public init(
         name: String?,
@@ -35,7 +64,10 @@ public class NearByPlace: Decodable {
         cityName: String,
         stateCode: String,
         postalCode: String,
-        primaryCategory: String
+        primaryCategory: String,
+        logoUrl: String?,
+        hasDeals: Bool?,
+        hasEvents: Bool?
         ) {
         
         self.name = name
@@ -50,5 +82,8 @@ public class NearByPlace: Decodable {
         self.stateCode = stateCode
         self.postalCode = postalCode
         self.primaryCategory = primaryCategory
+        self.logoUrl = logoUrl
+        self.hasDeals = hasDeals ?? false
+        self.hasEvents = hasEvents ?? false
     }
 }

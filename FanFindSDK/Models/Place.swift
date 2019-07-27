@@ -14,8 +14,18 @@ class Place: PeopleLocationAnnotation {
     var address: String = ""
     var placeId: String = ""
     var nearByPlace: NearByPlace?
-    var isSponsoredPlace: Bool = false
-    var logoUrl: String?
+    
+    var isSponsoredPlace: Bool {
+        get{
+            return nearByPlace?.isSponsoredPlace ?? false
+        }
+    }
+    
+    var logoUrl: String? {
+        get{
+            return nearByPlace?.logoUrl
+        }
+    }
     
     init(object: NearByPlace) {
         self.nearByPlace = object

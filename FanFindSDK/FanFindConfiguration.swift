@@ -72,6 +72,14 @@ public enum FanFindConfiguration {
         return UIColor(named: "TextPrimary", in: Bundle(for: PlacesCell.self), compatibleWith: nil)!
     }()
     
+    static let closedColor : UIColor = {
+        if FanFindConfiguration.theme == Themes.Dark {
+            return UIColor(named: "RedClosedDark", in: Bundle(for: PlacesCell.self), compatibleWith: nil)!
+        }
+        
+        return UIColor(named: "RedClosed", in: Bundle(for: PlacesCell.self), compatibleWith: nil)!
+    }()
+    
     static let backgroundColor : UIColor = {
         if FanFindConfiguration.theme == Themes.Dark {
             return UIColor(named: "ViewBackgroundDark", in: Bundle(for: PlacesCell.self), compatibleWith: nil)!

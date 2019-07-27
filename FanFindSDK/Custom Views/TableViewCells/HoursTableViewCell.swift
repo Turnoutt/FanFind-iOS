@@ -10,16 +10,19 @@ import UIKit
 
 class HoursTableViewCell: UITableViewCell {
     @IBOutlet var dayOfWeek: UILabel!
-    @IBOutlet var hours: UILabel!
+    @IBOutlet private var startTimeLabel: UILabel!
+    @IBOutlet private var endTimeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func setTime(startTime: Date, endTime: Date){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mma"
+        
+        startTimeLabel.text = dateFormatter.string(from: startTime)
+        endTimeLabel.text = dateFormatter.string(from: endTime)
     }
     
 }
