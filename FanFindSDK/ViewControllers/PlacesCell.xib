@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="286" height="100"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="AQZ-yW-DEw">
-                                <rect key="frame" x="135" y="12.5" width="16" height="75"/>
+                                <rect key="frame" x="74" y="12.5" width="138" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="tGq-3g-8WF"/>
                                 </constraints>
@@ -76,13 +76,13 @@
                                     <constraint firstAttribute="width" secondItem="1yJ-IM-VHD" secondAttribute="height" multiplier="13:10" id="da3-dF-FmR"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9j-Oo-epE" userLabel="NavigateButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9j-Oo-epE" userLabel="NavigateButton" customClass="NavigateButton" customModule="FanFindSDK" customModuleProvider="target">
                                 <rect key="frame" x="4" y="6" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7ut-YF-JL1"/>
                                     <constraint firstAttribute="width" constant="30" id="vsp-Xr-ZwS"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="arrow"/>
+                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="navigateClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="9qa-wi-yRX"/>
                                 </connections>
@@ -128,7 +128,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="arrow" width="55.5" height="53.5"/>
         <image name="placeholder" width="138" height="80"/>
         <image name="powered-by" width="39.5" height="14"/>
     </resources>

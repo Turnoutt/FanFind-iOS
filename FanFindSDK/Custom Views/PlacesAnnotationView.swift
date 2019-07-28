@@ -12,6 +12,8 @@ import MapKit
 class PlacesAnnotationView: MKAnnotationView {
     static let ReuseID = "placesAnnotation"
     
+    let brandsImageView = UIImageView()
+    
     override func prepareForDisplay() {
         super.prepareForDisplay()
         displayPriority = .defaultLow
@@ -22,13 +24,15 @@ class PlacesAnnotationView: MKAnnotationView {
         if(place.isSponsoredPlace){
             if let logoUrl = place.logoUrl {
                 DispatchQueue.main.async {
-                    let brandsImageView = UIImageView()
-                    brandsImageView.frame = CGRect(x: 8, y: 24, width: 50, height: 50)
-                    brandsImageView.imageFromURL(urlString: logoUrl)
-                    self.addSubview(brandsImageView)
-                    self.bringSubviewToFront(brandsImageView)
+                    
+                    self.brandsImageView.frame = CGRect(x: 8, y: 24, width: 50, height: 50)
+                    self.brandsImageView.imageFromURL(urlString: logoUrl)
+                    self.addSubview(self.brandsImageView)
+                    self.bringSubviewToFront(self.brandsImageView)
                 }
             }
+        }else{
+            self.brandsImageView.image = nil
         }
         
         redrawCircle(isSelected)

@@ -51,7 +51,7 @@ class DealsEventsIndicator: UIView {
     
     func setupImages(){
         
-        if(FanFindConfiguration.theme == .Dark){
+        if(FanFindConfiguration.currentTheme == .Dark){
             dealsImage = UIImage(named: "Deals_Icon_White", in: self.bundle, compatibleWith: nil)
             eventsImage = UIImage(named: "Events_Icon_White", in: self.bundle, compatibleWith: nil)
         }

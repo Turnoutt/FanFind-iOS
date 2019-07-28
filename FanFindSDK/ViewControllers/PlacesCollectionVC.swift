@@ -42,6 +42,13 @@ class PlacesCollectionVC: UIViewController, UIPopoverPresentationControllerDeleg
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setPlaces(places: [Place]){
+        placeArray = places
+        
+        self.collectionView.reloadData()
+        
+    }
 
     // MARK: - UIViewController delegate methods
 
@@ -211,7 +218,11 @@ extension PlacesCollectionVC: UICollectionViewDelegate, UICollectionViewDataSour
                 cell.layer.shadowOpacity = 1.0
                 cell.layer.masksToBounds = false
                 cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+            }else{
+                cell.layer.shadowColor = UIColor.clear.cgColor
+                cell.layer.masksToBounds = false
             }
+            
             return cell.configureWith(place: currentPlace)
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shortPlacesCell", for: indexPath) as! PlacesShortenedCell

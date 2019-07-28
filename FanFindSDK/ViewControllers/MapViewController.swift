@@ -220,7 +220,7 @@ public class MapViewController: UIViewController {
             }
         } else {
             placeArray = places
-            hideAndReshowPlacesView(places: places)
+            placesVC?.setPlaces(places: places)
         }
     }
     

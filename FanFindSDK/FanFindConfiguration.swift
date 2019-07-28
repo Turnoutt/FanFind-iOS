@@ -58,14 +58,14 @@ public enum FanFindConfiguration {
         return UIColor(hexString: secondaryColor)!
     }()
     
-    static let theme: Themes = {
+    static let currentTheme: Themes = {
          let theme = FanFindConfiguration.infoDictionary[Keys.Plist.theme] as? String
         
         return (theme == nil) ? Themes.Light : Themes(rawValue: theme!)!
     }()
     
     static let textColor : UIColor = {
-        if FanFindConfiguration.theme == Themes.Dark {
+        if FanFindConfiguration.currentTheme == Themes.Dark {
             return UIColor(named: "TextPrimaryDark", in: Bundle(for: PlacesCell.self), compatibleWith: nil)!
         }
         
@@ -73,7 +73,7 @@ public enum FanFindConfiguration {
     }()
     
     static let closedColor : UIColor = {
-        if FanFindConfiguration.theme == Themes.Dark {
+        if FanFindConfiguration.currentTheme == Themes.Dark {
             return UIColor(named: "RedClosedDark", in: Bundle(for: PlacesCell.self), compatibleWith: nil)!
         }
         
@@ -81,7 +81,7 @@ public enum FanFindConfiguration {
     }()
     
     static let backgroundColor : UIColor = {
-        if FanFindConfiguration.theme == Themes.Dark {
+        if FanFindConfiguration.currentTheme == Themes.Dark {
             return UIColor(named: "ViewBackgroundDark", in: Bundle(for: PlacesCell.self), compatibleWith: nil)!
         }
         

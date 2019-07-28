@@ -17,7 +17,7 @@ class DealsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        if(FanFindConfiguration.theme == .Light){
+        if(FanFindConfiguration.currentTheme == .Light){
             icon.image = UIImage(named: "Deals_Icon_Gray", in: self.bundle, compatibleWith: nil)            
         }else{
             icon.image = UIImage(named: "Deals_Icon_White", in: self.bundle, compatibleWith: nil)

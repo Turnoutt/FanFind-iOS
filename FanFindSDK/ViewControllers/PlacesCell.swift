@@ -51,6 +51,7 @@ class PlacesCell: UICollectionViewCell, UIScrollViewDelegate {
     }
     
     func configureWith(place: Place?) -> Self {
+       
         
         self.numbers.setTotals(maleCount: 0, femaleCount: 0, neutralCount: place!.totalCount)
         

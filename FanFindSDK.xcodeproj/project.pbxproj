@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0411CACF22ED3B020006EA4A /* NavigateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0411CACE22ED3B020006EA4A /* NavigateButton.swift */; };
 		0428338922E0B4A80089E7AB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428338822E0B4A80089E7AB /* DateExtensions.swift */; };
 		042927BF22EB7AA10057F759 /* RoundedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042927BE22EB7AA10057F759 /* RoundedCollectionViewCell.swift */; };
 		042927C522ECB47D0057F759 /* NavigationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042927C422ECB47D0057F759 /* NavigationApp.swift */; };
@@ -86,6 +87,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0411CACE22ED3B020006EA4A /* NavigateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateButton.swift; sourceTree = "<group>"; };
 		0428338822E0B4A80089E7AB /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		042927BE22EB7AA10057F759 /* RoundedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCollectionViewCell.swift; sourceTree = "<group>"; };
 		042927C422ECB47D0057F759 /* NavigationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationApp.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				048EBFE522E902670095ADB5 /* DealsEventsIndicator.swift */,
 				0487D20A22EA14DB006AB20F /* PlaceInfoHeaderView.swift */,
 				042927BE22EB7AA10057F759 /* RoundedCollectionViewCell.swift */,
+				0411CACE22ED3B020006EA4A /* NavigateButton.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				042927BF22EB7AA10057F759 /* RoundedCollectionViewCell.swift in Sources */,
 				0464488E22DFADEF00EA9504 /* PlaceDeal.swift in Sources */,
 				047CF2F322D63C2B00953CC1 /* APIRequest.swift in Sources */,
+				0411CACF22ED3B020006EA4A /* NavigateButton.swift in Sources */,
 				0487D20B22EA14DB006AB20F /* PlaceInfoHeaderView.swift in Sources */,
 				047CF2F622D63C2B00953CC1 /* TrackLocation.swift in Sources */,
 				047CF2EE22D63C2B00953CC1 /* TokenResponse.swift in Sources */,
