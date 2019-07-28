@@ -25,7 +25,7 @@ steps:
     gitHubConnection: 'stasdemir'
     repositoryName: 'Turnoutt/FanFind-iOS'
     action: 'create'
-    target: '$(Version)'
+    target: '6db92d020e381b111d8fdea1712c890a4d034be7'
     tagSource: 'manual'
     tag: '$(Version)'
     title: 'FanFind-iOS $(Version)'
