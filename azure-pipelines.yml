@@ -18,7 +18,7 @@ steps:
     rootFolderOrFile: 'build'
     includeRootFolder: true
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/FanFind-iOS-$(Version).zip'
     replaceExistingArchive: true
 - task: GitHubRelease@0
   inputs:
