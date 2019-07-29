@@ -20,7 +20,17 @@ class SelfSizedTableView: UITableView {
     }
     
     override var intrinsicContentSize: CGSize {
-        let height = min(contentSize.height, maxHeight)
+        var totalHeight = 0
+        
+        // Row Heights
+        for section in 0...(self.numberOfSections - 1) {
+            totalHeight += self.numberOfRows(inSection: section) * 20
+        }
+        
+        // Header Heights
+        totalHeight += self.numberOfSections * 40
+        
+        let height = min(CGFloat(totalHeight), maxHeight)
         return CGSize(width: contentSize.width, height: height)
     }
 }
