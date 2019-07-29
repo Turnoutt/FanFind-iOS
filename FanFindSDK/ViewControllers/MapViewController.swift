@@ -53,6 +53,14 @@ public class MapViewController: UIViewController {
         super.init(nibName: "MapViewController", bundle: Bundle(for: MapViewController.self))
     }
     
+    override public var shouldAutorotate: Bool{
+        return false
+    }
+    
+    override public var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        return .portrait
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         

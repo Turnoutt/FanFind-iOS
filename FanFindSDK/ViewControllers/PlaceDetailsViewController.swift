@@ -70,6 +70,13 @@ class PlaceDetailsViewController : UIViewController{
         super.init(nibName: "PlaceDetailsViewController", bundle: Bundle(for: PlaceDetailsViewController.self))
     }
     
+    override var shouldAutorotate: Bool{
+        return false
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        return .portrait
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

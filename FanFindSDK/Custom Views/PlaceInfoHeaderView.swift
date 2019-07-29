@@ -73,13 +73,13 @@ class PlaceInfoHeaderView: UIStackView {
         
         businessNameLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         
-        categoryNameLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        categoryNameLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
         
         addressLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         addressLabel.lineBreakMode = .byWordWrapping
         addressLabel.numberOfLines = 0
         
-        categoryNameLabel.insets = UIEdgeInsets(top: 2, left: 0, bottom: 2, right: 0)
+        categoryNameLabel.insets = UIEdgeInsets(top: 0, left: 0, bottom: 4, right: 0)
         
         phoneLabel.font = phoneLabel.font.withSize(14)
         
