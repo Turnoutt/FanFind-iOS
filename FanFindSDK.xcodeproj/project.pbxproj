@@ -19,6 +19,7 @@
 		042927D122ECB7180057F759 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042927D022ECB7180057F759 /* Extensions.swift */; };
 		043AD5D722E0F5A70080D67A /* ThemedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AD5D622E0F5A70080D67A /* ThemedUILabel.swift */; };
 		043AD5D922E276560080D67A /* UIIMageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AD5D822E276560080D67A /* UIIMageViewExtensions.swift */; };
+		043FDE6222F0B3A000CC3CD3 /* ThemedHeaderUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FDE6122F0B3A000CC3CD3 /* ThemedHeaderUILabel.swift */; };
 		0464488122DE343500EA9504 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464488022DE343500EA9504 /* ThemedButton.swift */; };
 		0464488722DE4F2500EA9504 /* DealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464488522DE4F2500EA9504 /* DealsTableViewCell.swift */; };
 		0464488822DE4F2500EA9504 /* DealsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0464488622DE4F2500EA9504 /* DealsTableViewCell.xib */; };
@@ -99,6 +100,7 @@
 		042927D022ECB7180057F759 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		043AD5D622E0F5A70080D67A /* ThemedUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedUILabel.swift; sourceTree = "<group>"; };
 		043AD5D822E276560080D67A /* UIIMageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIMageViewExtensions.swift; sourceTree = "<group>"; };
+		043FDE6122F0B3A000CC3CD3 /* ThemedHeaderUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedHeaderUILabel.swift; sourceTree = "<group>"; };
 		0461742422D7B67200B56E95 /* FanFind.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FanFind.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0461742622D7BA6000B56E95 /* build-universal-framework.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-universal-framework.sh"; sourceTree = "<group>"; };
 		0461742722D7BA6000B56E95 /* release-pod.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "release-pod.sh"; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				0487D20A22EA14DB006AB20F /* PlaceInfoHeaderView.swift */,
 				042927BE22EB7AA10057F759 /* RoundedCollectionViewCell.swift */,
 				0411CACE22ED3B020006EA4A /* NavigateButton.swift */,
+				043FDE6122F0B3A000CC3CD3 /* ThemedHeaderUILabel.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				047CF2E522D63C2B00953CC1 /* MkMapViewExtension.swift in Sources */,
 				042927CD22ECB5D60057F759 /* Mode.swift in Sources */,
 				043AD5D722E0F5A70080D67A /* ThemedUILabel.swift in Sources */,
+				043FDE6222F0B3A000CC3CD3 /* ThemedHeaderUILabel.swift in Sources */,
 				046448A522E0109600EA9504 /* BusinessHour.swift in Sources */,
 				046448A222E00F5900EA9504 /* HoursTableViewCell.swift in Sources */,
 				048EBFE622E902670095ADB5 /* DealsEventsIndicator.swift in Sources */,

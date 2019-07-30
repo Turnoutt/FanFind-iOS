@@ -14,12 +14,6 @@ class StandardHeaderTableViewCell: UITableViewHeaderFooterView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        if FanFindConfiguration.currentTheme == .Dark {
-            label.textColor = UIColor.white
-        } else{
-            label.textColor = FanFindConfiguration.textColor
-        }
-        
         addBottomBorderWithColor(color: UIColor.init(hex: 0xD3D2D2, alpha: 1.0), width: 1.0)
     }
     

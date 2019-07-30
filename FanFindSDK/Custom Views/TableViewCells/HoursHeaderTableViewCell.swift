@@ -57,7 +57,10 @@ class HoursHeaderTableViewCell: UITableViewHeaderFooterView {
                 
                 // Check if the restaurant will still open today
                 if todaysDate < hoursForCurrentDay.startTime {
-                    processClosed(hours, currentIndex!)
+                    self.openClosed.text = "CLOSED"
+                    self.openClosed.textColor = FanFindConfiguration.closedColor
+                    
+                    self.openUntil.text = "Opens " + self.closesDateFormatter.string(from: hoursForCurrentDay.startTime)
                 } else {
                     // Try for a later day
                     if(currentIndex! >= (hours.count - 1)){
