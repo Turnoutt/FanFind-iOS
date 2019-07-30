@@ -5,72 +5,79 @@
 
 trigger:
 - release/*
+- master
 
 pool:
   vmImage: 'macos-latest'
 
-steps:
-- task: Bash@3
-  inputs:
-    filePath: 'build-universal-framework.sh'
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: 'build'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/FanFind-iOS-$(Version).zip'
-    replaceExistingArchive: true
-- task: GitHubRelease@0
-  inputs:
-    gitHubConnection: 'stasdemir'
-    repositoryName: 'Turnoutt/FanFind-iOS'
-    action: 'create'
-    target: '6db92d020e381b111d8fdea1712c890a4d034be7'
-    tagSource: 'manual'
-    tag: '$(Version)'
-    title: 'FanFind-iOS $(Version)'
-    releaseNotesSource: 'input'
-    releaseNotes: 'None'
-    addChangeLog: false
+jobs:
+- job: Build
+  steps:
+  - task: Bash@3
+    inputs:
+      filePath: 'build-universal-framework.sh'
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: 'build'
+      includeRootFolder: true
+      archiveType: 'zip'
+      archiveFile: '$(Build.ArtifactStagingDirectory)/FanFind-iOS-$(Version).zip'
+      replaceExistingArchive: true
+- job : Deploy
+  dependsOn: Build
+  condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
+  steps:
+  - task: GitHubRelease@0
+    inputs:
+      gitHubConnection: 'stasdemir'
+      repositoryName: 'Turnoutt/FanFind-iOS'
+      action: 'create'
+      target: '6db92d020e381b111d8fdea1712c890a4d034be7'
+      tagSource: 'manual'
+      tag: '$(Version)'
+      title: 'FanFind-iOS $(Version)'
+      releaseNotesSource: 'input'
+      releaseNotes: 'None'
+      addChangeLog: false
 
-- script: |
-      cat > FanFind.podspec << EOL 
-      Pod::Spec.new do |spec|
-          spec.name         = "FanFind"
-          spec.version      = "${Version}"
-          spec.summary      = "FanFind is a tool for helping fans find each other anonymously in real time."
+  - script: |
+        cat > FanFind.podspec << EOL 
+        Pod::Spec.new do |spec|
+            spec.name         = "FanFind"
+            spec.version      = "${Version}"
+            spec.summary      = "FanFind is a tool for helping fans find each other anonymously in real time."
 
-          spec.description  = <<-DESC
-          This cocoapods library helps you easily integrate the FanFind API in your application.
-                          DESC
+            spec.description  = <<-DESC
+            This cocoapods library helps you easily integrate the FanFind API in your application.
+                            DESC
 
-          spec.homepage     = "https://www.turnoutt.com"
-          spec.license      = "MIT"
-          spec.author             = { "Chris Woolum" => "chris@turnoutt.com" }
+            spec.homepage     = "https://www.turnoutt.com"
+            spec.license      = "MIT"
+            spec.author             = { "Chris Woolum" => "chris@turnoutt.com" }
 
-          spec.ios.deployment_target = "12.1"
-          spec.swift_version = "4.2"
+            spec.ios.deployment_target = "12.1"
+            spec.swift_version = "4.2"
 
-          spec.source        = { :http => "https://github.com/Turnoutt/FanFind-iOS/releases/download/${Version}/FanFind-iOS-${Version}.zip" }
+            spec.source        = { :http => "https://github.com/Turnoutt/FanFind-iOS/releases/download/${Version}/FanFind-iOS-${Version}.zip" }
 
-          spec.vendored_frameworks = "build/universal/FanFindSDK.framework"
-      
-      end
-      EOL
-  displayName: Build podspec
-  env:
-    Version: $(Version)
+            spec.vendored_frameworks = "build/universal/FanFindSDK.framework"
+        
+        end
+        EOL
+    displayName: Build podspec
+    env:
+      Version: $(Version)
 
-- script: pod trunk push FanFind.podspec --allow-warnings
-  displayName: Publish podspec
-  env:
-    COCOAPODS_TRUNK_TOKEN: $(CocoapodsToken)
+  - script: pod trunk push FanFind.podspec --allow-warnings
+    displayName: Publish podspec
+    env:
+      COCOAPODS_TRUNK_TOKEN: $(CocoapodsToken)
 
-- task: GitHubRelease@0
-  condition: failed()
-  displayName: Clean up Orphan Release
-  inputs:
-    gitHubConnection: 'stasdemir'
-    repositoryName: 'Turnoutt/FanFind-iOS'
-    action: 'delete'
-    tag: '$(Version)'
+  - task: GitHubRelease@0
+    condition: failed()
+    displayName: Clean up Orphan Release
+    inputs:
+      gitHubConnection: 'stasdemir'
+      repositoryName: 'Turnoutt/FanFind-iOS'
+      action: 'delete'
+      tag: '$(Version)'
