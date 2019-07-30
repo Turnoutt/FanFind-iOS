@@ -7,11 +7,10 @@ trigger:
 - release/*
 - master
 
-pool:
-  vmImage: 'macos-latest'
-
 jobs:
 - job: Build
+  pool:
+    vmImage: 'macos-latest'
   steps:
   - task: Bash@3
     inputs:
@@ -24,6 +23,8 @@ jobs:
       archiveFile: '$(Build.ArtifactStagingDirectory)/FanFind-iOS-$(Version).zip'
       replaceExistingArchive: true
 - job : Deploy
+  pool:
+    vmImage: 'macos-latest'
   dependsOn: Build
   condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
   steps:
