@@ -55,10 +55,16 @@ class HoursHeaderTableViewCell: UITableViewHeaderFooterView {
                     hour.dayNumberOfWeek == hoursForCurrentDay.dayNumberOfWeek && hour.startTime == hoursForCurrentDay.startTime
                 }
                 
-                if(currentIndex! >= (hours.count - 1)){
-                    processClosed(hours, 0)
-                }else{
-                    processClosed(hours, currentIndex! + 1)
+                // Check if the restaurant will still open today
+                if todaysDate < hoursForCurrentDay.startTime {
+                    processClosed(hours, currentIndex!)
+                } else {
+                    // Try for a later day
+                    if(currentIndex! >= (hours.count - 1)){
+                        processClosed(hours, 0)
+                    }else{
+                        processClosed(hours, currentIndex! + 1)
+                    }
                 }
             }
         }else{

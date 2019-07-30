@@ -22,6 +22,10 @@ class SelfSizedTableView: UITableView {
     override var intrinsicContentSize: CGSize {
         var totalHeight = 0
         
+        if self.numberOfSections == 0 {
+            return CGSize(width: contentSize.width, height: 0)
+        }
+        
         // Row Heights
         for section in 0...(self.numberOfSections - 1) {
             totalHeight += self.numberOfRows(inSection: section) * 20
