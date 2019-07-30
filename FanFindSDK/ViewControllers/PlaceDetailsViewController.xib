@@ -105,7 +105,7 @@
                                         <constraint firstAttribute="bottom" secondItem="HWr-2Z-OZA" secondAttribute="bottom" id="zdQ-Hu-t32"/>
                                     </constraints>
                                 </view>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="128" style="plain" separatorStyle="default" rowHeight="20" estimatedRowHeight="-1" sectionHeaderHeight="50" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ipg-74-G3x" userLabel="Hours Table View" customClass="SelfSizedTableView" customModule="FanFindSDK" customModuleProvider="target">
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="128" style="plain" separatorStyle="default" rowHeight="20" estimatedRowHeight="-1" sectionHeaderHeight="41" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ipg-74-G3x" userLabel="Hours Table View" customClass="SelfSizedTableView" customModule="FanFindSDK" customModuleProvider="target">
                                     <rect key="frame" x="27" y="300" width="360" height="128"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
