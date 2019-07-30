@@ -63,3 +63,5 @@ steps:
 
 - script: pod trunk push FanFindTemp.podspec --allow-warnings
   displayName: Publish podspec
+  env:
+    COCOAPODS_TRUNK_TOKEN: $(CocoapodsToken)
