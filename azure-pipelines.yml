@@ -61,7 +61,5 @@ steps:
   env:
     Version: $(Version)
 
-- task: Bash@3
+- script: pod trunk push FanFindTemp.podspec --allow-warnings
   displayName: Publish podspec
-  inputs:
-      script: pod trunk push FanFindTemp.podspec --allow-warnings 
