@@ -36,7 +36,7 @@
                     <rect key="frame" x="0.0" y="224" width="414" height="638"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uY-IU-LRT">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="928"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="938"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQu-mB-6Mj" userLabel="Fan Count" customClass="PeopleCountNumbers" customModule="FanFindSDK" customModuleProvider="target">
                                     <rect key="frame" x="27" y="20" width="360" height="20"/>
@@ -105,12 +105,12 @@
                                         <constraint firstAttribute="bottom" secondItem="HWr-2Z-OZA" secondAttribute="bottom" id="zdQ-Hu-t32"/>
                                     </constraints>
                                 </view>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="128" style="plain" separatorStyle="default" rowHeight="20" estimatedRowHeight="-1" sectionHeaderHeight="40" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ipg-74-G3x" userLabel="Hours Table View" customClass="SelfSizedTableView" customModule="FanFindSDK" customModuleProvider="target">
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="128" style="plain" separatorStyle="default" rowHeight="20" estimatedRowHeight="-1" sectionHeaderHeight="50" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ipg-74-G3x" userLabel="Hours Table View" customClass="SelfSizedTableView" customModule="FanFindSDK" customModuleProvider="target">
                                     <rect key="frame" x="27" y="300" width="360" height="128"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="394" placeholderIntrinsicHeight="500" style="plain" separatorStyle="default" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="20" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ig6-F9-Cka" userLabel="Deals/Events View" customClass="SelfSizedTableView" customModule="FanFindSDK" customModuleProvider="target">
-                                    <rect key="frame" x="27" y="428" width="360" height="500"/>
+                                    <rect key="frame" x="27" y="438" width="360" height="500"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
                             </subviews>

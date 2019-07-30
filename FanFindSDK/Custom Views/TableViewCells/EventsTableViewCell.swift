@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventsTableViewCell: UITableViewCell {
+internal class EventsTableViewCell: UITableViewCell {
     @IBOutlet var icon: UIImageView!
     @IBOutlet var eventText: UILabel!
     @IBOutlet var eventDate: UILabel!

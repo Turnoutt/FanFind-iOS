@@ -28,13 +28,16 @@ class SelfSizedTableView: UITableView {
         
         // Row Heights
         for section in 0...(self.numberOfSections - 1) {
-            totalHeight += self.numberOfRows(inSection: section) * 20
+            totalHeight += self.numberOfRows(inSection: section) * Int(self.rowHeight)
         }
         
         // Header Heights
-        totalHeight += self.numberOfSections * 40
+        totalHeight += self.numberOfSections * Int(self.sectionHeaderHeight)
         
         let height = min(CGFloat(totalHeight), maxHeight)
+        
+        print(height)
+        
         return CGSize(width: contentSize.width, height: height)
     }
 }

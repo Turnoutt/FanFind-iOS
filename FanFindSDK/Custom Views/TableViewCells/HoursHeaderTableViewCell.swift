@@ -8,10 +8,11 @@
 
 import UIKit
 
-class HoursHeaderTableViewCell: UITableViewHeaderFooterView {
+internal class HoursHeaderTableViewCell: UITableViewHeaderFooterView {
     @IBOutlet private var openClosed: UILabel!
     @IBOutlet private var openUntil: UILabel!
     
+    private let border = CALayer()
     private let nextDateFormatter = DateFormatter()
     private let closesDateFormatter = DateFormatter()
     
@@ -20,6 +21,8 @@ class HoursHeaderTableViewCell: UITableViewHeaderFooterView {
         
         nextDateFormatter.dateFormat = "EEEE, MMM d h:mma"
         closesDateFormatter.dateFormat = "h:mma"
+        
+        addBottomBorderWithColor(color: UIColor.init(hex: 0xD3D2D2, alpha: 1.0))
     }
     
     fileprivate func processClosed(_ hours: [BusinessHour], _ nextIndex: Int) {
@@ -32,6 +35,16 @@ class HoursHeaderTableViewCell: UITableViewHeaderFooterView {
             
             self.openUntil.text = "Opens " + self.nextDateFormatter.string(from: nextHours.startTime)
         }
+    }
+    
+    fileprivate func addBottomBorderWithColor(color: UIColor) {
+        border.backgroundColor = color.cgColor
+        
+        self.layer.addSublayer(border)
+    }
+    
+    override func layoutSubviews() {
+        border.frame = CGRect(x: 0, y: self.frame.size.height, width: self.frame.size.width, height: 1)
     }
     
     func setHours(hours: Array<BusinessHour>){

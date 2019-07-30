@@ -34,7 +34,7 @@ steps:
     addChangeLog: false
 
 - script: |
-      cat > FanFindTemp.podspec << EOL 
+      cat > FanFind.podspec << EOL 
       Pod::Spec.new do |spec|
           spec.name         = "FanFind"
           spec.version      = "${Version}"
@@ -61,7 +61,7 @@ steps:
   env:
     Version: $(Version)
 
-- script: pod trunk push FanFindTemp.podspec --allow-warnings
+- script: pod trunk push FanFind.podspec --allow-warnings
   displayName: Publish podspec
   env:
     COCOAPODS_TRUNK_TOKEN: $(CocoapodsToken)

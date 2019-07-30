@@ -19,26 +19,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7c-9T-x08" customClass="ThemedHeaderUILabel" customModule="FanFindSDK" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="42" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOURS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7c-9T-x08" customClass="ThemedHeaderUILabel" customModule="FanFindSDK" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="22" width="51.5" height="17"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbj-Bf-Eh7" userLabel="Open/Closed">
-                        <rect key="frame" x="0.0" y="17" width="37" height="17"/>
+                        <rect key="frame" x="0.0" y="0.0" width="37" height="17"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <color key="textColor" red="0.29411764705882354" green="0.63921568627450975" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wz1-yb-By0" userLabel="Dot" customClass="ThemedHeaderUILabel" customModule="FanFindSDK" customModuleProvider="target">
-                        <rect key="frame" x="41" y="17" width="6.5" height="17"/>
+                        <rect key="frame" x="41" y="0.0" width="6.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svn-Ni-mmp" userLabel="OpenUntil" customClass="ThemedHeaderUILabel" customModule="FanFindSDK" customModuleProvider="target">
-                        <rect key="frame" x="51.5" y="17" width="36" height="17"/>
+                        <rect key="frame" x="51.5" y="0.0" width="36" height="17"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                         <nil key="highlightedColor"/>
@@ -48,9 +48,9 @@
                     <constraint firstItem="wz1-yb-By0" firstAttribute="leading" secondItem="sbj-Bf-Eh7" secondAttribute="trailing" constant="4" id="77U-lP-xVX"/>
                     <constraint firstItem="sbj-Bf-Eh7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FxB-Qb-NCl"/>
                     <constraint firstItem="w7c-9T-x08" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Tsn-3r-meS"/>
-                    <constraint firstItem="w7c-9T-x08" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WhU-Wl-Vhm"/>
+                    <constraint firstItem="w7c-9T-x08" firstAttribute="top" secondItem="sbj-Bf-Eh7" secondAttribute="bottom" constant="5" id="WhU-Wl-Vhm"/>
                     <constraint firstItem="svn-Ni-mmp" firstAttribute="leading" secondItem="wz1-yb-By0" secondAttribute="trailing" constant="4" id="bZ6-tg-DSy"/>
-                    <constraint firstItem="sbj-Bf-Eh7" firstAttribute="top" secondItem="w7c-9T-x08" secondAttribute="bottom" id="qaS-7Y-W6n"/>
+                    <constraint firstItem="sbj-Bf-Eh7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="qaS-7Y-W6n"/>
                     <constraint firstItem="svn-Ni-mmp" firstAttribute="centerY" secondItem="sbj-Bf-Eh7" secondAttribute="centerY" id="sig-44-kxd"/>
                     <constraint firstItem="wz1-yb-By0" firstAttribute="centerY" secondItem="sbj-Bf-Eh7" secondAttribute="centerY" id="yFZ-Tl-KIX"/>
                 </constraints>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DealsTableViewCell: UITableViewCell {
+internal class DealsTableViewCell: UITableViewCell {
     @IBOutlet var icon: UIImageView!
     @IBOutlet var label: UILabel!
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HoursTableViewCell: UITableViewCell {
+internal class HoursTableViewCell: UITableViewCell {
     @IBOutlet var dayOfWeek: UILabel!
     @IBOutlet private var startTimeLabel: UILabel!
     @IBOutlet private var endTimeLabel: UILabel!

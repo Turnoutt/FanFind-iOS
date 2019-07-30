@@ -46,7 +46,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDT-hd-fiC" userLabel="Fan Count" customClass="PeopleCountNumbers" customModule="FanFindSDK" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="104" width="286" height="28"/>
+                        <rect key="frame" x="4" y="104" width="282" height="28"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="aNv-vM-oBE"/>
@@ -105,7 +105,7 @@
                 <constraint firstAttribute="trailing" secondItem="5qf-6F-ujJ" secondAttribute="trailing" id="6ke-1c-ur0"/>
                 <constraint firstItem="OXb-Oj-6EN" firstAttribute="top" secondItem="RDT-hd-fiC" secondAttribute="bottom" constant="4" id="A7A-2o-zjM"/>
                 <constraint firstAttribute="trailing" secondItem="KgO-Ne-IQi" secondAttribute="trailing" id="Hnk-jd-NyQ"/>
-                <constraint firstItem="RDT-hd-fiC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Iob-Ih-l2D"/>
+                <constraint firstItem="RDT-hd-fiC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="Iob-Ih-l2D"/>
                 <constraint firstAttribute="trailing" secondItem="X1K-55-tAk" secondAttribute="trailing" id="T0v-Ri-eNB"/>
                 <constraint firstItem="X1K-55-tAk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VOl-xS-40w"/>
                 <constraint firstItem="5qf-6F-ujJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XkB-vN-Td8"/>
