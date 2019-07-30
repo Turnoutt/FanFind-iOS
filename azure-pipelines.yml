@@ -31,6 +31,8 @@ jobs:
   dependsOn: Build
   condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
   steps:
+  - download: current
+    artifact: Archive
   - task: GitHubRelease@0
     inputs:
       gitHubConnection: 'stasdemir'
