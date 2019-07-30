@@ -20,7 +20,7 @@ jobs:
       rootFolderOrFile: 'build'
       includeRootFolder: true
       archiveType: 'zip'
-      archiveFile: '$(Build.ArtifactStagingDirectory)/FanFind-iOS-$(Version).zip'
+      archiveFile: '$(Build.ArtifactStagingDirectory)/FanFind-iOS-$(Build.SourceBranchName).zip'
       replaceExistingArchive: true
 - job : Deploy
   pool:
@@ -35,8 +35,8 @@ jobs:
       action: 'create'
       target: '6db92d020e381b111d8fdea1712c890a4d034be7'
       tagSource: 'manual'
-      tag: '$(Version)'
-      title: 'FanFind-iOS $(Version)'
+      tag: '$(Build.SourceBranchName)'
+      title: 'FanFind-iOS $(Build.SourceBranchName)'
       releaseNotesSource: 'input'
       releaseNotes: 'None'
       addChangeLog: false
@@ -67,7 +67,7 @@ jobs:
         EOL
     displayName: Build podspec
     env:
-      Version: $(Version)
+      Version: $(Build.SourceBranchName)
 
   - script: pod trunk push FanFind.podspec --allow-warnings
     displayName: Publish podspec
@@ -81,4 +81,4 @@ jobs:
       gitHubConnection: 'stasdemir'
       repositoryName: 'Turnoutt/FanFind-iOS'
       action: 'delete'
-      tag: '$(Version)'
+      tag: '$(Build.SourceBranchName)'
