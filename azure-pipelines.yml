@@ -33,11 +33,7 @@ steps:
     releaseNotes: 'None'
     addChangeLog: false
 
-- task: Bash@3
-  displayName: Build podspec
-  inputs:
-    targetType: inline
-    script: |
+- script: |
       cat > FanFindTemp.podspec << EOL 
       Pod::Spec.new do |spec|
           spec.name         = "FanFind"
@@ -61,8 +57,9 @@ steps:
       
       end
       EOL
-    env:
-      Version: $(Version)
+  displayName: Build podspec
+  env:
+    Version: $(Version)
 
 - task: Bash@3
   displayName: Publish podspec
