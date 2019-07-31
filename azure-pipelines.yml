@@ -22,12 +22,17 @@ jobs:
       archiveType: 'zip'
       archiveFile: '$(Build.ArtifactStagingDirectory)/FanFind-iOS-$(Build.SourceBranchName).zip'
       replaceExistingArchive: true
+  - publish: $(Build.ArtifactStagingDirectory)
+    artifact: Archive
+    
 - job : Deploy
   pool:
     vmImage: 'macos-latest'
   dependsOn: Build
   condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
   steps:
+  - download: current
+    artifact: Archive
   - task: GitHubRelease@0
     inputs:
       gitHubConnection: 'stasdemir'
@@ -40,6 +45,7 @@ jobs:
       releaseNotesSource: 'input'
       releaseNotes: 'None'
       addChangeLog: false
+      assets: '$(Pipeline.Workspace)/Archive/FanFind-iOS-$(Build.SourceBranchName).zip'
 
   - script: |
         cat > FanFind.podspec << EOL 
