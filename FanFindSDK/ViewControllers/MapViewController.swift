@@ -183,10 +183,10 @@ public class MapViewController: UIViewController {
                         self.map.showAnnotations(self.placeArray!, animated: true)
                         
                         self.hideAndReshowPlacesView(places: mappedPlaces)
-                    }
-                    
-                    if places.count == 0{
-                        // self.view.makeToast("No results were returned.")
+                        
+                        if places.count == 0{
+                            self.showToast(message: "No results were returned.")
+                        }
                     }
                 }
                 
