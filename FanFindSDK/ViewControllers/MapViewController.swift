@@ -147,7 +147,9 @@ public class MapViewController: UIViewController {
             self.placesVC = nil
             self.isLocationShowing = false
             
-            self.showPlacesViewWith(places: places)
+            if places.count > 0 {
+                self.showPlacesViewWith(places: places)
+            }
         }
     }
     
