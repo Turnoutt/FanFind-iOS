@@ -182,7 +182,7 @@ public class MapViewController: UIViewController {
                         self.map.removeAnnotations(self.map.annotations)
                         self.map.showAnnotations(self.placeArray!, animated: true)
                         
-                        self.showPlacesViewWith(places: mappedPlaces)
+                        self.hideAndReshowPlacesView(places: mappedPlaces)
                     }
                     
                     if places.count == 0{
