@@ -38,7 +38,7 @@ public class NearByPlace: Decodable {
         }
         
         if !cityName.isEmpty {
-            fullAddress += " " + cityName
+            fullAddress += "\n" + cityName
         }
         
         if !stateCode.isEmpty {

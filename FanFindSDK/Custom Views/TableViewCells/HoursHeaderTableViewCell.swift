@@ -19,8 +19,8 @@ internal class HoursHeaderTableViewCell: UITableViewHeaderFooterView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        nextDateFormatter.dateFormat = "EEEE, MMM d h:mma"
-        closesDateFormatter.dateFormat = "h:mma"
+        nextDateFormatter.dateFormat = "EEEE, MMM d h:mm a"
+        closesDateFormatter.dateFormat = "h:mm a"
         
         addBottomBorderWithColor(color: UIColor.init(hex: 0xD3D2D2, alpha: 1.0))
     }

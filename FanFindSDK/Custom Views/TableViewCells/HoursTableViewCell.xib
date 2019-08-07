@@ -25,26 +25,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVm-6C-DBg" userLabel="StartTime" customClass="ThemedUILabel" customModule="FanFindSDK" customModuleProvider="target">
-                        <rect key="frame" x="185" y="3.5" width="60" height="17"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="60" id="Ky4-NF-HeG"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3W-Pa-EOL" customClass="ThemedUILabel" customModule="FanFindSDK" customModuleProvider="target">
-                        <rect key="frame" x="249" y="3.5" width="7" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:00PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhP-6V-BCv" userLabel="EndTime" customClass="ThemedUILabel" customModule="FanFindSDK" customModuleProvider="target">
-                        <rect key="frame" x="260" y="0.0" width="60" height="23.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="60" id="bxF-dr-PO9"/>
-                        </constraints>
+                        <rect key="frame" x="262.5" y="0.0" width="57.5" height="23.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -55,14 +37,10 @@
                     <constraint firstItem="NCn-WD-3iW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="OqO-qS-bsg"/>
                     <constraint firstAttribute="bottom" secondItem="NCn-WD-3iW" secondAttribute="bottom" id="RTO-X9-Ziw"/>
                     <constraint firstAttribute="trailing" secondItem="NhP-6V-BCv" secondAttribute="trailing" id="TBX-hw-bz3"/>
-                    <constraint firstItem="NhP-6V-BCv" firstAttribute="leading" secondItem="Z3W-Pa-EOL" secondAttribute="trailing" constant="4" id="UPJ-Ci-Hb8"/>
                     <constraint firstItem="NhP-6V-BCv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WNE-sG-zfb"/>
                     <constraint firstItem="NCn-WD-3iW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Z1S-qA-icA"/>
-                    <constraint firstItem="Z3W-Pa-EOL" firstAttribute="leading" secondItem="OVm-6C-DBg" secondAttribute="trailing" constant="4" id="faM-me-K3y"/>
-                    <constraint firstItem="OVm-6C-DBg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="h2D-0I-Ge8"/>
                     <constraint firstItem="NCn-WD-3iW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iuv-rk-dm3"/>
                     <constraint firstAttribute="bottom" secondItem="NhP-6V-BCv" secondAttribute="bottom" id="pbn-g0-18c"/>
-                    <constraint firstItem="Z3W-Pa-EOL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="rbc-tk-fhx"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -70,7 +48,6 @@
             <connections>
                 <outlet property="dayOfWeek" destination="NCn-WD-3iW" id="5po-Pn-yuZ"/>
                 <outlet property="endTimeLabel" destination="NhP-6V-BCv" id="6lB-sz-fB9"/>
-                <outlet property="startTimeLabel" destination="OVm-6C-DBg" id="IuS-t8-4OH"/>
             </connections>
             <point key="canvasLocation" x="99" y="152"/>
         </tableViewCell>

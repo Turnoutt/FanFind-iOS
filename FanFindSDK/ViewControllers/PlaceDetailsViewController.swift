@@ -181,7 +181,7 @@ extension PlaceDetailsViewController: UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "hoursTableViewCell") as! HoursTableViewCell
             
             cell.dayOfWeek.text = hours[indexPath.row].dayOfWeek
-            cell.setTime(startTime: hours[indexPath.row].startTime, endTime: hours[indexPath.row].endTime)
+            cell.setTime(startTime: hours[indexPath.row].startTime, endTime: hours[indexPath.row].endTime, dayNumberOfWeek: hours[indexPath.row].dayNumberOfWeek)
             
             return cell
         } else {

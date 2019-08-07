@@ -28,13 +28,12 @@ internal class EventsTableViewCell: UITableViewCell {
     func setEvent(event: PlaceEvent){
         self.eventText.text = event.eventText
         
-        let startDateFormatter = DateFormatter()
-        startDateFormatter.dateFormat = "EEEE, MMM d - h:mma"
+        let formatter = DateIntervalFormatter()
+        formatter.dateStyle = DateIntervalFormatter.Style.full
+        formatter.timeStyle = DateIntervalFormatter.Style.short
+        let dateRangeStr = formatter.string(from: event.startDate, to: event.endDate)
         
-        let endDateFormatter = DateFormatter()
-        endDateFormatter.dateFormat = "h:mma"
-        
-        self.eventDate.text = startDateFormatter.string(from: event.startDate)+"-"+endDateFormatter.string(from: event.endDate)
+        self.eventDate.text = dateRangeStr
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
