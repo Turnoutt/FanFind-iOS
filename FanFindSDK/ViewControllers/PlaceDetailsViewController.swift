@@ -60,6 +60,7 @@ class PlaceDetailsViewController : UIViewController{
             
             return prev.dayNumberOfWeek < next.dayNumberOfWeek
         })
+              
         self.deals = placeDetails.deals
         self.events = placeDetails.events
         
@@ -100,6 +101,8 @@ class PlaceDetailsViewController : UIViewController{
         }
         
         DispatchQueue.main.async {
+            self.fanCount.setTotals(maleCount: self.place?.peopleCount ?? 0, femaleCount: 0, neutralCount: 0)
+            
             self.placeInfoHeader.setPlace(place: self.place!)
             self.placeInfoHeader.setPlaceDetails(place: self.placeDetails!)
         

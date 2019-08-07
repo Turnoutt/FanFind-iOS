@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceDetailsViewController" customModule="FanFindSDK" customModuleProvider="target">
             <connections>
                 <outlet property="dealsEventsView" destination="Ig6-F9-Cka" id="mrd-6I-xfu"/>
-                <outlet property="fanCount" destination="YQu-mB-6Mj" id="5BY-ZX-CF5"/>
+                <outlet property="fanCount" destination="YQu-mB-6Mj" id="WJu-GT-wCv"/>
                 <outlet property="hoursTableView" destination="ipg-74-G3x" id="z6P-aX-Bf0"/>
                 <outlet property="logo" destination="dME-EI-ujq" id="LA8-5G-Hii"/>
                 <outlet property="placeInfoHeader" destination="cKe-h1-bOl" id="eAT-50-NOG"/>
