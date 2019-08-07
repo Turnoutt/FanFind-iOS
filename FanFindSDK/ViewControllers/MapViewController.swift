@@ -137,22 +137,6 @@ public class MapViewController: UIViewController {
         }
     }
     
-    @objc func hideAndReshowPlacesView(places: [Place]) {
-        placesVC?.view.frame.origin.y = view.frame.height
-        UIView.animate(withDuration: 0.2, animations: {
-            self.view.layoutIfNeeded()
-        }) { _ in
-            self.placesVC?.removeFromParent()
-            self.placesVC?.didMove(toParent: nil)
-            self.placesVC = nil
-            self.isLocationShowing = false
-            
-            if places.count > 0 {
-                self.showPlacesViewWith(places: places)
-            }
-        }
-    }
-    
     func loadPlaces(_ location: CLLocationCoordinate2D? = nil, _ distance: Double? = nil){
         let coord = location ?? self.map.centerCoordinate
         hasSearched = true
@@ -182,7 +166,7 @@ public class MapViewController: UIViewController {
                         self.map.removeAnnotations(self.map.annotations)
                         self.map.showAnnotations(self.placeArray!, animated: true)
                         
-                        self.hideAndReshowPlacesView(places: mappedPlaces)
+                        self.showPlacesViewWith(places: mappedPlaces)
                         
                         if places.count == 0{
                             self.showToast(message: "No results were returned.")
@@ -235,7 +219,13 @@ public class MapViewController: UIViewController {
             }
         } else {
             placeArray = places
-            placesVC?.setPlaces(places: places)
+            
+            if places.count == 0 {
+                self.placesVC!.view.isHidden = true
+            } else {
+                self.placesVC!.view.isHidden = false
+                placesVC?.setPlaces(places: places)
+            }
         }
     }
     
@@ -326,8 +316,12 @@ extension MapViewController: CLLocationManagerDelegate {
 }
 
 extension MapViewController: PlacesCenterCellDelegate{
-    func collectionViewStoppedAt(place: Place) {
+    func collectionViewStoppedAt(place: Place, focusOnPlace: Bool) {
         setAnnotationAsSelected(place)
+        
+        if(!focusOnPlace){
+            return
+        }
         
         DispatchQueue.main.async {
             if self.map.camera.altitude > 550 {

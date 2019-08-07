@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 protocol PlacesCenterCellDelegate {
-    func collectionViewStoppedAt(place: Place)
+    func collectionViewStoppedAt(place: Place, focusOnPlace: Bool)
     func tappedOnPlace(place: Place)
     func collectionViewChangedHeight()
 }
@@ -47,6 +47,11 @@ class PlacesCollectionVC: UIViewController, UIPopoverPresentationControllerDeleg
         placeArray = places
         
         self.collectionView.reloadData()
+        self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0),
+                                         at: .centeredHorizontally,
+                                         animated: true)
+        
+        delegate?.collectionViewStoppedAt(place: places[0], focusOnPlace: false)
         
     }
 
@@ -273,7 +278,7 @@ extension PlacesCollectionVC: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func centerCell(place: Place) {
-        delegate?.collectionViewStoppedAt(place: place)
+        delegate?.collectionViewStoppedAt(place: place, focusOnPlace: true)
     }
 
     func collectionView(_: UICollectionView, didSelectItemAt _: IndexPath) {
