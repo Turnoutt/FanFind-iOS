@@ -28,6 +28,7 @@ public class MapViewController: UIViewController {
         if let gestureRecognizers = view.gestureRecognizers {
             for recognizer in gestureRecognizers {
                 if( recognizer.state == UIGestureRecognizer.State.began || recognizer.state == UIGestureRecognizer.State.ended ) {
+                    self.searchBar.endEditing(true)
                     return true
                 }
             }
