@@ -22,12 +22,17 @@ public class MapViewController: UIViewController {
     private var mapChangedFromUserInteraction = false
     var tileOverlay: GoogleMapsTileOverlay?
     
+    @IBAction func onTapped(_ sender: UITapGestureRecognizer) {
+        self.searchBar.endEditing(true)
+    }
+    
     private func mapViewRegionDidChangeFromUserInteraction() -> Bool {
         let view = self.map.subviews[0]
         //  Look through gesture recognizers to determine whether this region change is from user interaction
         if let gestureRecognizers = view.gestureRecognizers {
             for recognizer in gestureRecognizers {
                 if( recognizer.state == UIGestureRecognizer.State.began || recognizer.state == UIGestureRecognizer.State.ended ) {
+                    
                     return true
                 }
             }

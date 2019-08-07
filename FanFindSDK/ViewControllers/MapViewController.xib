@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14810.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.15"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +26,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0R-uB-r9h">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                     <subviews>
-                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5NN-2E-xOY">
+                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsCompass="NO" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5NN-2E-xOY">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                         </mapView>
                         <searchBar contentMode="redraw" placeholder="Find places to go..." translatesAutoresizingMaskIntoConstraints="NO" id="IbR-RQ-OGD">
@@ -48,6 +50,7 @@
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="5NN-2E-xOY" firstAttribute="leading" secondItem="h0R-uB-r9h" secondAttribute="leading" id="7ZL-dE-sEy"/>
                         <constraint firstItem="IbR-RQ-OGD" firstAttribute="leading" secondItem="p2M-YL-P8c" secondAttribute="leading" constant="10" id="7dS-oF-Emx"/>
@@ -63,6 +66,9 @@
                         <constraint firstItem="rfi-Fn-28c" firstAttribute="top" secondItem="IbR-RQ-OGD" secondAttribute="bottom" constant="10" id="hdX-ct-nEH"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="p2M-YL-P8c"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="dyN-Ei-wJV" appends="YES" id="Kte-Vn-dNr"/>
+                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -75,5 +81,10 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="28" y="150"/>
         </view>
+        <tapGestureRecognizer id="dyN-Ei-wJV">
+            <connections>
+                <action selector="onTapped:" destination="-1" id="aW1-Qt-ANK"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>
