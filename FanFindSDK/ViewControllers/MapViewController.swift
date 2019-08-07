@@ -182,11 +182,11 @@ public class MapViewController: UIViewController {
                         self.map.removeAnnotations(self.map.annotations)
                         self.map.showAnnotations(self.placeArray!, animated: true)
                         
-                        self.showPlacesViewWith(places: mappedPlaces)
-                    }
-                    
-                    if places.count == 0{
-                        // self.view.makeToast("No results were returned.")
+                        self.hideAndReshowPlacesView(places: mappedPlaces)
+                        
+                        if places.count == 0{
+                            self.showToast(message: "No results were returned.")
+                        }
                     }
                 }
                 
