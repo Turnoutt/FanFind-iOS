@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import os
 
 public class MapViewController: UIViewController {
     @IBOutlet var map: MKMapView!
@@ -291,8 +292,10 @@ extension MapViewController: MKMapViewDelegate {
     public func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation as? Place {
             //mapView.setCenter(annotation.coordinate, animated: true)
-            if let placeIndex = self.placeArray?.firstIndex(of: annotation) {
-                placesVC?.collectionView.scrollToItem(at: IndexPath(row: placeIndex, section: 0), at: .centeredHorizontally, animated: true)
+            guard let placesVC = self.placesVC else {  return }
+            
+            if let placeIndex = placesVC.placeArray.firstIndex(where: { $0.placeId == annotation.placeId }) {
+                placesVC.collectionView.scrollToItem(at: IndexPath(row: placeIndex, section: 0), at: .centeredHorizontally, animated: true)
             }
         }
     }
