@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class PlaceInfoHeaderView: UIStackView {
+internal class PlaceInfoHeaderView: UIStackView {
     var businessNameLabel = ThemedUILabel()
     var categoryNameLabel = ThemedUILabel()
     var addressLabel = ThemedUILabel()

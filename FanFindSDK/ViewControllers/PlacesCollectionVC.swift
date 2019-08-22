@@ -15,7 +15,7 @@ protocol PlacesCenterCellDelegate {
     func collectionViewChangedHeight()
 }
 
-class PlacesCollectionVC: UIViewController, UIPopoverPresentationControllerDelegate {
+internal class PlacesCollectionVC: UIViewController, UIPopoverPresentationControllerDelegate {
     func closeView() {
         dismiss(animated: false)
     }

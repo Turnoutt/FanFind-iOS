@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class NearByPlace: Decodable {
+internal class NearByPlace: Decodable {
     
     public var latitude: Double?
     public var longitude: Double?

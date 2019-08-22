@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class DrawingTools {
+internal class DrawingTools {
     static func setupGradientLayer(unspecifiedCount: Int64, isSelected: Bool, showClusteredMarker: Bool = false) -> UIImage {
         let diameter = showClusteredMarker ? 50 : 40
         

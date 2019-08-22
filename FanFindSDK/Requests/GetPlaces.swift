@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GetPlaces: APIRequest {
+internal struct GetPlaces: APIRequest {
     public typealias Response = [NearByPlace]
     
     public var resourceName: String {

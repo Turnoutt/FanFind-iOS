@@ -8,4 +8,4 @@
 
 import Foundation
 
-struct NoReply: Decodable {}
+internal struct NoReply: Decodable {}

@@ -13,7 +13,7 @@ private struct LocationDistance {
     let distance: Double
 }
 
-struct LocationHelper {
+internal struct LocationHelper {
     public func sort(places: [Place], byDistanceFrom currentLocation: CLLocationCoordinate2D) -> [Place] {
         let myLocation = CLLocation(latitude: currentLocation.latitude, longitude: currentLocation.longitude)
         var locationDistanceArray: [LocationDistance] = []

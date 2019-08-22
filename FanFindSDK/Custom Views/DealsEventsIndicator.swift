@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class DealsEventsIndicator: UIView {
+internal class DealsEventsIndicator: UIView {
     private var _hasEvents = false
     var hasEvents: Bool {
         set(newVal){

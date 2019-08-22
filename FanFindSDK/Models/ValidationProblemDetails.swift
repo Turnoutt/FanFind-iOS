@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ValidationProblemDetails : Decodable {
+internal class ValidationProblemDetails : Decodable {
     var detail: String
     
     var status: String

@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 extension Navigator {
-    public enum Mode: String {
+    internal enum Mode: String {
         case walking
         case bicycling
         case driving

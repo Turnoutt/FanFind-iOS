@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class Place: PeopleLocationAnnotation {
+internal class Place: PeopleLocationAnnotation {
     var name: String = ""
     var address: String = ""
     var placeId: String = ""

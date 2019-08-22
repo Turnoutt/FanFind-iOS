@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class PlacesAnnotationView: MKAnnotationView {
+internal class PlacesAnnotationView: MKAnnotationView {
     static let ReuseID = "placesAnnotation"
     
     let brandsImageView = UIImageView()

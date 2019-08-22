@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ThemedHeaderUILabel: UILabel {
+internal class ThemedHeaderUILabel: UILabel {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!

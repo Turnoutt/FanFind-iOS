@@ -14,7 +14,7 @@ protocol PlacesCellDelegate {
     func showNavigationModal(_ frame: CGRect, _ view: UIView, location: LocationRepresentable)
 }
 
-class PlacesCell: UICollectionViewCell, UIScrollViewDelegate {
+internal class PlacesCell: UICollectionViewCell, UIScrollViewDelegate {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var navigateButton: UIButton!
     @IBOutlet var numbers: PeopleCountNumbers!

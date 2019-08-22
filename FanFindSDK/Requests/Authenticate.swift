@@ -1,7 +1,7 @@
 import AdSupport
 import Foundation
 
-struct Authenticate: APIRequest {
+internal struct Authenticate: APIRequest {
     public typealias Response = TokenResponse
     
     public var resourceName: String {

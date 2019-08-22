@@ -18,7 +18,7 @@ internal enum GoogleMapsTileOverlayError: Error {
 
 extension GoogleMapsTileOverlayError: LocalizedError {
     
-    public var errorDescription: String? {
+    internal var errorDescription: String? {
         switch self {
         case .invalidJSON:        return "JSON file is not valid"
         case .failedToEncodeURL:  return "Failed to encode URL with percentage encoding"

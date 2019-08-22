@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class PlaceDetailsViewController : UIViewController{
+internal class PlaceDetailsViewController : UIViewController{
     @IBOutlet var dealsEventsView: SelfSizedTableView!
     @IBOutlet var hoursTableView: SelfSizedTableView!
     @IBOutlet var logo: UIImageView!

@@ -63,10 +63,10 @@
 		047CF2FA22D63C2B00953CC1 /* PlacesShortenedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047CF2D222D63C2B00953CC1 /* PlacesShortenedCell.xib */; };
 		047CF2FB22D63C2B00953CC1 /* PlacesCollectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047CF2D322D63C2B00953CC1 /* PlacesCollectionVC.xib */; };
 		047CF2FC22D63C2B00953CC1 /* PlacesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047CF2D422D63C2B00953CC1 /* PlacesCell.xib */; };
-		047CF2FD22D63C2B00953CC1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2D522D63C2B00953CC1 /* MapViewController.swift */; };
+		047CF2FD22D63C2B00953CC1 /* FanFindMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2D522D63C2B00953CC1 /* FanFindMapViewController.swift */; };
 		047CF2FE22D63C2B00953CC1 /* PlacesFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2D622D63C2B00953CC1 /* PlacesFlowLayout.swift */; };
 		047CF2FF22D63C2B00953CC1 /* PlacesShortenedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2D722D63C2B00953CC1 /* PlacesShortenedCell.swift */; };
-		047CF30022D63C2B00953CC1 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047CF2D822D63C2B00953CC1 /* MapViewController.xib */; };
+		047CF30022D63C2B00953CC1 /* FanFindMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047CF2D822D63C2B00953CC1 /* FanFindMapViewController.xib */; };
 		047CF30122D63C2B00953CC1 /* PlacesCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2D922D63C2B00953CC1 /* PlacesCollectionVC.swift */; };
 		047CF30322D63C2B00953CC1 /* PlacesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2DB22D63C2B00953CC1 /* PlacesCell.swift */; };
 		047CF30522D63C2B00953CC1 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2DE22D63C2B00953CC1 /* ProgressView.swift */; };
@@ -150,10 +150,10 @@
 		047CF2D222D63C2B00953CC1 /* PlacesShortenedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlacesShortenedCell.xib; sourceTree = "<group>"; };
 		047CF2D322D63C2B00953CC1 /* PlacesCollectionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlacesCollectionVC.xib; sourceTree = "<group>"; };
 		047CF2D422D63C2B00953CC1 /* PlacesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlacesCell.xib; sourceTree = "<group>"; };
-		047CF2D522D63C2B00953CC1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		047CF2D522D63C2B00953CC1 /* FanFindMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanFindMapViewController.swift; sourceTree = "<group>"; };
 		047CF2D622D63C2B00953CC1 /* PlacesFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesFlowLayout.swift; sourceTree = "<group>"; };
 		047CF2D722D63C2B00953CC1 /* PlacesShortenedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesShortenedCell.swift; sourceTree = "<group>"; };
-		047CF2D822D63C2B00953CC1 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		047CF2D822D63C2B00953CC1 /* FanFindMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FanFindMapViewController.xib; sourceTree = "<group>"; };
 		047CF2D922D63C2B00953CC1 /* PlacesCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesCollectionVC.swift; sourceTree = "<group>"; };
 		047CF2DB22D63C2B00953CC1 /* PlacesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesCell.swift; sourceTree = "<group>"; };
 		047CF2DE22D63C2B00953CC1 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -320,8 +320,8 @@
 				047CF2D622D63C2B00953CC1 /* PlacesFlowLayout.swift */,
 				047CF2D722D63C2B00953CC1 /* PlacesShortenedCell.swift */,
 				047CF2D222D63C2B00953CC1 /* PlacesShortenedCell.xib */,
-				047CF2D822D63C2B00953CC1 /* MapViewController.xib */,
-				047CF2D522D63C2B00953CC1 /* MapViewController.swift */,
+				047CF2D822D63C2B00953CC1 /* FanFindMapViewController.xib */,
+				047CF2D522D63C2B00953CC1 /* FanFindMapViewController.swift */,
 				047CF2D322D63C2B00953CC1 /* PlacesCollectionVC.xib */,
 				047CF2D922D63C2B00953CC1 /* PlacesCollectionVC.swift */,
 				0482A46522DE29B70018ABDB /* PlaceDetailsViewController.swift */,
@@ -443,7 +443,7 @@
 				047CF2FA22D63C2B00953CC1 /* PlacesShortenedCell.xib in Resources */,
 				0464488822DE4F2500EA9504 /* DealsTableViewCell.xib in Resources */,
 				047CF30722D63C2B00953CC1 /* PeopleCountNumbers.xib in Resources */,
-				047CF30022D63C2B00953CC1 /* MapViewController.xib in Resources */,
+				047CF30022D63C2B00953CC1 /* FanFindMapViewController.xib in Resources */,
 				047CF2FC22D63C2B00953CC1 /* PlacesCell.xib in Resources */,
 				0464489822DFF87600EA9504 /* HoursHeaderTableViewCell.xib in Resources */,
 			);
@@ -479,7 +479,7 @@
 				046448A222E00F5900EA9504 /* HoursTableViewCell.swift in Sources */,
 				048EBFE622E902670095ADB5 /* DealsEventsIndicator.swift in Sources */,
 				043AD5D922E276560080D67A /* UIIMageViewExtensions.swift in Sources */,
-				047CF2FD22D63C2B00953CC1 /* MapViewController.swift in Sources */,
+				047CF2FD22D63C2B00953CC1 /* FanFindMapViewController.swift in Sources */,
 				042927CB22ECB5AC0057F759 /* Location.swift in Sources */,
 				047CF2EA22D63C2B00953CC1 /* URLQueryItemEncoder.swift in Sources */,
 				047CF2EC22D63C2B00953CC1 /* FanFindClient.swift in Sources */,

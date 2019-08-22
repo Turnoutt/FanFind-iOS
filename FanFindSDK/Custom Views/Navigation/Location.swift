@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 extension Navigator {
-    public struct Location {
+    internal struct Location {
         public let coordinate: CLLocationCoordinate2D
         public let name: String?
         public let address: String?

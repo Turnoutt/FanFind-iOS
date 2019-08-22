@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PlaceDeal : Decodable {
+internal class PlaceDeal : Decodable {
     public var startDate: Date
     public var endDate: Date
     public var dealText: String

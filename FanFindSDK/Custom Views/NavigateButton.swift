@@ -9,7 +9,7 @@
 import Foundation
 
 @IBDesignable
-class NavigateButton: UIButton{
+internal class NavigateButton: UIButton{
     var bundle = Bundle(for: PlacesCell.self)
     
     override func awakeFromNib() {

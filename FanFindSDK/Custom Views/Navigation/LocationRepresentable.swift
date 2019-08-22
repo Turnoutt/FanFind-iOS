@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 import MapKit
 
-public protocol LocationRepresentable {
+internal protocol LocationRepresentable {
     var latitude: Double { get }
     var longitude: Double { get }
     /// - Note: This property is not supported by all navigation apps.
@@ -43,7 +43,7 @@ extension Navigator.Location: LocationRepresentable {
     }
 }
 
-class NavigatorLocation: LocationRepresentable{
+internal class NavigatorLocation: LocationRepresentable{
     var coords: CLLocationCoordinate2D
     var _name: String
     var _address: String

@@ -7,6 +7,12 @@ trigger:
 - release/*
 - master
 
+variables:
+  major: 1
+  minor: 0
+  patch: $[counter(variables['minor'], 0)]
+  version: "$(major).$(minor).$(patch)"
+
 jobs:
 - job: Build
   pool:
@@ -29,7 +35,6 @@ jobs:
   pool:
     vmImage: 'macos-latest'
   dependsOn: Build
-  condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
   steps:
   - download: current
     artifact: Archive
@@ -40,12 +45,12 @@ jobs:
       action: 'create'
       target: '6db92d020e381b111d8fdea1712c890a4d034be7'
       tagSource: 'manual'
-      tag: '$(Build.SourceBranchName)'
-      title: 'FanFind-iOS $(Build.SourceBranchName)'
+      tag: '$(version)'
+      title: 'FanFind-iOS $(version)'
       releaseNotesSource: 'input'
       releaseNotes: 'None'
       addChangeLog: false
-      assets: '$(Pipeline.Workspace)/Archive/FanFind-iOS-$(Build.SourceBranchName).zip'
+      assets: '$(Pipeline.Workspace)/Archive/FanFind-iOS-$(version).zip'
 
   - script: |
         cat > FanFind.podspec << EOL 
@@ -73,7 +78,7 @@ jobs:
         EOL
     displayName: Build podspec
     env:
-      Version: $(Build.SourceBranchName)
+      Version: $(version)
 
   - script: pod trunk push FanFind.podspec --allow-warnings
     displayName: Publish podspec

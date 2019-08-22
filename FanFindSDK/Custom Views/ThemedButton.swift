@@ -9,7 +9,7 @@
 import Foundation
 
 @IBDesignable
-class ThemedButton : UIButton{
+internal class ThemedButton : UIButton{
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

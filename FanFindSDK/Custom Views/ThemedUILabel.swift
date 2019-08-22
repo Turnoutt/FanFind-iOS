@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class ThemedUILabel: UILabel {
+internal class ThemedUILabel: UILabel {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!

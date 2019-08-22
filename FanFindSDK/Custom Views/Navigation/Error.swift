@@ -9,7 +9,7 @@
 import Foundation
 
 extension Navigator {
-    public enum Error: Swift.Error {
+    internal enum Error: Swift.Error {
         case unsupportedMode
     }
 }

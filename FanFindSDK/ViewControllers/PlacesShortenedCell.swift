@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlacesShortenedCell: UICollectionViewCell {
+internal class PlacesShortenedCell: UICollectionViewCell {
     @IBOutlet var directionsButton: UIButton!
     @IBOutlet var pointOfInterestLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!

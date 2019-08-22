@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class PeopleLocationAnnotation: NSObject, MKAnnotation {
+internal class PeopleLocationAnnotation: NSObject, MKAnnotation {
     public static func == (lhs: PeopleLocationAnnotation, rhs: PeopleLocationAnnotation) -> Bool {
         return lhs.geoHash == rhs.geoHash
             && lhs.latestUpdateDate == rhs.latestUpdateDate

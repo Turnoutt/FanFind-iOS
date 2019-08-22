@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-public enum Navigator {
+internal enum Navigator {
     /// Check if a navigation app is installed on the device.
     ///
     /// - Parameter app: a navigation app supported by Karte

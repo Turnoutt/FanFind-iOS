@@ -9,7 +9,7 @@
 import Foundation
 
 extension Navigator {
-    public enum NavigationApp: String, CaseIterable {
+    internal enum NavigationApp: String, CaseIterable {
         case appleMaps
         case googleMaps // https://developers.google.com/maps/documentation/ios/urlscheme
         

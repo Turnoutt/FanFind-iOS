@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import os
 
-public class MapViewController: UIViewController {
+public class FanFindMapViewController: UIViewController {
     @IBOutlet var map: MKMapView!
     @IBOutlet var redoSearchButton: UIButton!
     @IBOutlet var searchBar: UISearchBar!
@@ -51,12 +51,12 @@ public class MapViewController: UIViewController {
     }
     
     public init() {
-        super.init(nibName: "MapViewController", bundle: Bundle(for: MapViewController.self))
+        super.init(nibName: "MapViewController", bundle: Bundle(for: FanFindMapViewController.self))
         
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        super.init(nibName: "MapViewController", bundle: Bundle(for: MapViewController.self))
+        super.init(nibName: "MapViewController", bundle: Bundle(for: FanFindMapViewController.self))
     }
     
     override public var shouldAutorotate: Bool{
@@ -102,12 +102,7 @@ public class MapViewController: UIViewController {
             map.setCenter(coor, animated: true)
         }
         
-        if (CLLocationManager.locationServicesEnabled())
-        {
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestAlwaysAuthorization()
-            locationManager.startUpdatingLocation()
-        }
+        fanFindClient.startUpdatingLocation()
         
         map.register(PlacesAnnotationView.self, forAnnotationViewWithReuseIdentifier: "placesViewReuseIdentitier")
     }
@@ -272,7 +267,7 @@ public class MapViewController: UIViewController {
     }
 }
 
-extension MapViewController: MKMapViewDelegate {
+extension FanFindMapViewController: MKMapViewDelegate {
     public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let place = annotation as? Place {
             return mapView.dequeueReusableAnnotationView(withIdentifier: PlacesAnnotationView.ReuseID) ??
@@ -307,7 +302,7 @@ extension MapViewController: MKMapViewDelegate {
     }
 }
 
-extension MapViewController: CLLocationManagerDelegate {
+extension FanFindMapViewController: CLLocationManagerDelegate {
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
@@ -318,7 +313,7 @@ extension MapViewController: CLLocationManagerDelegate {
     }
 }
 
-extension MapViewController: PlacesCenterCellDelegate{
+extension FanFindMapViewController: PlacesCenterCellDelegate{
     func collectionViewStoppedAt(place: Place, focusOnPlace: Bool) {
         setAnnotationAsSelected(place)
         
@@ -373,7 +368,7 @@ extension MapViewController: PlacesCenterCellDelegate{
     
 }
 
-extension MapViewController: UISearchBarDelegate{
+extension FanFindMapViewController: UISearchBarDelegate{
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
         self.map.removeAnnotations(self.map.annotations)
         

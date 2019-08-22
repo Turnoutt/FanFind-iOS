@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoundedCollectionViewCell: UICollectionViewCell {
+internal class RoundedCollectionViewCell: UICollectionViewCell {
     let containerView = UIView()
     
     override init(frame: CGRect) {

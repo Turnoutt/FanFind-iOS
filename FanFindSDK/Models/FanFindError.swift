@@ -1,6 +1,6 @@
 import Foundation
 
-public enum FanFindError: Error {
+internal enum FanFindError: Error {
     case encoding
     case decoding
     case server(message: String)

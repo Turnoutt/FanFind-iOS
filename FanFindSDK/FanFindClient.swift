@@ -98,8 +98,13 @@ public class FanFindClient: NSObject {
         print("Starting Location Updates")
         if CLLocationManager.locationServicesEnabled() {
             if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-                self.locationManager.startUpdatingLocation()
+                
+                Timer.scheduledTimer(withTimeInterval: 15 * 60.0, repeats: true) { (timer) in
+                    self.locationManager.startUpdatingLocation()
+                }
+                
                 self.locationManager.startMonitoringVisits()
+                self.locationManager.startMonitoringSignificantLocationChanges()
             }
         }
     }
@@ -243,7 +248,7 @@ extension FanFindClient : CLLocationManagerDelegate{
         }
         
         FanFindClient.shared.trackLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, accuracy: location.horizontalAccuracy) { (err) in
-            
+            self.locationManager.stopUpdatingLocation()
         }
     }
 }

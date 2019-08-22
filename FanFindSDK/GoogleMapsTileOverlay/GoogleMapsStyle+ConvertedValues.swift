@@ -18,7 +18,7 @@ internal extension GoogleMapsStyle {
 }
 
 
-private extension GoogleMapsStyle {
+internal extension GoogleMapsStyle {
     
     func convertedFeature() -> String? {
         guard featureType != nil else { return nil }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ProgressView {
+internal class ProgressView {
     static let shared = ProgressView()
     
     var containerView = UIView()

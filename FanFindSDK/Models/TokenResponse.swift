@@ -8,6 +8,6 @@
 
 import Foundation
 
-public class TokenResponse: Decodable{
+internal class TokenResponse: Decodable{
     var token: String
 }

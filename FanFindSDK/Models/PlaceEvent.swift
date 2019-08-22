@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PlaceEvent : Decodable {
+internal class PlaceEvent : Decodable {
     public var startDate: Date
     public var endDate: Date
     public var eventText: String

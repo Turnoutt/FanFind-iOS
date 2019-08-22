@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NumberAbbreviator {
+internal struct NumberAbbreviator {
     func formatPoints(num: Double) -> String {
         var thousandNum = num / 1000
         var millionNum = num / 1_000_000
