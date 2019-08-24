@@ -51,12 +51,12 @@ public class FanFindMapViewController: UIViewController {
     }
     
     public init() {
-        super.init(nibName: "MapViewController", bundle: Bundle(for: FanFindMapViewController.self))
+        super.init(nibName: "FanFindMapViewController", bundle: Bundle(for: FanFindMapViewController.self))
         
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        super.init(nibName: "MapViewController", bundle: Bundle(for: FanFindMapViewController.self))
+        super.init(nibName: "FanFindMapViewController", bundle: Bundle(for: FanFindMapViewController.self))
     }
     
     override public var shouldAutorotate: Bool{
