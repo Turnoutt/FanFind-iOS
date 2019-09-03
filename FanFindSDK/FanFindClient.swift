@@ -75,6 +75,19 @@ public class FanFindClient: NSObject {
         }
     }
     
+    internal func createEvent(eventType: String, placeId: String, completion: @escaping ((_ error: Error?)->Void)){
+        let request = CreateEvent(eventType: eventType, placeId: placeId)
+        
+        self.sendWithBody(request) { (res) in
+            switch res {
+            case .success(_):
+                completion(nil)
+            case .failure(let err):
+                completion(err)
+            }
+        }
+    }
+    
     /**
      Gets details for a specific place. Please be sure to call FanFindClient.initialize before calling this.
      
@@ -223,11 +236,10 @@ public class FanFindClient: NSObject {
         
         do {
             customQueryItems = try URLQueryItemEncoder.encode(request)
+            components.queryItems = customQueryItems
         } catch {
-            fatalError("Wrong parameters: \(error)")
+            //fatalError("Wrong parameters: \(error)")
         }
-        
-        components.queryItems = customQueryItems
         
         // Construct the final URL with all the previous data
         return components.url!

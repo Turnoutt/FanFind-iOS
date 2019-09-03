@@ -152,6 +152,9 @@ internal class PlacesCollectionVC: UIViewController, UIPopoverPresentationContro
             if let placeId=cell?.place?.placeId{
                 DispatchQueue.main.async {
                     ProgressView.shared.showProgressView()
+                }
+                
+                FanFindClient.shared.createEvent(eventType: "PlaceDetailsViewed", placeId: placeId) { (err) in
                     
                 }
                 
@@ -161,8 +164,6 @@ internal class PlacesCollectionVC: UIViewController, UIPopoverPresentationContro
                         
                         ProgressView.shared.hideProgressView()
                     }
-                    
-                    
                 }
             }
         }

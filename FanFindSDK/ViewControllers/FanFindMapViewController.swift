@@ -317,6 +317,11 @@ extension FanFindMapViewController: PlacesCenterCellDelegate{
     func collectionViewStoppedAt(place: Place, focusOnPlace: Bool) {
         setAnnotationAsSelected(place)
         
+       
+        FanFindClient.shared.createEvent(eventType: "PlaceFocused", placeId: place.placeId) { (err) in
+            
+        }
+        
         if(!focusOnPlace){
             return
         }
