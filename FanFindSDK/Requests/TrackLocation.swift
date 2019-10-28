@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal struct TrackLocation: APIRequest {
+internal struct TrackLocationRequest: APIRequest {
     public typealias Response = NoReply
     
     public var resourceName: String {

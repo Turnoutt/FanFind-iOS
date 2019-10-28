@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FanFindMapViewController" customModule="FanFindSDK" customModuleProvider="target">
             <connections>
+                <outlet property="centerLocationButton" destination="sWy-nR-CSA" id="1OR-Do-qiE"/>
                 <outlet property="map" destination="5NN-2E-xOY" id="v14-oV-bLE"/>
                 <outlet property="redoSearchButton" destination="rfi-Fn-28c" id="cdb-tn-ekD"/>
                 <outlet property="searchBar" destination="IbR-RQ-OGD" id="joO-15-cw9"/>
@@ -48,6 +47,14 @@
                                 <action selector="redoSearchClicked:" destination="-1" eventType="touchUpInside" id="JUV-k2-tOB"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWy-nR-CSA" userLabel="CenterLocationButton">
+                            <rect key="frame" x="359" y="567" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="cA1-cH-3KK"/>
+                                <constraint firstAttribute="height" constant="35" id="wgS-xy-h5I"/>
+                            </constraints>
+                            <state key="normal" image="location.fill" catalog="system"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <gestureRecognizers/>
@@ -64,6 +71,8 @@
                         <constraint firstItem="p2M-YL-P8c" firstAttribute="trailing" secondItem="5NN-2E-xOY" secondAttribute="trailing" id="ZFM-rO-ofB"/>
                         <constraint firstAttribute="trailing" secondItem="5NN-2E-xOY" secondAttribute="trailing" id="gyc-hC-kcj"/>
                         <constraint firstItem="rfi-Fn-28c" firstAttribute="top" secondItem="IbR-RQ-OGD" secondAttribute="bottom" constant="10" id="hdX-ct-nEH"/>
+                        <constraint firstItem="p2M-YL-P8c" firstAttribute="bottom" secondItem="sWy-nR-CSA" secondAttribute="bottom" constant="260" id="kUV-Ho-KFH"/>
+                        <constraint firstItem="p2M-YL-P8c" firstAttribute="trailing" secondItem="sWy-nR-CSA" secondAttribute="trailing" constant="20" id="sbG-3k-JKN"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="p2M-YL-P8c"/>
                     <connections>
@@ -87,4 +96,7 @@
             </connections>
         </tapGestureRecognizer>
     </objects>
+    <resources>
+        <image name="location.fill" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

@@ -14,10 +14,10 @@ public class FanFindMapViewController: UIViewController {
     @IBOutlet var map: MKMapView!
     @IBOutlet var redoSearchButton: UIButton!
     @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var centerLocationButton: UIButton!
     
-    var locationManager: CLLocationManager!
     var fanFindClient = FanFindClient.shared
-    var location:CLLocation? = nil
+    var location:CLLocationCoordinate2D? = nil
     var hasSearched = false
     var hasLoaded = false
     private var mapChangedFromUserInteraction = false
@@ -84,8 +84,6 @@ public class FanFindMapViewController: UIViewController {
         
         redoSearchButton.isHidden = true
         
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
         
         redoSearchButton.layer.masksToBounds =  false
         
@@ -102,34 +100,71 @@ public class FanFindMapViewController: UIViewController {
             map.setCenter(coor, animated: true)
         }
         
-        fanFindClient.startUpdatingLocation()
+        fanFindClient.delegate = self
         
         map.register(PlacesAnnotationView.self, forAnnotationViewWithReuseIdentifier: "placesViewReuseIdentitier")
+        
+        addMapTrackingButton()
     }
     
-    override public func viewDidAppear(_ animated: Bool) {
-        if(!hasLoaded){
-            DispatchQueue.global(qos: .background).async {
-                let center = CLLocationCoordinate2D(latitude: 34.0430, longitude: -118.2673)
-                let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-                
-                DispatchQueue.main.async {
-                    self.map.setRegion(region, animated: true)
-                }
-                
-                let span = region.span
-                
-                let loc1 = CLLocation(latitude: center.latitude - span.latitudeDelta * 0.5, longitude: center.longitude)
-                let loc2 = CLLocation(latitude: center.latitude + span.latitudeDelta * 0.5, longitude: center.longitude)
-                
-                
-                let metersInLatitude = loc1.distance(from: loc2)
-                
-                self.loadPlaces(center, metersInLatitude)
-                
-                self.hasLoaded = true
-                
+    func addMapTrackingButton(){
+      
+        centerLocationButton.backgroundColor = .white
+        centerLocationButton.addTarget(self, action: #selector(centerMapOnUserButtonClicked), for:.touchUpInside)
+    }
+
+    @objc func centerMapOnUserButtonClicked() {
+        map.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
+        self.loadPlaces(self.location)
+    }
+    
+    override public func viewWillAppear(_ animated: Bool){
+        showLocationRequestModal()
+    }
+    
+    public override func viewWillDisappear(_ animated: Bool) {
+        fanFindClient.stopUpdatingLocation()
+    }
+    
+    func showLocationRequestModal(){
+        if CLLocationManager.locationServicesEnabled() {
+            if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+                fanFindClient.startUpdatingLocation()
+                fanFindClient.startUpdatingBackgroundLocation()
+            } else if CLLocationManager.authorizationStatus() == .denied {
+                let alert = UIAlertController(title: "Need Authorization", message: "You have denied location access for this application. In order to use the fan map, please enable location access.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+                    self.goBackToPreviousView()
+                }))
+                alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
+                    let url = URL(string: UIApplication.openSettingsURLString)!
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    self.goBackToPreviousView()
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }             else{
+                RequestLocationViewController.show(on: self, action: { [weak self] (allowClicked, controller) in
+                    guard let self = self else { return }
+                    
+                    if allowClicked{
+                        self.fanFindClient.requestLocationAuthorization()
+                        controller.dismiss(animated: true)
+                       
+                    }else{
+                        self.goBackToPreviousView()
+                        
+                        controller.dismiss(animated: true)
+                    }
+                })
             }
+        }
+    }
+    
+    private func goBackToPreviousView(){
+        if let navigationController = self.navigationController {
+            navigationController.popViewController(animated: true)
+        } else if let tabBarController = self.tabBarController {
+            tabBarController.selectedIndex = 0
         }
     }
     
@@ -146,8 +181,6 @@ public class FanFindMapViewController: UIViewController {
             if( radius == nil){
                 radius = self.map.currentRadius()
             }
-            
-            print(Int(radius!))
             
             self.fanFindClient.getNearbyPlaces(latitude: Float(coord.latitude), longitude: Float(coord.longitude), radius: Int(radius!), query: self.searchBar?.text, completion: { (places, innerErr) in
                 if let places = places{
@@ -302,14 +335,42 @@ extension FanFindMapViewController: MKMapViewDelegate {
     }
 }
 
-extension FanFindMapViewController: CLLocationManagerDelegate {
+extension FanFindMapViewController: LocationUpdateDelegate{
+    func authorizationStatusChanged(_ status: CLAuthorizationStatus) {
+        if (status == CLAuthorizationStatus.denied) {
+            self.goBackToPreviousView()
+        } else if (status == CLAuthorizationStatus.authorizedAlways) {
+            fanFindClient.startUpdatingLocation()
+            fanFindClient.startUpdatingBackgroundLocation()
+        }
+    }
     
-    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
-            if(self.location == nil){
-                self.location = location
+    func locationUpdated(_ location: CLLocationCoordinate2D){
+        if(!hasLoaded){
+            DispatchQueue.global(qos: .background).async {
+                
+                let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                
+                DispatchQueue.main.async {
+                    self.map.setRegion(region, animated: true)
+                }
+                
+                let span = region.span
+                
+                let loc1 = CLLocation(latitude: location.latitude - span.latitudeDelta * 0.5, longitude: location.longitude)
+                let loc2 = CLLocation(latitude: location.latitude + span.latitudeDelta * 0.5, longitude: location.longitude)
+                
+                
+                let metersInLatitude = loc1.distance(from: loc2)
+                
+                self.loadPlaces(location, metersInLatitude)
+                
+                self.hasLoaded = true
+                
             }
         }
+        
+        self.location = location
     }
 }
 
@@ -317,7 +378,7 @@ extension FanFindMapViewController: PlacesCenterCellDelegate{
     func collectionViewStoppedAt(place: Place, focusOnPlace: Bool) {
         setAnnotationAsSelected(place)
         
-       
+        
         FanFindClient.shared.createEvent(eventType: "PlaceFocused", placeId: place.placeId) { (err) in
             
         }

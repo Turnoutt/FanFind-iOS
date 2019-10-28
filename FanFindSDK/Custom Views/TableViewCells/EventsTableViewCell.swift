@@ -29,8 +29,14 @@ internal class EventsTableViewCell: UITableViewCell {
         self.eventText.text = event.eventText
         
         let formatter = DateIntervalFormatter()
-        formatter.dateStyle = DateIntervalFormatter.Style.full
-        formatter.timeStyle = DateIntervalFormatter.Style.short
+        formatter.dateStyle = DateIntervalFormatter.Style.medium
+        
+        if(event.startDate.dayNumberOfWeek() != event.endDate.dayNumberOfWeek()){
+            formatter.timeStyle = DateIntervalFormatter.Style.none
+        }else{
+            formatter.timeStyle = DateIntervalFormatter.Style.short
+        }
+        
         let dateRangeStr = formatter.string(from: event.startDate, to: event.endDate)
         
         self.eventDate.text = dateRangeStr

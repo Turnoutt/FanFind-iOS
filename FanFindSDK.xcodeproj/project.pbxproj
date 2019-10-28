@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040EF81F233FCB1000796AA4 /* LocationUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EF81E233FCB1000796AA4 /* LocationUpdateDelegate.swift */; };
 		0411CACF22ED3B020006EA4A /* NavigateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0411CACE22ED3B020006EA4A /* NavigateButton.swift */; };
 		0428338922E0B4A80089E7AB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428338822E0B4A80089E7AB /* DateExtensions.swift */; };
 		042927BF22EB7AA10057F759 /* RoundedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042927BE22EB7AA10057F759 /* RoundedCollectionViewCell.swift */; };
@@ -20,6 +21,7 @@
 		043AD5D722E0F5A70080D67A /* ThemedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AD5D622E0F5A70080D67A /* ThemedUILabel.swift */; };
 		043AD5D922E276560080D67A /* UIIMageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AD5D822E276560080D67A /* UIIMageViewExtensions.swift */; };
 		043FDE6222F0B3A000CC3CD3 /* ThemedHeaderUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FDE6122F0B3A000CC3CD3 /* ThemedHeaderUILabel.swift */; };
+		046439D6235EB5FD00FAD6D9 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046439D5235EB5FD00FAD6D9 /* BorderedButton.swift */; };
 		0464488122DE343500EA9504 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464488022DE343500EA9504 /* ThemedButton.swift */; };
 		0464488722DE4F2500EA9504 /* DealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464488522DE4F2500EA9504 /* DealsTableViewCell.swift */; };
 		0464488822DE4F2500EA9504 /* DealsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0464488622DE4F2500EA9504 /* DealsTableViewCell.xib */; };
@@ -86,9 +88,14 @@
 		04A3511B22D79FAF00A1ACCD /* GoogleMapsTileOverlayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3511A22D79FAF00A1ACCD /* GoogleMapsTileOverlayError.swift */; };
 		04A3511D22D79FC000A1ACCD /* GoogleMapsURLStyleConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3511C22D79FC000A1ACCD /* GoogleMapsURLStyleConverter.swift */; };
 		04A3511F22D79FE100A1ACCD /* GoogleMapsStyle+ConvertedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3511E22D79FE100A1ACCD /* GoogleMapsStyle+ConvertedValues.swift */; };
+		04B8664A2362249100CF0959 /* LocationRequestMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B866492362249100CF0959 /* LocationRequestMap.swift */; };
+		04B8664C236224C700CF0959 /* LocationRequestMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B8664B236224C700CF0959 /* LocationRequestMap.xib */; };
+		04C0BDF3235EAD460050683F /* RequestLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0BDF2235EAD460050683F /* RequestLocationViewController.swift */; };
+		04C0BDF5235EAD5E0050683F /* RequestLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C0BDF4235EAD5E0050683F /* RequestLocationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040EF81E233FCB1000796AA4 /* LocationUpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUpdateDelegate.swift; sourceTree = "<group>"; };
 		0411CACE22ED3B020006EA4A /* NavigateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateButton.swift; sourceTree = "<group>"; };
 		0428338822E0B4A80089E7AB /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		042927BE22EB7AA10057F759 /* RoundedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -105,6 +112,7 @@
 		0461742422D7B67200B56E95 /* FanFind.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FanFind.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0461742622D7BA6000B56E95 /* build-universal-framework.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-universal-framework.sh"; sourceTree = "<group>"; };
 		0461742722D7BA6000B56E95 /* release-pod.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "release-pod.sh"; sourceTree = "<group>"; };
+		046439D5235EB5FD00FAD6D9 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		0464488022DE343500EA9504 /* ThemedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedButton.swift; sourceTree = "<group>"; };
 		0464488522DE4F2500EA9504 /* DealsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsTableViewCell.swift; sourceTree = "<group>"; };
 		0464488622DE4F2500EA9504 /* DealsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DealsTableViewCell.xib; sourceTree = "<group>"; };
@@ -174,6 +182,10 @@
 		04A3511A22D79FAF00A1ACCD /* GoogleMapsTileOverlayError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlayError.swift; sourceTree = "<group>"; };
 		04A3511C22D79FC000A1ACCD /* GoogleMapsURLStyleConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsURLStyleConverter.swift; sourceTree = "<group>"; };
 		04A3511E22D79FE100A1ACCD /* GoogleMapsStyle+ConvertedValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleMapsStyle+ConvertedValues.swift"; sourceTree = "<group>"; };
+		04B866492362249100CF0959 /* LocationRequestMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRequestMap.swift; sourceTree = "<group>"; };
+		04B8664B236224C700CF0959 /* LocationRequestMap.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationRequestMap.xib; sourceTree = "<group>"; };
+		04C0BDF2235EAD460050683F /* RequestLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationViewController.swift; sourceTree = "<group>"; };
+		04C0BDF4235EAD5E0050683F /* RequestLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestLocationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +199,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040EF81D233FCAF600796AA4 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				040EF81E233FCB1000796AA4 /* LocationUpdateDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		042927C322ECB46B0057F759 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +261,7 @@
 		047CF22922D5471500953CC1 /* FanFindSDK */ = {
 			isa = PBXGroup;
 			children = (
+				040EF81D233FCAF600796AA4 /* Delegates */,
 				04A3511522D79F4F00A1ACCD /* GoogleMapsTileOverlay */,
 				047CF2DD22D63C2B00953CC1 /* Custom Views */,
 				047CF2B622D63C2A00953CC1 /* Extensions */,
@@ -329,6 +350,8 @@
 				047CF2D922D63C2B00953CC1 /* PlacesCollectionVC.swift */,
 				0482A46522DE29B70018ABDB /* PlaceDetailsViewController.swift */,
 				0482A46722DE29C70018ABDB /* PlaceDetailsViewController.xib */,
+				04C0BDF2235EAD460050683F /* RequestLocationViewController.swift */,
+				04C0BDF4235EAD5E0050683F /* RequestLocationViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -350,6 +373,9 @@
 				042927BE22EB7AA10057F759 /* RoundedCollectionViewCell.swift */,
 				0411CACE22ED3B020006EA4A /* NavigateButton.swift */,
 				043FDE6122F0B3A000CC3CD3 /* ThemedHeaderUILabel.swift */,
+				046439D5235EB5FD00FAD6D9 /* BorderedButton.swift */,
+				04B866492362249100CF0959 /* LocationRequestMap.swift */,
+				04B8664B236224C700CF0959 /* LocationRequestMap.xib */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -446,9 +472,11 @@
 				047CF2FA22D63C2B00953CC1 /* PlacesShortenedCell.xib in Resources */,
 				0464488822DE4F2500EA9504 /* DealsTableViewCell.xib in Resources */,
 				047CF30722D63C2B00953CC1 /* PeopleCountNumbers.xib in Resources */,
+				04B8664C236224C700CF0959 /* LocationRequestMap.xib in Resources */,
 				047CF30022D63C2B00953CC1 /* FanFindMapViewController.xib in Resources */,
 				047CF2FC22D63C2B00953CC1 /* PlacesCell.xib in Resources */,
 				0464489822DFF87600EA9504 /* HoursHeaderTableViewCell.xib in Resources */,
+				04C0BDF5235EAD5E0050683F /* RequestLocationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +490,7 @@
 				047CF2E822D63C2B00953CC1 /* Result.swift in Sources */,
 				047CF2FE22D63C2B00953CC1 /* PlacesFlowLayout.swift in Sources */,
 				048F43C3231EFB860070498C /* CreateEvent.swift in Sources */,
+				04C0BDF3235EAD460050683F /* RequestLocationViewController.swift in Sources */,
 				047CF2EF22D63C2B00953CC1 /* Place.swift in Sources */,
 				047CF30122D63C2B00953CC1 /* PlacesCollectionVC.swift in Sources */,
 				047CF2F222D63C2B00953CC1 /* PeopleLocationAnnotation.swift in Sources */,
@@ -482,6 +511,7 @@
 				046448A522E0109600EA9504 /* BusinessHour.swift in Sources */,
 				046448A222E00F5900EA9504 /* HoursTableViewCell.swift in Sources */,
 				048EBFE622E902670095ADB5 /* DealsEventsIndicator.swift in Sources */,
+				04B8664A2362249100CF0959 /* LocationRequestMap.swift in Sources */,
 				043AD5D922E276560080D67A /* UIIMageViewExtensions.swift in Sources */,
 				047CF2FD22D63C2B00953CC1 /* FanFindMapViewController.swift in Sources */,
 				042927CB22ECB5AC0057F759 /* Location.swift in Sources */,
@@ -489,6 +519,7 @@
 				047CF2EC22D63C2B00953CC1 /* FanFindClient.swift in Sources */,
 				047CF2F922D63C2B00953CC1 /* Authenticate.swift in Sources */,
 				047CF2ED22D63C2B00953CC1 /* NearbyPlace.swift in Sources */,
+				040EF81F233FCB1000796AA4 /* LocationUpdateDelegate.swift in Sources */,
 				047CF2E422D63C2B00953CC1 /* UIViewExtensions.swift in Sources */,
 				047CF30522D63C2B00953CC1 /* ProgressView.swift in Sources */,
 				047CF2FF22D63C2B00953CC1 /* PlacesShortenedCell.swift in Sources */,
@@ -519,6 +550,7 @@
 				042927D122ECB7180057F759 /* Extensions.swift in Sources */,
 				047CF30822D63C2B00953CC1 /* PeopleCountNumbers.swift in Sources */,
 				04A3511B22D79FAF00A1ACCD /* GoogleMapsTileOverlayError.swift in Sources */,
+				046439D6235EB5FD00FAD6D9 /* BorderedButton.swift in Sources */,
 				042927C722ECB4D90057F759 /* Navigator.swift in Sources */,
 				047CF2F522D63C2B00953CC1 /* NearbyPlaceDetails.swift in Sources */,
 				0464489022DFAEC700EA9504 /* PlaceEvent.swift in Sources */,

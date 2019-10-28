@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RequestLocationViewController" customModule="FanFindSDK" customModuleProvider="target">
+            <connections>
+                <outlet property="mapHolder" destination="M1e-mC-yRD" id="CEP-6P-zmy"/>
+                <outlet property="notNowButton" destination="cQm-E5-Lfu" id="img-Ln-gig"/>
+                <outlet property="view" destination="iN0-l3-epB" id="cmy-ms-Vk0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1e-mC-yRD" userLabel="Map Holder" customClass="LocationRequestMap" customModule="FanFindSDK" customModuleProvider="target">
+                    <rect key="frame" x="30" y="54" width="354" height="280"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="280" id="gYG-o6-WLv"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZe-17-y3s" userLabel="Paragraph 1">
+                    <rect key="frame" x="30" y="384" width="354" height="101.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <string key="text">To provide the best experience for all users, we use your location to anonymously count fans at bars and restaurants wherever you are. 
+</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Please always share your location so we can provide the most up to date map." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjQ-qH-RnR" userLabel="Paragraph 2">
+                    <rect key="frame" x="30" y="495.5" width="354" height="41"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQm-E5-Lfu">
+                    <rect key="frame" x="30" y="797" width="354" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="V6o-Ht-PXt"/>
+                    </constraints>
+                    <state key="normal" title="Not now"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="goBackClicked:" destination="-1" eventType="touchUpInside" id="0v6-eX-QjJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8F-ci-Uk6" customClass="ThemedButton" customModule="FanFindSDK" customModuleProvider="target">
+                    <rect key="frame" x="30" y="742" width="354" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="4xh-A6-ZDq"/>
+                    </constraints>
+                    <state key="normal" title="Count Me In!">
+                        <color key="titleColor" name="TextPrimaryDark"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="allowClicked:" destination="-1" eventType="touchUpInside" id="NJL-Pd-GKH"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="cQm-E5-Lfu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="0gh-7t-61Y"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cQm-E5-Lfu" secondAttribute="trailing" constant="30" id="6iQ-zU-H2B"/>
+                <constraint firstItem="zjQ-qH-RnR" firstAttribute="top" secondItem="vZe-17-y3s" secondAttribute="bottom" id="8GC-kn-90e"/>
+                <constraint firstItem="vZe-17-y3s" firstAttribute="top" secondItem="M1e-mC-yRD" secondAttribute="bottom" constant="30" id="B4m-Ck-hKg"/>
+                <constraint firstItem="M1e-mC-yRD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="JKz-ZM-E22"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cQm-E5-Lfu" secondAttribute="bottom" constant="20" id="OdY-pN-mEG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Y8F-ci-Uk6" secondAttribute="trailing" constant="30" id="OwR-pL-FOU"/>
+                <constraint firstItem="Y8F-ci-Uk6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="cCJ-2v-FhA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="M1e-mC-yRD" secondAttribute="trailing" constant="30" id="giQ-u8-zZh"/>
+                <constraint firstItem="vZe-17-y3s" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="hJV-U8-bRW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zjQ-qH-RnR" secondAttribute="trailing" constant="30" id="kGk-XT-YP8"/>
+                <constraint firstItem="zjQ-qH-RnR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="kU3-xZ-X2j"/>
+                <constraint firstItem="M1e-mC-yRD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="muD-ta-QNs"/>
+                <constraint firstAttribute="trailing" secondItem="vZe-17-y3s" secondAttribute="trailing" constant="30" id="pg4-yo-Y6O"/>
+                <constraint firstItem="cQm-E5-Lfu" firstAttribute="top" secondItem="Y8F-ci-Uk6" secondAttribute="bottom" constant="10" id="sSE-lh-JXw"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="TextPrimaryDark">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

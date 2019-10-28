@@ -143,7 +143,11 @@ extension PlaceDetailsViewController: UITableViewDataSource{
         if(tableView == self.dealsEventsView){
             switch section {
             case 0:
-                return deals.count
+                if deals.count == 0 {
+                    return events.count
+                }else{
+                    return deals.count
+                }
             case 1:
                 return events.count
             default:
@@ -168,7 +172,11 @@ extension PlaceDetailsViewController: UITableViewDataSource{
             
             switch section {
             case 0:
-                cell.label.text = "DEALS"
+                if deals.count == 0 {
+                    cell.label.text = "EVENTS"
+                }else{
+                    cell.label.text = "DEALS"
+                }
             case 1:
                 cell.label.text =  "EVENTS"
             default:
@@ -191,10 +199,16 @@ extension PlaceDetailsViewController: UITableViewDataSource{
             
             switch indexPath.section {
             case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "dealsTableViewCell") as! DealsTableViewCell
-                cell.label.text = deals[indexPath.row].dealText
+                if deals.count == 0 {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "eventsTableViewCell") as! EventsTableViewCell
+                    cell.setEvent(event: events[indexPath.row])
+                    return cell
+                } else {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "dealsTableViewCell") as! DealsTableViewCell
+                    cell.label.text = deals[indexPath.row].dealText
+                    return cell
+                }
                 
-                return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "eventsTableViewCell") as! EventsTableViewCell
                 cell.setEvent(event: events[indexPath.row])

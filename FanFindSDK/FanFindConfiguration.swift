@@ -43,11 +43,16 @@ public enum FanFindConfiguration {
     
     static let primaryColor: UIColor = {
         
-        guard let primaryColor = FanFindConfiguration.infoDictionary[Keys.Plist.primaryColor] as? String else {
-            fatalError("Primary color not set in plist for this environment")
-        }
+        #if TARGET_INTERFACE_BUILDER
+            return UIColor(hexString: "FF0000")!
+        #else
+            guard let primaryColor = FanFindConfiguration.infoDictionary[Keys.Plist.primaryColor] as? String else {
+                fatalError("Primary color not set in plist for this environment")
+            }
+            
+            return UIColor(hexString: primaryColor)!
+        #endif
         
-        return UIColor(hexString: primaryColor)!
     }()
     
     static let secondaryColor: UIColor = {
