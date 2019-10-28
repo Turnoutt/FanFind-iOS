@@ -16,7 +16,7 @@ variables:
 jobs:
 - job: Build
   pool:
-    vmImage: 'macOS 10.14'
+    vmImage: 'macos-latest'
   steps:
   - task: Bash@3
     inputs:
