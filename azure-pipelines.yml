@@ -15,6 +15,7 @@ variables:
 
 jobs:
 - job: Build
+  container: swift:5.1
   pool:
     vmImage: 'macos-latest'
   steps:
@@ -68,7 +69,7 @@ jobs:
             spec.author             = { "Chris Woolum" => "chris@turnoutt.com" }
 
             spec.ios.deployment_target = "12.1"
-            spec.swift_version = "4.2"
+            spec.swift_version = ['4.0', '4.2', '5.0', '5.1']
 
             spec.source        = { :http => "https://github.com/Turnoutt/FanFind-iOS/releases/download/${Version}/FanFind-iOS-${Version}.zip" }
 
