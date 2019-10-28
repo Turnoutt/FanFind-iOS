@@ -15,9 +15,8 @@ variables:
 
 jobs:
 - job: Build
-  container: swift:5.1
   pool:
-    vmImage: 'macos-latest'
+    vmImage: 'macOS 10.14'
   steps:
   - task: Bash@3
     inputs:
