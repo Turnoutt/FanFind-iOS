@@ -142,7 +142,7 @@ public class FanFindMapViewController: UIViewController {
                 fanFindClient.startUpdatingBackgroundLocation()
                 
                 if let lastLocation =  self.fanFindClient.lastLocation {
-                    loadInitialMap(lastLocation.coordinate)
+                     loadInitialMap(lastLocation.coordinate)
                 }
             } else if CLLocationManager.authorizationStatus() == .denied {
                 let alert = UIAlertController(title: "Need Authorization", message: "You have denied location access for this application. In order to use the fan map, please enable location access.", preferredStyle: .alert)

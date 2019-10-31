@@ -34,7 +34,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZe-17-y3s" userLabel="Paragraph 1">
-                    <rect key="frame" x="30" y="384" width="354" height="101.5"/>
+                    <rect key="frame" x="30" y="364" width="354" height="101.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <string key="text">To provide the best experience for all users, we use your location to anonymously count fans at bars and restaurants wherever you are. 
 </string>
@@ -43,7 +43,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Please always share your location so we can provide the most up to date map." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjQ-qH-RnR" userLabel="Paragraph 2">
-                    <rect key="frame" x="30" y="495.5" width="354" height="41"/>
+                    <rect key="frame" x="30" y="465.5" width="354" height="41"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>

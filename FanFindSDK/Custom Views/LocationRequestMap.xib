@@ -19,16 +19,22 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8H-C6-2d0" userLabel="Map Holder">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="285"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="284"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISCOVER WHERE FANS ARE IN REAL-TIME" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffc-xj-nEy">
-                            <rect key="frame" x="20" y="10" width="374" height="43"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISCOVER WHERE FANS " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffc-xj-nEy">
+                            <rect key="frame" x="20" y="10" width="374" height="21.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARE IN REAL-TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cO-rs-Loa">
+                            <rect key="frame" x="0.0" y="30" width="414" height="22"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="request-map" translatesAutoresizingMaskIntoConstraints="NO" id="Grq-Z0-p3t">
-                            <rect key="frame" x="0.0" y="63" width="414" height="222"/>
+                            <rect key="frame" x="0.0" y="62" width="414" height="222"/>
                         </imageView>
                     </subviews>
                     <constraints>
@@ -37,8 +43,11 @@
                         <constraint firstItem="ffc-xj-nEy" firstAttribute="leading" secondItem="l8H-C6-2d0" secondAttribute="leading" constant="20" id="YFE-H7-gKg"/>
                         <constraint firstItem="Grq-Z0-p3t" firstAttribute="leading" secondItem="l8H-C6-2d0" secondAttribute="leading" id="akT-fz-JBk"/>
                         <constraint firstAttribute="bottom" secondItem="Grq-Z0-p3t" secondAttribute="bottom" id="bg1-i1-vhU"/>
+                        <constraint firstItem="1cO-rs-Loa" firstAttribute="leading" secondItem="Lxr-bv-BYW" secondAttribute="leading" id="dFP-qt-U98"/>
                         <constraint firstAttribute="trailing" secondItem="ffc-xj-nEy" secondAttribute="trailing" constant="20" id="gp8-NQ-Swz"/>
-                        <constraint firstItem="Grq-Z0-p3t" firstAttribute="top" secondItem="ffc-xj-nEy" secondAttribute="bottom" constant="10" id="ysS-ht-W91"/>
+                        <constraint firstItem="Lxr-bv-BYW" firstAttribute="trailing" secondItem="1cO-rs-Loa" secondAttribute="trailing" id="ngy-1x-Prj"/>
+                        <constraint firstItem="1cO-rs-Loa" firstAttribute="top" secondItem="ffc-xj-nEy" secondAttribute="top" constant="20" id="y2p-A0-X6Q"/>
+                        <constraint firstItem="Grq-Z0-p3t" firstAttribute="top" secondItem="1cO-rs-Loa" secondAttribute="bottom" constant="10" id="ysS-ht-W91"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="Lxr-bv-BYW"/>
                     <userDefinedRuntimeAttributes>

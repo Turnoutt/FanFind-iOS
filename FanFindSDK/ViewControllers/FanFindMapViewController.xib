@@ -32,9 +32,9 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6b-e2-5cr" userLabel="Search Bar Wrapper">
                             <rect key="frame" x="10" y="64" width="394" height="40"/>
                             <subviews>
-                                <searchBar contentMode="redraw" placeholder="Find places to go..." backgroundImage="." translatesAutoresizingMaskIntoConstraints="NO" id="IbR-RQ-OGD">
+                                <searchBar contentMode="redraw" placeholder="Find places to go..." translatesAutoresizingMaskIntoConstraints="NO" id="IbR-RQ-OGD">
                                     <rect key="frame" x="-5" y="0.0" width="354" height="40"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <textInputTraits key="textInputTraits" textContentType="organization"/>
                                 </searchBar>
@@ -116,7 +116,6 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="." width="16" height="16"/>
         <image name="location.fill" catalog="system" width="64" height="56"/>
     </resources>
 </document>
