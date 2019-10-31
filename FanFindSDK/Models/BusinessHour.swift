@@ -40,7 +40,8 @@ internal class BusinessHour: Decodable{
     
     required init(from decoder: Decoder) throws{
         let inFormatter = DateFormatter()
-        inFormatter.locale = Locale(identifier: "en_US_POSIX")
+        inFormatter.timeZone = TimeZone.current
+        inFormatter.locale = Locale.current
         inFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss xx"
         
         let dateFormatter = DateFormatter()
@@ -72,7 +73,11 @@ internal class BusinessHour: Decodable{
             let nextDateString = calendar.nextDate(after: Date(), matching: sundayComponents, matchingPolicy: .nextTime)
              nextDate = dateFormatter.string(from: nextDateString!)
         }else if(self.dayNumberOfWeek < currentDayOfWeek!){
-            let nextDateString = calendar.nextDate(after: Date(), matching: sundayComponents, matchingPolicy: .previousTimePreservingSmallerComponents)
+            let nextDateString = calendar.nextDate(
+                after: Date(),
+                matching: sundayComponents,
+                matchingPolicy: .nextTime,
+                direction: .backward)
              nextDate = dateFormatter.string(from: nextDateString!)
         } else{
              nextDate = dateFormatter.string(from: Date())
@@ -80,6 +85,8 @@ internal class BusinessHour: Decodable{
         
         self.endTime = inFormatter.date(from: nextDate + " " + endDateString + " " + TimeZone.current.offsetFromUTC())!
         self.startTime = inFormatter.date(from: nextDate + " " + startDateString + " " + TimeZone.current.offsetFromUTC())!
+        
+        print(self.startTime, self.endTime)
         
     }
 }

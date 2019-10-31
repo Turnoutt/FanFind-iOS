@@ -6,6 +6,8 @@ public class FanFindClient: NSObject {
     
     public static var shared = FanFindClient()
     
+    public var lastLocation: CLLocation? = nil
+    
     private static var baseEndpointUrl = URL(string: "https://findfans.turnoutt.com/")!
     private static let apiKey = FanFindConfiguration.apiKey
     private var locationManager = CLLocationManager()
@@ -123,10 +125,6 @@ public class FanFindClient: NSObject {
         print("Starting Location Updates")
         if CLLocationManager.locationServicesEnabled() {
             if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-                
-                Timer.scheduledTimer(withTimeInterval: 15 * 60.0, repeats: true) { (timer) in
-                    self.locationManager.startUpdatingLocation()
-                }
                 
                 self.locationManager.startMonitoringVisits()
             }
@@ -336,6 +334,7 @@ extension FanFindClient : CLLocationManagerDelegate{
     }
     
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
         self.delegate?.authorizationStatusChanged(status)
     }
     
@@ -344,6 +343,8 @@ extension FanFindClient : CLLocationManagerDelegate{
         guard let location = locations.last else {
             return
         }
+        
+        self.lastLocation = location
         
         FanFindClient.shared.trackLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, accuracy: location.horizontalAccuracy) { (err) in
             //self.locationManager.stopUpdatingLocation()

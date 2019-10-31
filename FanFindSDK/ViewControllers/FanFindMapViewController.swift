@@ -15,6 +15,7 @@ public class FanFindMapViewController: UIViewController {
     @IBOutlet var redoSearchButton: UIButton!
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var centerLocationButton: UIButton!
+    @IBOutlet var searchBarWrapper: UIView!
     
     var fanFindClient = FanFindClient.shared
     var location:CLLocationCoordinate2D? = nil
@@ -70,6 +71,7 @@ public class FanFindMapViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
+        edgesForExtendedLayout = [];
         guard let jsonURL = Bundle.main.url(forResource: "MapStyle", withExtension: "json") else { return }
         
         if let tileOverlay = try? GoogleMapsTileOverlay(jsonURL: jsonURL) {
@@ -83,9 +85,17 @@ public class FanFindMapViewController: UIViewController {
         self.searchBar.backgroundImage = UIImage()
         
         redoSearchButton.isHidden = true
-        
-        
         redoSearchButton.layer.masksToBounds =  false
+        redoSearchButton.layer.shadowColor = UIColor.gray.cgColor
+        redoSearchButton.layer.shadowOpacity = 1
+        redoSearchButton.layer.shadowOffset = .init(width: 0, height: 2)
+        redoSearchButton.layer.shadowRadius = 2
+        
+        searchBarWrapper.layer.masksToBounds = false
+        searchBarWrapper.layer.shadowColor = UIColor.gray.cgColor
+        searchBarWrapper.layer.shadowOpacity = 1
+        searchBarWrapper.layer.shadowOffset = .init(width: 0, height: 2)
+        searchBarWrapper.layer.shadowRadius = 2
         
         map.delegate = self
         map.mapType = .standard
@@ -109,7 +119,6 @@ public class FanFindMapViewController: UIViewController {
     
     func addMapTrackingButton(){
       
-        centerLocationButton.backgroundColor = .white
         centerLocationButton.addTarget(self, action: #selector(centerMapOnUserButtonClicked), for:.touchUpInside)
     }
 
@@ -131,6 +140,10 @@ public class FanFindMapViewController: UIViewController {
             if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
                 fanFindClient.startUpdatingLocation()
                 fanFindClient.startUpdatingBackgroundLocation()
+                
+                if let lastLocation =  self.fanFindClient.lastLocation {
+                    loadInitialMap(lastLocation.coordinate)
+                }
             } else if CLLocationManager.authorizationStatus() == .denied {
                 let alert = UIAlertController(title: "Need Authorization", message: "You have denied location access for this application. In order to use the fan map, please enable location access.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
@@ -339,35 +352,39 @@ extension FanFindMapViewController: LocationUpdateDelegate{
     func authorizationStatusChanged(_ status: CLAuthorizationStatus) {
         if (status == CLAuthorizationStatus.denied) {
             self.goBackToPreviousView()
-        } else if (status == CLAuthorizationStatus.authorizedAlways) {
+        } else {
             fanFindClient.startUpdatingLocation()
             fanFindClient.startUpdatingBackgroundLocation()
         }
     }
     
+    fileprivate func loadInitialMap(_ location: CLLocationCoordinate2D) {
+        DispatchQueue.global(qos: .background).async {
+            
+            let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            
+            DispatchQueue.main.async {
+                self.map.setRegion(region, animated: true)
+            }
+            
+            let span = region.span
+            
+            let loc1 = CLLocation(latitude: location.latitude - span.latitudeDelta * 0.5, longitude: location.longitude)
+            let loc2 = CLLocation(latitude: location.latitude + span.latitudeDelta * 0.5, longitude: location.longitude)
+            
+            
+            let metersInLatitude = loc1.distance(from: loc2)
+            
+            self.loadPlaces(location, metersInLatitude)
+            
+            self.hasLoaded = true
+            
+        }
+    }
+    
     func locationUpdated(_ location: CLLocationCoordinate2D){
         if(!hasLoaded){
-            DispatchQueue.global(qos: .background).async {
-                
-                let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-                
-                DispatchQueue.main.async {
-                    self.map.setRegion(region, animated: true)
-                }
-                
-                let span = region.span
-                
-                let loc1 = CLLocation(latitude: location.latitude - span.latitudeDelta * 0.5, longitude: location.longitude)
-                let loc2 = CLLocation(latitude: location.latitude + span.latitudeDelta * 0.5, longitude: location.longitude)
-                
-                
-                let metersInLatitude = loc1.distance(from: loc2)
-                
-                self.loadPlaces(location, metersInLatitude)
-                
-                self.hasLoaded = true
-                
-            }
+            loadInitialMap(location)
         }
         
         self.location = location

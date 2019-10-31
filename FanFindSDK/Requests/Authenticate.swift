@@ -24,10 +24,23 @@ internal struct Authenticate: APIRequest {
     func identifierForAdvertising() -> String? {
         // Check whether advertising tracking is enabled
         guard ASIdentifierManager.shared().isAdvertisingTrackingEnabled else {
-            return nil
+            return getUniqueIdentifier()
         }
         
         // Get and return IDFA
         return ASIdentifierManager.shared().advertisingIdentifier.uuidString
+    }
+    
+    private func getUniqueIdentifier() -> String{
+        let defaults = UserDefaults.standard
+        var uniqueIdentifier = defaults.string(forKey: "unique-identifier")
+        
+        if uniqueIdentifier == nil {
+            uniqueIdentifier = UUID().uuidString
+            defaults.set(uniqueIdentifier, forKey: "unique-identifier")
+        }
+        
+        return uniqueIdentifier!
+        
     }
 }

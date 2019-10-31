@@ -20,7 +20,6 @@ internal class DrawingTools {
     static func drawRatio(_ fraction: Int, to whole: Int, fractionColor: UIColor?, wholeColor: UIColor?, diameter: Int = 40, count: Int = 0, isSelected: Bool) -> UIImage {
         
         let primaryColorAdjusted = wholeColor
-        let secondaryColorAdjusted = fractionColor
         var whiteColorAdjusted = UIColor.white
         let drarkGrayColorAdjusted = UIColor.darkGray
         var blackColorAdjusted = UIColor.black
@@ -32,7 +31,7 @@ internal class DrawingTools {
         }
         
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: diameter + 4, height: diameter + 4))
-        return renderer.image { _ in
+        return renderer.image { ctx in
             // Fill full circle with wholeColor
             let primaryPath = UIBezierPath()
             let primaryEndAngle = (CGFloat.pi * 2.0 * CGFloat(whole - fraction)) / CGFloat(whole)
@@ -43,31 +42,20 @@ internal class DrawingTools {
             primaryColorAdjusted?.setStroke()
             primaryPath.stroke()
             
-            // Fill pie with fractionColor
-            let secondaryPath = UIBezierPath()
-            let secondaryEndAngle = (CGFloat.pi * 2.0 * CGFloat(fraction)) / CGFloat(whole) + primaryEndAngle
-            secondaryPath.addArc(withCenter: CGPoint(x: (diameter / 2) + 2, y: (diameter / 2) + 2), radius: CGFloat(diameter / 2) + 1,
-                                 startAngle: primaryEndAngle, endAngle: secondaryEndAngle,
-                                 clockwise: true)
-            
-            secondaryPath.lineWidth = 2
-            secondaryColorAdjusted?.setStroke()
-            secondaryPath.stroke()
-            
-           
-            
             // Fill inner circle with white color
             whiteColorAdjusted.setFill()
             UIBezierPath(ovalIn: CGRect(x: 3, y: 3, width: diameter - 2, height: diameter - 2)).fill()
             
             let borderPath = UIBezierPath()
             borderPath.addArc(withCenter: CGPoint(x: (diameter / 2) + 2, y: (diameter / 2) + 2),
-                              radius: CGFloat(diameter / 2),
+                              radius: CGFloat(diameter / 2) - 2,
                               startAngle: 0, endAngle: CGFloat.pi * 2.0,
                               clockwise: true)
             borderPath.lineWidth = 0.5
-            drarkGrayColorAdjusted.setStroke()
+            primaryColorAdjusted!.setStroke()
             borderPath.stroke()
+            
+            ctx.cgContext.setShadow(offset: .init(width: 0, height: 1), blur: 1, color: drarkGrayColorAdjusted.cgColor)
             
             // Finally draw count text vertically and horizontally centered
             let attributes = [NSAttributedString.Key.foregroundColor: blackColorAdjusted,
@@ -106,7 +94,7 @@ internal class DrawingTools {
             ctx.cgContext.addPath(roundRect.cgPath)
             ctx.cgContext.drawPath(using: .fillStroke)
             
-            ctx.cgContext.setShadow(offset: .zero, blur: 1, color: drarkGrayColorAdjusted.cgColor)
+            ctx.cgContext.setShadow(offset: .init(width: 0, height: 1), blur: 1, color: drarkGrayColorAdjusted.cgColor)
             
             // Fill inner circle with white color
             let circle = UIBezierPath(ovalIn: CGRect(x: 3, y: 20, width: diameter - 2, height: diameter - 2))

@@ -22,6 +22,9 @@ internal class PlacesCell: UICollectionViewCell, UIScrollViewDelegate {
     @IBOutlet var dealsEventsIndicator: DealsEventsIndicator!
     @IBOutlet var placeInfoHeader: PlaceInfoHeaderView!
     
+    @IBOutlet var logoImage: UIImageView!
+    @IBOutlet var logoImageWrapper: UIView!
+    
     @IBAction func navigateClicked(_ sender: UIButton) {
         let locationCoords = CLLocationCoordinate2D(
             latitude: (self.place!.nearByPlace!.latitude)!,
@@ -68,6 +71,13 @@ internal class PlacesCell: UICollectionViewCell, UIScrollViewDelegate {
     func populateImagePager() {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        
+        if let logoImageUrl = place?.logoUrl {
+            logoImage.imageFromURL(urlString: logoImageUrl)
+            logoImageWrapper.isHidden = false
+        } else {
+            logoImageWrapper.isHidden = true
+        }
         
         guard let place = self.place?.nearByPlace else { return }
         DispatchQueue.main.async {

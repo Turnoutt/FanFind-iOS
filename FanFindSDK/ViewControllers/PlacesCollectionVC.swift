@@ -160,8 +160,13 @@ internal class PlacesCollectionVC: UIViewController, UIPopoverPresentationContro
                 
                 FanFindClient.shared.getPlaceDetails(placeId: placeId) { (placeDetails, err) in
                     DispatchQueue.main.async {
-                        self.present(PlaceDetailsViewController(place: cell!.place!.nearByPlace!, placeDetails: placeDetails!), animated: true)
-                        
+                        if err != nil{
+                            let alert = UIAlertController(title: "Unable to Load", message: "An error occurred loading this place. Please try again soon.", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        }else{
+                            self.present(PlaceDetailsViewController(place: cell!.place!.nearByPlace!, placeDetails: placeDetails!), animated: true)
+                        }
                         ProgressView.shared.hideProgressView()
                     }
                 }
