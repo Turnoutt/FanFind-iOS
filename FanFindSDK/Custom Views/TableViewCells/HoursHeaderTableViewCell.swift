@@ -52,13 +52,20 @@ internal class HoursHeaderTableViewCell: UITableViewHeaderFooterView {
             return
         }
         
-        let todaysDate = Date.init()
+        let todaysDate = Date()
         let dayNumberOfWeek = Date.init().dayNumberOfWeek()!
         
         if let hoursForCurrentDay = hours.first(where: { (hour) -> Bool in
             hour.dayNumberOfWeek == dayNumberOfWeek
         }) {
-            if(todaysDate>hoursForCurrentDay.startTime && todaysDate<hoursForCurrentDay.endTime ){
+            let startTime = hoursForCurrentDay.startTime
+            var endTime = hoursForCurrentDay.endTime
+            
+            if(hoursForCurrentDay.endTime < hoursForCurrentDay.startTime){
+                endTime = Calendar.current.date(byAdding: .day, value: 1, to: endTime)!
+            }
+            
+            if(todaysDate > startTime && todaysDate < endTime ){
                 DispatchQueue.main.async {
                     self.openClosed.text = "OPEN"
                     self.openUntil.text = "Closes " + self.closesDateFormatter.string(from: hoursForCurrentDay.endTime)

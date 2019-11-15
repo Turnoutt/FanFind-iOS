@@ -26,7 +26,7 @@ internal class BusinessHour: Decodable{
         startTime: String,
         endTime: String,
         dayNumberOfWeek: Int
-        ){
+    ){
         
         let inFormatter = DateFormatter()
         inFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -71,16 +71,16 @@ internal class BusinessHour: Decodable{
         
         if(self.dayNumberOfWeek > currentDayOfWeek!){
             let nextDateString = calendar.nextDate(after: Date(), matching: sundayComponents, matchingPolicy: .nextTime)
-             nextDate = dateFormatter.string(from: nextDateString!)
+            nextDate = dateFormatter.string(from: nextDateString!)
         }else if(self.dayNumberOfWeek < currentDayOfWeek!){
             let nextDateString = calendar.nextDate(
                 after: Date(),
                 matching: sundayComponents,
                 matchingPolicy: .nextTime,
                 direction: .backward)
-             nextDate = dateFormatter.string(from: nextDateString!)
+            nextDate = dateFormatter.string(from: nextDateString!)
         } else{
-             nextDate = dateFormatter.string(from: Date())
+            nextDate = dateFormatter.string(from: Date())
         }
         
         self.endTime = inFormatter.date(from: nextDate + " " + endDateString + " " + TimeZone.current.offsetFromUTC())!
@@ -89,6 +89,21 @@ internal class BusinessHour: Decodable{
         print(self.startTime, self.endTime)
         
     }
+    
+    
+}
+
+extension BusinessHour: CustomStringConvertible{
+    var description: String {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let startTimeString = df.string(from: startTime)
+        let endTimeString = df.string(from: endTime)
+        
+        return "Start Timne: " + startTimeString + ", End Time: " + endTimeString
+    }
+    
+    
 }
 
 extension TimeZone {
