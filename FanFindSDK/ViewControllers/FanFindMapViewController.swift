@@ -23,6 +23,8 @@ public class FanFindMapViewController: UIViewController {
     var hasLoaded = false
     private var mapChangedFromUserInteraction = false
     var tileOverlay: GoogleMapsTileOverlay?
+    var facets: [FacetResponse] = []
+    var selectedFacets: [String: [String]] = [:]
     
     @IBAction func onTapped(_ sender: UITapGestureRecognizer) {
         self.searchBar.endEditing(true)
@@ -84,6 +86,15 @@ public class FanFindMapViewController: UIViewController {
         self.searchBar.delegate = self
         self.searchBar.backgroundImage = UIImage()
         
+        var settingsImage: UIImage? = nil
+        
+        if #available(iOS 13.0, *) {
+            settingsImage = UIImage.init(systemName: "slider.horizontal.3")
+        }
+        
+        self.searchBar.setImage(settingsImage, for: .bookmark, state: .normal)
+        self.searchBar.setPositionAdjustment(UIOffset.init(horizontal: -10, vertical: 0), for: .bookmark)
+        
         redoSearchButton.isHidden = true
         redoSearchButton.layer.masksToBounds =  false
         redoSearchButton.layer.shadowColor = UIColor.gray.cgColor
@@ -118,10 +129,10 @@ public class FanFindMapViewController: UIViewController {
     }
     
     func addMapTrackingButton(){
-      
+        
         centerLocationButton.addTarget(self, action: #selector(centerMapOnUserButtonClicked), for:.touchUpInside)
     }
-
+    
     @objc func centerMapOnUserButtonClicked() {
         map.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
         self.loadPlaces(self.location)
@@ -142,7 +153,7 @@ public class FanFindMapViewController: UIViewController {
                 fanFindClient.startUpdatingBackgroundLocation()
                 
                 if let lastLocation =  self.fanFindClient.lastLocation {
-                     loadInitialMap(lastLocation.coordinate)
+                    loadInitialMap(lastLocation.coordinate)
                 }
             } else if CLLocationManager.authorizationStatus() == .denied {
                 let alert = UIAlertController(title: "Need Authorization", message: "You have denied location access for this application. In order to use the fan map, please enable location access.", preferredStyle: .alert)
@@ -162,7 +173,7 @@ public class FanFindMapViewController: UIViewController {
                     if allowClicked{
                         self.fanFindClient.requestLocationAuthorization()
                         controller.dismiss(animated: true)
-                       
+                        
                     }else{
                         self.goBackToPreviousView()
                         
@@ -195,8 +206,13 @@ public class FanFindMapViewController: UIViewController {
                 radius = self.map.currentRadius()
             }
             
-            self.fanFindClient.getNearbyPlaces(latitude: Float(coord.latitude), longitude: Float(coord.longitude), radius: Int(radius!), query: self.searchBar?.text, completion: { (places, innerErr) in
-                if let places = places{
+            self.fanFindClient.getNearbyPlaces(latitude: Float(coord.latitude), longitude: Float(coord.longitude), radius: Int(radius!), query: self.searchBar?.text, facets: self.selectedFacets, completion: { (result, innerErr) in
+                
+                if let facets = result?.facets {
+                    self.facets = facets
+                }
+                
+                if let places = result?.results{
                     
                     let mappedPlaces = places.map({ (place) -> Place in
                         return Place(object: place)
@@ -459,5 +475,28 @@ extension FanFindMapViewController: UISearchBarDelegate{
         
         self.searchBar.endEditing(true)
     }
+    
+    public func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+        let facetVC = FacetVC(facets: self.facets, selectedFacets: self.selectedFacets)
+        facetVC.delegate = self
+        
+        let navController = UINavigationController(rootViewController: facetVC)
+        
+        self.present(navController, animated: true, completion: nil)
+    }
+    
+    
 }
 
+extension FanFindMapViewController: FacetManager {
+    func selectFacets(facets: [String : [String]]) {
+        self.selectedFacets = facets
+        self.loadPlaces()
+    }
+    
+    
+}
+
+protocol FacetManager {
+    func selectFacets(facets: [String: [String]])
+}

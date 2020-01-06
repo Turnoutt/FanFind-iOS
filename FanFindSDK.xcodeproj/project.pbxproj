@@ -38,6 +38,10 @@
 		046448A222E00F5900EA9504 /* HoursTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046448A022E00F5900EA9504 /* HoursTableViewCell.swift */; };
 		046448A322E00F5900EA9504 /* HoursTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046448A122E00F5900EA9504 /* HoursTableViewCell.xib */; };
 		046448A522E0109600EA9504 /* BusinessHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046448A422E0109600EA9504 /* BusinessHour.swift */; };
+		0475219623B7B31D007F1133 /* GetPlacesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475219523B7B31D007F1133 /* GetPlacesResponse.swift */; };
+		0475219823B7B49B007F1133 /* Facet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475219723B7B49B007F1133 /* Facet.swift */; };
+		0475219A23B7BA65007F1133 /* FacetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475219923B7BA65007F1133 /* FacetVC.swift */; };
+		0475219C23B7BA75007F1133 /* FacetVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0475219B23B7BA75007F1133 /* FacetVC.xib */; };
 		047CF22C22D5471500953CC1 /* FanFindSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 047CF22A22D5471500953CC1 /* FanFindSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		047CF2E322D63C2B00953CC1 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2B722D63C2A00953CC1 /* UIViewControllerExtensions.swift */; };
 		047CF2E422D63C2B00953CC1 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CF2B822D63C2A00953CC1 /* UIViewExtensions.swift */; };
@@ -82,6 +86,8 @@
 		0487D20B22EA14DB006AB20F /* PlaceInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0487D20A22EA14DB006AB20F /* PlaceInfoHeaderView.swift */; };
 		048EBFE622E902670095ADB5 /* DealsEventsIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EBFE522E902670095ADB5 /* DealsEventsIndicator.swift */; };
 		048F43C3231EFB860070498C /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F43C2231EFB860070498C /* CreateEvent.swift */; };
+		049E635723C2411C003C6977 /* FacetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E635523C2411C003C6977 /* FacetTableViewCell.swift */; };
+		049E635823C2411C003C6977 /* FacetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049E635623C2411C003C6977 /* FacetTableViewCell.xib */; };
 		04A3511322D6E89700A1ACCD /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3511222D6E89700A1ACCD /* UIColorExtensions.swift */; };
 		04A3511722D79F6700A1ACCD /* GoogleMapsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3511622D79F6700A1ACCD /* GoogleMapsStyle.swift */; };
 		04A3511922D79F8A00A1ACCD /* GoogleMapsTileOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3511822D79F8A00A1ACCD /* GoogleMapsTileOverlay.swift */; };
@@ -92,6 +98,8 @@
 		04B8664C236224C700CF0959 /* LocationRequestMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B8664B236224C700CF0959 /* LocationRequestMap.xib */; };
 		04C0BDF3235EAD460050683F /* RequestLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0BDF2235EAD460050683F /* RequestLocationViewController.swift */; };
 		04C0BDF5235EAD5E0050683F /* RequestLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C0BDF4235EAD5E0050683F /* RequestLocationViewController.xib */; };
+		04CAA4C823BA6B7A00FF060E /* FacetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAA4C723BA6B7A00FF060E /* FacetResponse.swift */; };
+		04CAA4CA23BA6BA300FF060E /* FacetSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAA4C923BA6BA300FF060E /* FacetSelector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +137,10 @@
 		046448A022E00F5900EA9504 /* HoursTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursTableViewCell.swift; sourceTree = "<group>"; };
 		046448A122E00F5900EA9504 /* HoursTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HoursTableViewCell.xib; sourceTree = "<group>"; };
 		046448A422E0109600EA9504 /* BusinessHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessHour.swift; sourceTree = "<group>"; };
+		0475219523B7B31D007F1133 /* GetPlacesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlacesResponse.swift; sourceTree = "<group>"; };
+		0475219723B7B49B007F1133 /* Facet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facet.swift; sourceTree = "<group>"; };
+		0475219923B7BA65007F1133 /* FacetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetVC.swift; sourceTree = "<group>"; };
+		0475219B23B7BA75007F1133 /* FacetVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacetVC.xib; sourceTree = "<group>"; };
 		047CF22722D5471500953CC1 /* FanFindSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FanFindSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		047CF22A22D5471500953CC1 /* FanFindSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FanFindSDK.h; sourceTree = "<group>"; };
 		047CF29122D5487000953CC1 /* FanFindLocal.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FanFindLocal.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -176,6 +188,8 @@
 		0487D20A22EA14DB006AB20F /* PlaceInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoHeaderView.swift; sourceTree = "<group>"; };
 		048EBFE522E902670095ADB5 /* DealsEventsIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsEventsIndicator.swift; sourceTree = "<group>"; };
 		048F43C2231EFB860070498C /* CreateEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
+		049E635523C2411C003C6977 /* FacetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetTableViewCell.swift; sourceTree = "<group>"; };
+		049E635623C2411C003C6977 /* FacetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacetTableViewCell.xib; sourceTree = "<group>"; };
 		04A3511222D6E89700A1ACCD /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		04A3511622D79F6700A1ACCD /* GoogleMapsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsStyle.swift; sourceTree = "<group>"; };
 		04A3511822D79F8A00A1ACCD /* GoogleMapsTileOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsTileOverlay.swift; sourceTree = "<group>"; };
@@ -186,6 +200,8 @@
 		04B8664B236224C700CF0959 /* LocationRequestMap.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationRequestMap.xib; sourceTree = "<group>"; };
 		04C0BDF2235EAD460050683F /* RequestLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationViewController.swift; sourceTree = "<group>"; };
 		04C0BDF4235EAD5E0050683F /* RequestLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestLocationViewController.xib; sourceTree = "<group>"; };
+		04CAA4C723BA6B7A00FF060E /* FacetResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacetResponse.swift; sourceTree = "<group>"; };
+		04CAA4C923BA6BA300FF060E /* FacetSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacetSelector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +324,7 @@
 		047CF2C222D63C2A00953CC1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04CAA4C723BA6B7A00FF060E /* FacetResponse.swift */,
 				047CF2C322D63C2A00953CC1 /* NearbyPlace.swift */,
 				047CF2C422D63C2A00953CC1 /* TokenResponse.swift */,
 				047CF2C522D63C2A00953CC1 /* Place.swift */,
@@ -320,6 +337,8 @@
 				0464488D22DFADEF00EA9504 /* PlaceDeal.swift */,
 				0464488F22DFAEC700EA9504 /* PlaceEvent.swift */,
 				046448A422E0109600EA9504 /* BusinessHour.swift */,
+				0475219523B7B31D007F1133 /* GetPlacesResponse.swift */,
+				0475219723B7B49B007F1133 /* Facet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,6 +371,8 @@
 				0482A46722DE29C70018ABDB /* PlaceDetailsViewController.xib */,
 				04C0BDF2235EAD460050683F /* RequestLocationViewController.swift */,
 				04C0BDF4235EAD5E0050683F /* RequestLocationViewController.xib */,
+				0475219923B7BA65007F1133 /* FacetVC.swift */,
+				0475219B23B7BA75007F1133 /* FacetVC.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -359,6 +380,7 @@
 		047CF2DD22D63C2B00953CC1 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				04CAA4C923BA6BA300FF060E /* FacetSelector.swift */,
 				042927C322ECB46B0057F759 /* Navigation */,
 				0464488222DE4EB800EA9504 /* TableViewCells */,
 				047CF2DE22D63C2B00953CC1 /* ProgressView.swift */,
@@ -376,6 +398,8 @@
 				046439D5235EB5FD00FAD6D9 /* BorderedButton.swift */,
 				04B866492362249100CF0959 /* LocationRequestMap.swift */,
 				04B8664B236224C700CF0959 /* LocationRequestMap.xib */,
+				049E635523C2411C003C6977 /* FacetTableViewCell.swift */,
+				049E635623C2411C003C6977 /* FacetTableViewCell.xib */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -465,11 +489,13 @@
 				0464488C22DE4FA200EA9504 /* EventsTableViewCell.xib in Resources */,
 				0464489C22DFFCDD00EA9504 /* StandardHeaderTableViewCell.xib in Resources */,
 				0464489E22E0080D00EA9504 /* Colors.xcassets in Resources */,
+				049E635823C2411C003C6977 /* FacetTableViewCell.xib in Resources */,
 				046448A322E00F5900EA9504 /* HoursTableViewCell.xib in Resources */,
 				047CF2FB22D63C2B00953CC1 /* PlacesCollectionVC.xib in Resources */,
 				0482A46822DE29C70018ABDB /* PlaceDetailsViewController.xib in Resources */,
 				047CF30B22D6D37300953CC1 /* Images.xcassets in Resources */,
 				047CF2FA22D63C2B00953CC1 /* PlacesShortenedCell.xib in Resources */,
+				0475219C23B7BA75007F1133 /* FacetVC.xib in Resources */,
 				0464488822DE4F2500EA9504 /* DealsTableViewCell.xib in Resources */,
 				047CF30722D63C2B00953CC1 /* PeopleCountNumbers.xib in Resources */,
 				04B8664C236224C700CF0959 /* LocationRequestMap.xib in Resources */,
@@ -502,10 +528,12 @@
 				04A3511D22D79FC000A1ACCD /* GoogleMapsURLStyleConverter.swift in Sources */,
 				0464489B22DFFCDD00EA9504 /* StandardHeaderTableViewCell.swift in Sources */,
 				042927CF22ECB6D90057F759 /* Error.swift in Sources */,
+				04CAA4C823BA6B7A00FF060E /* FacetResponse.swift in Sources */,
 				047CF30322D63C2B00953CC1 /* PlacesCell.swift in Sources */,
 				047CF2F122D63C2B00953CC1 /* FanFindError.swift in Sources */,
 				047CF2E522D63C2B00953CC1 /* MkMapViewExtension.swift in Sources */,
 				042927CD22ECB5D60057F759 /* Mode.swift in Sources */,
+				04CAA4CA23BA6BA300FF060E /* FacetSelector.swift in Sources */,
 				043AD5D722E0F5A70080D67A /* ThemedUILabel.swift in Sources */,
 				043FDE6222F0B3A000CC3CD3 /* ThemedHeaderUILabel.swift in Sources */,
 				046448A522E0109600EA9504 /* BusinessHour.swift in Sources */,
@@ -523,13 +551,16 @@
 				047CF2E422D63C2B00953CC1 /* UIViewExtensions.swift in Sources */,
 				047CF30522D63C2B00953CC1 /* ProgressView.swift in Sources */,
 				047CF2FF22D63C2B00953CC1 /* PlacesShortenedCell.swift in Sources */,
+				0475219A23B7BA65007F1133 /* FacetVC.swift in Sources */,
 				047CF2F422D63C2B00953CC1 /* NoReply.swift in Sources */,
+				0475219623B7B31D007F1133 /* GetPlacesResponse.swift in Sources */,
 				047CF2EB22D63C2B00953CC1 /* LocationHelper.swift in Sources */,
 				047CF2E922D63C2B00953CC1 /* DrawingTools.swift in Sources */,
 				047CF30922D63C2B00953CC1 /* FanFindConfiguration.swift in Sources */,
 				0464488122DE343500EA9504 /* ThemedButton.swift in Sources */,
 				047CF2F722D63C2B00953CC1 /* GetPlaces.swift in Sources */,
 				0464488722DE4F2500EA9504 /* DealsTableViewCell.swift in Sources */,
+				049E635723C2411C003C6977 /* FacetTableViewCell.swift in Sources */,
 				0482A46622DE29B70018ABDB /* PlaceDetailsViewController.swift in Sources */,
 				042927C922ECB5780057F759 /* LocationRepresentable.swift in Sources */,
 				04A3511722D79F6700A1ACCD /* GoogleMapsStyle.swift in Sources */,
@@ -556,6 +587,7 @@
 				0464489022DFAEC700EA9504 /* PlaceEvent.swift in Sources */,
 				047CF2E322D63C2B00953CC1 /* UIViewControllerExtensions.swift in Sources */,
 				0464488B22DE4FA200EA9504 /* EventsTableViewCell.swift in Sources */,
+				0475219823B7B49B007F1133 /* Facet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

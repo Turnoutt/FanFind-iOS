@@ -66,8 +66,8 @@ public class FanFindClient: NSObject {
      
      - Parameter userId: The id of the user being signed in. This must be a unique value.
      */
-    internal func getNearbyPlaces(latitude: Float, longitude: Float, radius: Int, query: String?, completion: @escaping ((_ data: [NearByPlace]?, _ error: Error?) -> Void)) {
-        let request = GetPlaces(latitude: latitude, longitude: longitude, radius: radius, query: query)
+    internal func getNearbyPlaces(latitude: Float, longitude: Float, radius: Int, query: String?, facets: [String: [String]], completion: @escaping ((_ data: GetPlacesResponse?, _ error: Error?) -> Void)) {
+        let request = GetPlaces(latitude: latitude, longitude: longitude, radius: radius, query: query, facets: facets)
         
         self.sendWithBody(request) { (res) in
             switch res {
