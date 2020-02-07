@@ -58,9 +58,9 @@ internal class FacetTableViewCell: UITableViewCell {
         self.count = count
         
         if let facetName = self.facetName, let facetValue = self.facetValue {
-            label.text = facetValue + " (" + String(count ) + ")"
+            label.text = facetValue // + " (" + String(count ) + ")"
             
-            if selectedFacets[facetName]?.index(of: facetValue) ?? -1 > -1 {
+            if selectedFacets[facetName]?.firstIndex(of: facetValue) ?? -1 > -1 {
                 facetSelector.setOn(true, animated: true)
             } else {
                 facetSelector.setOn(false, animated: true)

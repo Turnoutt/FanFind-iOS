@@ -17,25 +17,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfR-Kx-v79">
-                        <rect key="frame" x="5" y="11.5" width="256" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfR-Kx-v79">
+                        <rect key="frame" x="10" y="12" width="240" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XWG-sU-kFL">
-                        <rect key="frame" x="266" y="6.5" width="51" height="31"/>
+                        <rect key="frame" x="260" y="6.5" width="52" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="fem-yK-8IC"/>
+                        </constraints>
                         <connections>
                             <action selector="selectionChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="GDU-kh-OYz"/>
                         </connections>
                     </switch>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="XWG-sU-kFL" secondAttribute="trailing" constant="5" id="6Z0-K2-R75"/>
+                    <constraint firstAttribute="trailing" secondItem="XWG-sU-kFL" secondAttribute="trailing" constant="10" id="6Z0-K2-R75"/>
                     <constraint firstItem="XWG-sU-kFL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="J9P-aW-Pi0"/>
                     <constraint firstItem="YfR-Kx-v79" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="OXy-5w-ciN"/>
-                    <constraint firstItem="YfR-Kx-v79" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Rjc-gS-y4V"/>
-                    <constraint firstItem="XWG-sU-kFL" firstAttribute="leading" secondItem="YfR-Kx-v79" secondAttribute="trailing" constant="5" id="yJW-B0-MW9"/>
+                    <constraint firstItem="YfR-Kx-v79" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Rjc-gS-y4V"/>
+                    <constraint firstItem="XWG-sU-kFL" firstAttribute="leading" secondItem="YfR-Kx-v79" secondAttribute="trailing" constant="10" id="yJW-B0-MW9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,11 +29,17 @@
                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsCompass="NO" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5NN-2E-xOY">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                         </mapView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6b-e2-5cr" userLabel="Search Bar Wrapper">
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6b-e2-5cr" userLabel="Search Bar Wrapper">
                             <rect key="frame" x="10" y="64" width="394" height="40"/>
                             <subviews>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mge-Mp-iCo" customClass="TeamSelector" customModule="FanFindSDK" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" id="D5f-Or-g24"/>
+                                    </constraints>
+                                </view>
                                 <searchBar contentMode="redraw" placeholder="Find places to go..." showsBookmarkButton="YES" backgroundImage="." translatesAutoresizingMaskIntoConstraints="NO" id="IbR-RQ-OGD">
-                                    <rect key="frame" x="-5" y="0.0" width="354" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="349" height="40"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <textInputTraits key="textInputTraits" textContentType="organization"/>
@@ -54,14 +60,17 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstItem="IbR-RQ-OGD" firstAttribute="leading" secondItem="Y6b-e2-5cr" secondAttribute="leading" constant="-5" id="5IB-J2-uIO"/>
                                 <constraint firstAttribute="trailing" secondItem="sWy-nR-CSA" secondAttribute="trailing" constant="10" id="APQ-NQ-AVS"/>
                                 <constraint firstItem="sWy-nR-CSA" firstAttribute="top" secondItem="Y6b-e2-5cr" secondAttribute="top" id="Dc6-tW-aGW"/>
                                 <constraint firstItem="IbR-RQ-OGD" firstAttribute="top" secondItem="Y6b-e2-5cr" secondAttribute="top" id="OGR-AA-lkY"/>
+                                <constraint firstItem="Mge-Mp-iCo" firstAttribute="leading" secondItem="Y6b-e2-5cr" secondAttribute="leading" id="Seb-R7-gPl"/>
                                 <constraint firstAttribute="height" constant="40" id="Tvv-7i-Xoy"/>
-                                <constraint firstAttribute="bottom" secondItem="IbR-RQ-OGD" secondAttribute="bottom" id="V3t-vf-f9Y"/>
+                                <constraint firstItem="IbR-RQ-OGD" firstAttribute="bottom" secondItem="Y6b-e2-5cr" secondAttribute="bottom" id="V3t-vf-f9Y"/>
                                 <constraint firstItem="sWy-nR-CSA" firstAttribute="leading" secondItem="IbR-RQ-OGD" secondAttribute="trailing" id="nek-Ox-cE8"/>
-                                <constraint firstAttribute="bottom" secondItem="sWy-nR-CSA" secondAttribute="bottom" id="sAu-dS-W61"/>
+                                <constraint firstItem="sWy-nR-CSA" firstAttribute="bottom" secondItem="Y6b-e2-5cr" secondAttribute="bottom" id="sAu-dS-W61"/>
+                                <constraint firstItem="Mge-Mp-iCo" firstAttribute="bottom" secondItem="Y6b-e2-5cr" secondAttribute="bottom" id="sN9-ia-DRm"/>
+                                <constraint firstItem="IbR-RQ-OGD" firstAttribute="leading" secondItem="Mge-Mp-iCo" secondAttribute="trailing" id="uaR-DM-wHJ"/>
+                                <constraint firstItem="Mge-Mp-iCo" firstAttribute="top" secondItem="Y6b-e2-5cr" secondAttribute="top" id="vcw-s6-sla"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

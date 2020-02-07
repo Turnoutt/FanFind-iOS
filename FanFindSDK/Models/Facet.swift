@@ -12,17 +12,17 @@ internal class Facet: Decodable {
     public var from: String?
     public var to: String?
     public var value: String
-    public var count: CLong
+    public var count: CLong?
     
     init(
         from: String?,
         to: String?,
         value: String,
-        count: CLong
+        count: CLong?
     ){
         self.from = from
         self.to = to
         self.value = value
-        self.count = count
+        self.count = count ?? 0
     }
 }

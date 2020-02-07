@@ -21,6 +21,8 @@
 		043AD5D722E0F5A70080D67A /* ThemedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AD5D622E0F5A70080D67A /* ThemedUILabel.swift */; };
 		043AD5D922E276560080D67A /* UIIMageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AD5D822E276560080D67A /* UIIMageViewExtensions.swift */; };
 		043FDE6222F0B3A000CC3CD3 /* ThemedHeaderUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FDE6122F0B3A000CC3CD3 /* ThemedHeaderUILabel.swift */; };
+		0462A4BF23E74217004F9D3D /* TeamSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462A4BE23E74217004F9D3D /* TeamSelector.swift */; };
+		0462A4C123E7422A004F9D3D /* TeamSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0462A4C023E7422A004F9D3D /* TeamSelector.xib */; };
 		046439D6235EB5FD00FAD6D9 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046439D5235EB5FD00FAD6D9 /* BorderedButton.swift */; };
 		0464488122DE343500EA9504 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464488022DE343500EA9504 /* ThemedButton.swift */; };
 		0464488722DE4F2500EA9504 /* DealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464488522DE4F2500EA9504 /* DealsTableViewCell.swift */; };
@@ -99,7 +101,6 @@
 		04C0BDF3235EAD460050683F /* RequestLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0BDF2235EAD460050683F /* RequestLocationViewController.swift */; };
 		04C0BDF5235EAD5E0050683F /* RequestLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C0BDF4235EAD5E0050683F /* RequestLocationViewController.xib */; };
 		04CAA4C823BA6B7A00FF060E /* FacetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAA4C723BA6B7A00FF060E /* FacetResponse.swift */; };
-		04CAA4CA23BA6BA300FF060E /* FacetSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAA4C923BA6BA300FF060E /* FacetSelector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,8 @@
 		0461742422D7B67200B56E95 /* FanFind.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FanFind.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0461742622D7BA6000B56E95 /* build-universal-framework.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "build-universal-framework.sh"; sourceTree = "<group>"; };
 		0461742722D7BA6000B56E95 /* release-pod.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "release-pod.sh"; sourceTree = "<group>"; };
+		0462A4BE23E74217004F9D3D /* TeamSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSelector.swift; sourceTree = "<group>"; };
+		0462A4C023E7422A004F9D3D /* TeamSelector.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamSelector.xib; sourceTree = "<group>"; };
 		046439D5235EB5FD00FAD6D9 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		0464488022DE343500EA9504 /* ThemedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedButton.swift; sourceTree = "<group>"; };
 		0464488522DE4F2500EA9504 /* DealsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsTableViewCell.swift; sourceTree = "<group>"; };
@@ -201,7 +204,6 @@
 		04C0BDF2235EAD460050683F /* RequestLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationViewController.swift; sourceTree = "<group>"; };
 		04C0BDF4235EAD5E0050683F /* RequestLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestLocationViewController.xib; sourceTree = "<group>"; };
 		04CAA4C723BA6B7A00FF060E /* FacetResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacetResponse.swift; sourceTree = "<group>"; };
-		04CAA4C923BA6BA300FF060E /* FacetSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacetSelector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,7 +382,6 @@
 		047CF2DD22D63C2B00953CC1 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				04CAA4C923BA6BA300FF060E /* FacetSelector.swift */,
 				042927C322ECB46B0057F759 /* Navigation */,
 				0464488222DE4EB800EA9504 /* TableViewCells */,
 				047CF2DE22D63C2B00953CC1 /* ProgressView.swift */,
@@ -400,6 +401,8 @@
 				04B8664B236224C700CF0959 /* LocationRequestMap.xib */,
 				049E635523C2411C003C6977 /* FacetTableViewCell.swift */,
 				049E635623C2411C003C6977 /* FacetTableViewCell.xib */,
+				0462A4BE23E74217004F9D3D /* TeamSelector.swift */,
+				0462A4C023E7422A004F9D3D /* TeamSelector.xib */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0464488C22DE4FA200EA9504 /* EventsTableViewCell.xib in Resources */,
+				0462A4C123E7422A004F9D3D /* TeamSelector.xib in Resources */,
 				0464489C22DFFCDD00EA9504 /* StandardHeaderTableViewCell.xib in Resources */,
 				0464489E22E0080D00EA9504 /* Colors.xcassets in Resources */,
 				049E635823C2411C003C6977 /* FacetTableViewCell.xib in Resources */,
@@ -515,6 +519,7 @@
 			files = (
 				047CF2E822D63C2B00953CC1 /* Result.swift in Sources */,
 				047CF2FE22D63C2B00953CC1 /* PlacesFlowLayout.swift in Sources */,
+				0462A4BF23E74217004F9D3D /* TeamSelector.swift in Sources */,
 				048F43C3231EFB860070498C /* CreateEvent.swift in Sources */,
 				04C0BDF3235EAD460050683F /* RequestLocationViewController.swift in Sources */,
 				047CF2EF22D63C2B00953CC1 /* Place.swift in Sources */,
@@ -533,7 +538,6 @@
 				047CF2F122D63C2B00953CC1 /* FanFindError.swift in Sources */,
 				047CF2E522D63C2B00953CC1 /* MkMapViewExtension.swift in Sources */,
 				042927CD22ECB5D60057F759 /* Mode.swift in Sources */,
-				04CAA4CA23BA6BA300FF060E /* FacetSelector.swift in Sources */,
 				043AD5D722E0F5A70080D67A /* ThemedUILabel.swift in Sources */,
 				043FDE6222F0B3A000CC3CD3 /* ThemedHeaderUILabel.swift in Sources */,
 				046448A522E0109600EA9504 /* BusinessHour.swift in Sources */,
