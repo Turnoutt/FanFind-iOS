@@ -231,8 +231,8 @@ public class FanFindClient: NSObject {
         task.resume()
     }
     
-    private func trackLocation(latitude: CLLocationDegrees, longitude: CLLocationDegrees, accuracy: Double, completion: @escaping ((_ error: Error?) -> Void)) {
-        let request = TrackLocationRequest(latitude: latitude, longitude: longitude, accuracy: accuracy)
+    private func trackLocation(latitude: CLLocationDegrees, longitude: CLLocationDegrees, accuracy: Double, altitude: Double?, speed: Double?, completion: @escaping ((_ error: Error?) -> Void)) {
+        let request = TrackLocationRequest(latitude: latitude, longitude: longitude, accuracy: accuracy, altitude: altitude, speed: speed)
         
         self.sendWithBody(request) { (res) in
             switch res {
@@ -328,7 +328,7 @@ public class FanFindClient: NSObject {
 
 extension FanFindClient : CLLocationManagerDelegate{
     public func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
-        FanFindClient.shared.trackLocation(latitude: visit.coordinate.latitude, longitude: visit.coordinate.longitude, accuracy: visit.horizontalAccuracy) { (err) in
+        FanFindClient.shared.trackLocation(latitude: visit.coordinate.latitude, longitude: visit.coordinate.longitude, accuracy: visit.horizontalAccuracy, altitude: manager.location?.altitude, speed: manager.location?.speed) { (err) in
             
         }
     }
@@ -346,7 +346,7 @@ extension FanFindClient : CLLocationManagerDelegate{
         
         self.lastLocation = location
         
-        FanFindClient.shared.trackLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, accuracy: location.horizontalAccuracy) { (err) in
+        FanFindClient.shared.trackLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, accuracy: location.horizontalAccuracy, altitude: location.altitude, speed: location.speed) { (err) in
             //self.locationManager.stopUpdatingLocation()
         }
         
