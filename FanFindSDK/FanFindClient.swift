@@ -25,10 +25,10 @@ public class FanFindClient: NSObject {
         return URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
     }
     
-    private override init(userDefaults: UserDefaults = .standard) {
+    private override init() {
         super.init()
 
-        self.userDefaults = userDefaults
+        self.userDefaults = .standard
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // The accuracy of the location data
         locationManager.distanceFilter = 20 // The minimum distance (measured in meters) a device must move horizontally before an update event is generated.
@@ -42,6 +42,17 @@ public class FanFindClient: NSObject {
     public func requestLocationAuthorization() {
         locationManager.requestAlwaysAuthorization()
     }
+
+    func getSessionId(): String {
+        var phoneSessionId = userDefaults.string(forKey: "SessionId")
+
+        if(phoneSessionId == nil){
+            phoneSessionId = UUID().uuidString
+            userDefaults.set(phoneSessionId, forKey: "SessionId");
+        }
+
+        return phoneSessionId
+    }
     
     /**
      Signs in the user. You will not be able to call any of the other methods until this is called.
@@ -51,15 +62,8 @@ public class FanFindClient: NSObject {
     public func signIn(userId: String, completion: @escaping ((_ error: Error?) -> Void)) {
         
         self.userId = userId;
-
-        var phoneSessionId = userDefaults.string(forKey: "SessionId")
-
-        if(phoneSessionId == nil){
-            phoneSessionId = UUID().uuidString
-            userDefaults.set(phoneSessionId, forKey: "SessionId");
-        }
         
-        let request = Authenticate(clientUserId: self.userId!, apiKey: FanFindClient.apiKey, phoneSessionId: phoneSessionId!)
+        let request = Authenticate(clientUserId: self.userId!, apiKey: FanFindClient.apiKey, phoneSessionId: self.getSessionId())
         self.sendWithBody(request) { (res) in
             switch res {
             case .success(let tokenResponse):
@@ -183,7 +187,7 @@ public class FanFindClient: NSObject {
             let statusCode = (response as! HTTPURLResponse).statusCode
             
             if statusCode == 401 {
-                let authRequest = Authenticate(clientUserId: self.userId!, apiKey: FanFindClient.apiKey)
+                let authRequest = Authenticate(clientUserId: self.userId!, apiKey: FanFindClient.apiKey, phoneSessionId: self.getSessionId())
                 self.sendWithBody(authRequest) { (res) in
                     switch res {
                     case .success(let tokenResponse):

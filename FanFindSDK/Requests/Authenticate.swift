@@ -15,8 +15,7 @@ internal struct Authenticate: APIRequest {
     
     public init(clientUserId: String, apiKey: String, phoneSessionId: String) {
         self.clientUserId = clientUserId
-        self.apiKey = apiKey
-        
+        self.apiKey = apiKey        
         self.phoneSessionId = phoneSessionId
     }
 }
