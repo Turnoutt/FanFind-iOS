@@ -28,7 +28,7 @@ public class FanFindClient: NSObject {
     private override init(userDefaults: UserDefaults = .standard) {
         super.init()
 
-        this.userDefaults = userDefaults
+        self.userDefaults = userDefaults
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // The accuracy of the location data
         locationManager.distanceFilter = 20 // The minimum distance (measured in meters) a device must move horizontally before an update event is generated.
@@ -52,14 +52,14 @@ public class FanFindClient: NSObject {
         
         self.userId = userId;
 
-        let phoneSessionId = userDefaults.string(forKey: "SessionId")
+        var phoneSessionId = userDefaults.string(forKey: "SessionId")
 
         if(phoneSessionId == nil){
             phoneSessionId = UUID().uuidString
             userDefaults.set(phoneSessionId, forKey: "SessionId");
         }
         
-        let request = Authenticate(clientUserId: self.userId!, apiKey: FanFindClient.apiKey, phoneSessionId: phoneSessionId)
+        let request = Authenticate(clientUserId: self.userId!, apiKey: FanFindClient.apiKey, phoneSessionId: phoneSessionId!)
         self.sendWithBody(request) { (res) in
             switch res {
             case .success(let tokenResponse):

@@ -8,11 +8,10 @@ internal struct Authenticate: APIRequest {
         return "auth/v1/sign-in"
     }
     
-    private var mobileAdId: String?
-    
     // Parameters
     private let clientUserId: String
     private let apiKey: String
+    private var phoneSessionId: String?
     
     public init(clientUserId: String, apiKey: String, phoneSessionId: String) {
         self.clientUserId = clientUserId
