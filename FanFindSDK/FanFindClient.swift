@@ -43,7 +43,7 @@ public class FanFindClient: NSObject {
         locationManager.requestAlwaysAuthorization()
     }
 
-    func getSessionId() {
+    func getSessionId() -> String {
         var phoneSessionId = userDefaults.string(forKey: "SessionId")
 
         if(phoneSessionId == nil){
