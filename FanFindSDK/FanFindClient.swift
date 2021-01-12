@@ -11,7 +11,7 @@ public class FanFindClient: NSObject {
     private static var baseEndpointUrl = URL(string: "https://findfans.turnoutt.com/")!
     private static let apiKey = FanFindConfiguration.apiKey
     private var locationManager = CLLocationManager()
-    private let userDefaults: UserDefaults
+    private let userDefaults = UserDefaults.standard
     
     internal var delegate: LocationUpdateDelegate?
     
@@ -27,8 +27,6 @@ public class FanFindClient: NSObject {
     
     private override init() {
         super.init()
-
-        self.userDefaults = .standard
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // The accuracy of the location data
         locationManager.distanceFilter = 20 // The minimum distance (measured in meters) a device must move horizontally before an update event is generated.
