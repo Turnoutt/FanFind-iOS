@@ -86,14 +86,14 @@ public class FanFindMapViewController: UIViewController {
         self.searchBar.delegate = self
         self.searchBar.backgroundImage = UIImage()
         
-        var settingsImage: UIImage? = nil
+        //var settingsImage: UIImage? = nil
         
-        if #available(iOS 13.0, *) {
-            settingsImage = UIImage.init(systemName: "slider.horizontal.3")
-        }
+        //if #available(iOS 13.0, *) {
+        //    settingsImage = UIImage.init(systemName: "slider.horizontal.3")
+        //}
         
-        self.searchBar.setImage(settingsImage, for: .bookmark, state: .normal)
-        self.searchBar.setPositionAdjustment(UIOffset.init(horizontal: -10, vertical: 0), for: .bookmark)
+        //self.searchBar.setImage(settingsImage, for: .bookmark, state: .normal)
+        //self.searchBar.setPositionAdjustment(UIOffset.init(horizontal: -10, vertical: 0), for: .bookmark)
         
         redoSearchButton.isHidden = true
         redoSearchButton.layer.masksToBounds =  false
@@ -208,9 +208,9 @@ public class FanFindMapViewController: UIViewController {
             
             self.fanFindClient.getNearbyPlaces(latitude: Float(coord.latitude), longitude: Float(coord.longitude), radius: Int(radius!), query: self.searchBar?.text, facets: self.selectedFacets, completion: { (result, innerErr) in
                 
-                if let facets = result?.facets {
-                    self.facets = facets
-                }
+                //if let facets = result?.facets {
+                //    self.facets = facets
+                //}
                 
                 if let places = result?.results{
                     

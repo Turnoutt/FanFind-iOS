@@ -12,7 +12,7 @@ internal struct TrackLocationRequest: APIRequest {
     public typealias Response = NoReply
     
     public var resourceName: String {
-        return "locations/v2/user/location"
+        return "v1/locations/location"
     }
     
     public init(latitude: Double, longitude: Double, accuracy: Double, altitude: Double?, speed: Double?){

@@ -12,7 +12,7 @@ internal struct GetPlaceDetails: APIRequest {
     public typealias Response = NearByPlaceDetails
     
     public var resourceName: String {
-        return "places/v2/" + self.placeId + "/details"
+        return "v3/places/" + self.placeId + "/details"
     }
     
     public init(placeId: String){

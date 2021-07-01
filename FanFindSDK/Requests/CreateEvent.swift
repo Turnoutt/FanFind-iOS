@@ -12,7 +12,7 @@ internal struct CreateEvent: APIRequest {
     public typealias Response = NoReply
     
     public var resourceName: String {
-        return "analytics/api/v1/analytics?eventType=" + self.eventType
+        return "v1/analytics?eventType=" + self.eventType
     }
     
     public init(eventType: String, placeId: String){

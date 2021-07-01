@@ -53,7 +53,7 @@ public class FanFindClient: NSObject {
         self.sendWithBody(request) { (res) in
             switch res {
             case .success(let tokenResponse):
-                self.authToken = tokenResponse.token
+                self.authToken = tokenResponse.accessToken
                 completion(nil)
             case .failure(let err):
                 completion(err)
@@ -177,7 +177,7 @@ public class FanFindClient: NSObject {
                 self.sendWithBody(authRequest) { (res) in
                     switch res {
                     case .success(let tokenResponse):
-                        self.authToken = tokenResponse.token
+                        self.authToken = tokenResponse.accessToken
                         self.sendWithBody(request) { (res) in
                             switch res {
                             case .success(let response):

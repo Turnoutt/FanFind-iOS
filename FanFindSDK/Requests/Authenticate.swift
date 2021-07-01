@@ -5,7 +5,7 @@ internal struct Authenticate: APIRequest {
     public typealias Response = TokenResponse
     
     public var resourceName: String {
-        return "auth/v1/sign-in"
+        return "v1/auth/sign-in"
     }
     
     private var mobileAdId: String?

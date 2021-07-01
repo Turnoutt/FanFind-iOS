@@ -32,7 +32,14 @@ internal class RequestLocationViewController : UIViewController {
         if !UIAccessibility.isReduceTransparencyEnabled {
             view.backgroundColor = .clear
             
-            let blurEffect = UIBlurEffect(style: .light)
+            var blurEffect = UIBlurEffect(style: .light);
+            
+            if #available(iOS 13, *) {
+                if self.traitCollection.userInterfaceStyle == .dark {
+                    blurEffect = UIBlurEffect(style: .dark)
+                }
+            }
+            
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
             
             blurEffectView.frame = view.frame

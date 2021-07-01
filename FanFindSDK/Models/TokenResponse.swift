@@ -9,5 +9,5 @@
 import Foundation
 
 internal class TokenResponse: Decodable{
-    var token: String
+    var accessToken: String
 }

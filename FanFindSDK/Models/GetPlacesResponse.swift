@@ -10,13 +10,13 @@ import Foundation
 
 internal class GetPlacesResponse: Decodable {
     public var results: [NearByPlace]
-    public var facets: [FacetResponse]
+    //public var facets: [FacetResponse]
     
     init(
-        results: [NearByPlace],
-        facets: [FacetResponse]
+        results: [NearByPlace]
+        //facets: [FacetResponse]
     ){
         self.results = results
-        self.facets = facets
+        //self.facets = facets
     }
 }

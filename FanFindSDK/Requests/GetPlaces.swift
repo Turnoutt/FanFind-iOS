@@ -12,7 +12,7 @@ internal struct GetPlaces: APIRequest {
     public typealias Response = GetPlacesResponse
     
     public var resourceName: String {
-        return "places/v3/nearby"
+        return "v3/places/nearby"
     }
     
     public init(latitude: Float, longitude: Float, radius: Int, query: String?, facets: [String: [String]]){
