@@ -4,92 +4,92 @@
 # https://aka.ms/yaml
 
 trigger:
-- release/*
-- master
+  - release/*
+  - master
 
 variables:
-  major: 1
-  minor: 6
+  major: 2
+  minor: 0
   patch: $[counter(variables['minor'], 0)]
   version: "$(major).$(minor).$(patch)"
 
 jobs:
-- job: Build
-  pool:
-    vmImage: 'macos-latest'
-  steps:
-  - task: Bash@3
-    inputs:
-      filePath: 'build-universal-framework.sh'
-  - task: ArchiveFiles@2
-    inputs:
-      rootFolderOrFile: 'build'
-      includeRootFolder: true
-      archiveType: 'zip'
-      archiveFile: '$(Build.ArtifactStagingDirectory)/FanFind-iOS-$(version).zip'
-      replaceExistingArchive: true
-  - publish: $(Build.ArtifactStagingDirectory)
-    artifact: Archive
-    
-- job : Deploy
-  pool:
-    vmImage: 'macos-latest'
-  dependsOn: Build
-  steps:
-  - download: current
-    artifact: Archive
-  - task: GitHubRelease@0
-    inputs:
-      gitHubConnection: 'stasdemir'
-      repositoryName: 'Turnoutt/FanFind-iOS'
-      action: 'create'
-      target: '6db92d020e381b111d8fdea1712c890a4d034be7'
-      tagSource: 'manual'
-      tag: '$(version)'
-      title: 'FanFind-iOS $(version)'
-      releaseNotesSource: 'input'
-      releaseNotes: 'None'
-      addChangeLog: false
-      assets: '$(Pipeline.Workspace)/Archive/FanFind-iOS-$(version).zip'
+  - job: Build
+    pool:
+      vmImage: "macos-latest"
+    steps:
+      - task: Bash@3
+        inputs:
+          filePath: "build-universal-framework.sh"
+      - task: ArchiveFiles@2
+        inputs:
+          rootFolderOrFile: "build"
+          includeRootFolder: true
+          archiveType: "zip"
+          archiveFile: "$(Build.ArtifactStagingDirectory)/FanFind-iOS-$(version).zip"
+          replaceExistingArchive: true
+      - publish: $(Build.ArtifactStagingDirectory)
+        artifact: Archive
 
-  - script: |
-        cat > FanFind.podspec << EOL 
-        Pod::Spec.new do |spec|
-            spec.name         = "FanFind"
-            spec.version      = "${Version}"
-            spec.summary      = "FanFind is a tool for helping fans find each other anonymously in real time."
+  - job: Deploy
+    pool:
+      vmImage: "macos-latest"
+    dependsOn: Build
+    steps:
+      - download: current
+        artifact: Archive
+      - task: GitHubRelease@0
+        inputs:
+          gitHubConnection: "stasdemir"
+          repositoryName: "Turnoutt/FanFind-iOS"
+          action: "create"
+          target: "6db92d020e381b111d8fdea1712c890a4d034be7"
+          tagSource: "manual"
+          tag: "$(version)"
+          title: "FanFind-iOS $(version)"
+          releaseNotesSource: "input"
+          releaseNotes: "None"
+          addChangeLog: false
+          assets: "$(Pipeline.Workspace)/Archive/FanFind-iOS-$(version).zip"
 
-            spec.description  = <<-DESC
-            This cocoapods library helps you easily integrate the FanFind API in your application.
-                            DESC
+      - script: |
+          cat > FanFind.podspec << EOL 
+          Pod::Spec.new do |spec|
+              spec.name         = "FanFind"
+              spec.version      = "${Version}"
+              spec.summary      = "FanFind is a tool for helping fans find each other anonymously in real time."
 
-            spec.homepage     = "https://www.turnoutt.com"
-            spec.license      = "MIT"
-            spec.author             = { "Chris Woolum" => "chris@turnoutt.com" }
+              spec.description  = <<-DESC
+              This cocoapods library helps you easily integrate the FanFind API in your application.
+                              DESC
 
-            spec.ios.deployment_target = "12.1"
-            spec.swift_versions = ['5.0', '5.1']
+              spec.homepage     = "https://www.turnoutt.com"
+              spec.license      = "MIT"
+              spec.author             = { "Chris Woolum" => "chris@turnoutt.com" }
 
-            spec.source        = { :http => "https://github.com/Turnoutt/FanFind-iOS/releases/download/${Version}/FanFind-iOS-${Version}.zip" }
+              spec.ios.deployment_target = "12.1"
+              spec.swift_versions = ['5.0', '5.1']
 
-            spec.vendored_frameworks = "build/universal/FanFindSDK.framework"
-        
-        end
-        EOL
-    displayName: Build podspec
-    env:
-      Version: $(version)
+              spec.source        = { :http => "https://github.com/Turnoutt/FanFind-iOS/releases/download/${Version}/FanFind-iOS-${Version}.zip" }
 
-  - script: pod trunk push FanFind.podspec --allow-warnings
-    displayName: Publish podspec
-    env:
-      COCOAPODS_TRUNK_TOKEN: $(CocoapodsToken)
+              spec.vendored_frameworks = "build/universal/FanFindSDK.framework"
 
-  - task: GitHubRelease@0
-    condition: failed()
-    displayName: Clean up Orphan Release
-    inputs:
-      gitHubConnection: 'stasdemir'
-      repositoryName: 'Turnoutt/FanFind-iOS'
-      action: 'delete'
-      tag: '$(version)'
+          end
+          EOL
+        displayName: Build podspec
+        env:
+          Version: $(version)
+
+      - script: pod trunk push FanFind.podspec --allow-warnings
+        displayName: Publish podspec
+        env:
+          COCOAPODS_TRUNK_TOKEN: $(CocoapodsToken)
+
+      - task: GitHubRelease@0
+        condition: failed()
+        displayName: Clean up Orphan Release
+        inputs:
+          gitHubConnection: "stasdemir"
+          repositoryName: "Turnoutt/FanFind-iOS"
+          action: "delete"
+          tag: "$(version)"
