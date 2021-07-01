@@ -11,6 +11,7 @@ public class FanFindClient: NSObject {
     private static var baseEndpointUrl = URL(string: "https://findfans.turnoutt.com/")!
     private static let apiKey = FanFindConfiguration.apiKey
     private var locationManager = CLLocationManager()
+    private let userDefaults = UserDefaults.standard
     
     internal var delegate: LocationUpdateDelegate?
     
@@ -39,6 +40,17 @@ public class FanFindClient: NSObject {
     public func requestLocationAuthorization() {
         locationManager.requestAlwaysAuthorization()
     }
+
+    func getSessionId() -> String {
+        var phoneSessionId = userDefaults.string(forKey: "SessionId")
+
+        if(phoneSessionId == nil){
+            phoneSessionId = UUID().uuidString
+            userDefaults.set(phoneSessionId, forKey: "SessionId");
+        }
+
+        return phoneSessionId!
+    }
     
     /**
      Signs in the user. You will not be able to call any of the other methods until this is called.
@@ -49,7 +61,7 @@ public class FanFindClient: NSObject {
         
         self.userId = userId;
         
-        let request = Authenticate(clientUserId: self.userId!, apiKey: FanFindClient.apiKey)
+        let request = Authenticate(clientUserId: self.userId!, apiKey: FanFindClient.apiKey, phoneSessionId: self.getSessionId())
         self.sendWithBody(request) { (res) in
             switch res {
             case .success(let tokenResponse):
@@ -173,7 +185,7 @@ public class FanFindClient: NSObject {
             let statusCode = (response as! HTTPURLResponse).statusCode
             
             if statusCode == 401 {
-                let authRequest = Authenticate(clientUserId: self.userId!, apiKey: FanFindClient.apiKey)
+                let authRequest = Authenticate(clientUserId: self.userId!, apiKey: FanFindClient.apiKey, phoneSessionId: self.getSessionId())
                 self.sendWithBody(authRequest) { (res) in
                     switch res {
                     case .success(let tokenResponse):
