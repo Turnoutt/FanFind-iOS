@@ -40,7 +40,7 @@ jobs:
         artifact: Archive
       - task: GitHubRelease@0
         inputs:
-          gitHubConnection: "stasdemir"
+          gitHubConnection: "Turnoutt"
           repositoryName: "Turnoutt/FanFind-iOS"
           action: "create"
           target: "6db92d020e381b111d8fdea1712c890a4d034be7"
@@ -89,7 +89,7 @@ jobs:
         condition: failed()
         displayName: Clean up Orphan Release
         inputs:
-          gitHubConnection: "stasdemir"
+          gitHubConnection: "Turnoutt"
           repositoryName: "Turnoutt/FanFind-iOS"
           action: "delete"
           tag: "$(version)"
