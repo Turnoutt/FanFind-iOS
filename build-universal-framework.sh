@@ -41,4 +41,4 @@ build/devices/FanFindSDK.framework/FanFindSDK \
 -output build/universal/FanFindSDK.framework/FanFindSDK
 
 # copy simulator Swift public interface to universal framework
-cp build/simulator/FanFindSDK.framework/Modules/FanFindSDK.swiftmodule/* build/universal/FanFindSDK.framework/Modules/FanFindSDK.swiftmodule
+cp -r build/simulator/FanFindSDK.framework/Modules/FanFindSDK.swiftmodule/* build/universal/FanFindSDK.framework/Modules/FanFindSDK.swiftmodule
