@@ -33,8 +33,11 @@ cp -r derived_data/Build/Products/Release-iphoneos/FanFindSDK.framework build/de
 mkdir build/universal
 ####################### Create universal framework #############################
 # copy device framework into universal folder
+echo "Copying iphone output"
 cp -r build/devices/FanFindSDK.framework build/universal/
 # create framework binary compatible with simulators and devices, and replace binary in unviersal framework
+
+echo "Creating universal package"
 lipo -create \
 build/simulator/FanFindSDK.framework/FanFindSDK \
 build/devices/FanFindSDK.framework/FanFindSDK \
