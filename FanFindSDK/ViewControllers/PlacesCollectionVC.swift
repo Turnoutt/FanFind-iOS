@@ -222,16 +222,17 @@ extension PlacesCollectionVC: UICollectionViewDelegate, UICollectionViewDataSour
             cell.contentView.layer.borderColor = UIColor.clear.cgColor
             cell.contentView.layer.masksToBounds = true
             
+            cell.layer.shadowOffset = CGSize(width: 0, height: 10.0)
+            cell.layer.shadowRadius = 10.0
+            cell.layer.shadowOpacity = 1.0
+            cell.layer.masksToBounds = false
+            cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+            
             if currentPlace.isSponsoredPlace{
                 cell.layer.shadowColor = FanFindConfiguration.primaryColor.cgColor
-                cell.layer.shadowOffset = CGSize(width: 0, height: 10.0)
-                cell.layer.shadowRadius = 10.0
-                cell.layer.shadowOpacity = 1.0
-                cell.layer.masksToBounds = false
-                cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
             }else{
-                cell.layer.shadowColor = UIColor.clear.cgColor
-                cell.layer.masksToBounds = false
+                cell.layer.shadowColor = UIColor.black.cgColor
+               
             }
             
             return cell.configureWith(place: currentPlace)

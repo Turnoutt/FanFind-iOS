@@ -71,11 +71,11 @@ internal class PlaceInfoHeaderView: UIStackView {
         self.alignment = .fill
         self.distribution = .fill
         
-        businessNameLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        businessNameLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         
-        categoryNameLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
+        categoryNameLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         
-        addressLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        addressLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
         addressLabel.lineBreakMode = .byWordWrapping
         addressLabel.numberOfLines = 0
         

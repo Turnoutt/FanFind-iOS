@@ -36,6 +36,12 @@ internal class PeopleCountNumbers: UIView {
         }
     }
     
+    override var intrinsicContentSize: CGSize{
+        let height = totalBox.frame.size.height
+        let width = totalBox.frame.size.width + totalCountLabel.frame.size.width + 12
+        return CGSize(width: width, height: height)
+    }
+    
     func initViews() {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "PeopleCountNumbers", bundle: bundle)
@@ -45,9 +51,14 @@ internal class PeopleCountNumbers: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
+        translatesAutoresizingMaskIntoConstraints = false
+        
         frame.size.height = 40
         totalBox.layer.backgroundColor = FanFindConfiguration.primaryColor.cgColor
         totalLabel.textColor = FanFindConfiguration.secondaryColor
+        totalCountLabel.textColor = UIColor.white
+        
+        self.totalCountLabel.text = "1000"
         
     }
     

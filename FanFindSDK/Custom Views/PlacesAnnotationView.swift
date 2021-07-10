@@ -13,6 +13,9 @@ internal class PlacesAnnotationView: MKAnnotationView {
     static let ReuseID = "placesAnnotation"
     
     let brandsImageView = UIImageView()
+
+    
+    var bundle = Bundle(for: PlacesAnnotationView.self)
     
     override func prepareForDisplay() {
         super.prepareForDisplay()
@@ -21,18 +24,39 @@ internal class PlacesAnnotationView: MKAnnotationView {
         guard let place = annotation as? Place
             else { return }
          
+        self.brandsImageView.frame = CGRect(x: 7, y: 22, width: 17, height: 17)
+        
         if(place.isSponsoredPlace){
             if let logoUrl = place.logoUrl {
                 DispatchQueue.main.async {
-                    
-                    self.brandsImageView.frame = CGRect(x: 8, y: 24, width: 50, height: 50)
                     self.brandsImageView.imageFromURL(urlString: logoUrl)
                     self.addSubview(self.brandsImageView)
                     self.bringSubviewToFront(self.brandsImageView)
                 }
             }
         }else{
-            self.brandsImageView.image = nil
+            if(place.nearByPlace?.primaryCategory == "Full-Service Restaurants"){
+                let restaurantImage: UIImage?
+                
+                if FanFindConfiguration.currentTheme == .Dark {
+                    restaurantImage = UIImage(named: "Restaurant_Dark", in: self.bundle, compatibleWith: nil)
+                    
+                } else {
+                    restaurantImage = UIImage(named: "Restaurant_Light", in: self.bundle, compatibleWith: nil)
+                }
+                self.brandsImageView.image = restaurantImage
+            }else{
+                let barImage: UIImage?
+                if FanFindConfiguration.currentTheme == .Dark {
+                    barImage = UIImage(named: "Bar_Dark", in: self.bundle, compatibleWith: nil)
+                } else {
+                    barImage = UIImage(named: "Bar_Light", in: self.bundle, compatibleWith: nil)
+                }
+                self.brandsImageView.image = barImage
+            }
+            
+            self.addSubview(self.brandsImageView)
+            self.bringSubviewToFront(self.brandsImageView)
         }
         
         redrawCircle(isSelected)
@@ -41,10 +65,10 @@ internal class PlacesAnnotationView: MKAnnotationView {
     fileprivate func redrawCircle(_ selected: Bool) {
         if let place = annotation as? Place{
             if(place.isSponsoredPlace){
-                image = DrawingTools.drawSponsoredPlace(wholeColor: UIColor.white, isSelected: selected, count: Int(place.totalCount))
+                image = DrawingTools.drawNewBadge(wholeColor: UIColor.white, isSelected: selected, count: Int(place.totalCount))
                 
             } else{
-                image = DrawingTools.setupGradientLayer(unspecifiedCount: place.totalCount , isSelected: selected)
+                image = DrawingTools.drawNewBadge(wholeColor: UIColor.white, isSelected: selected, count: Int(place.totalCount))
             }
         }
     }

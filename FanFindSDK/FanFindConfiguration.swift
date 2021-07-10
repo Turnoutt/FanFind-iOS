@@ -71,10 +71,10 @@ public enum FanFindConfiguration {
     
     static let textColor : UIColor = {
         if FanFindConfiguration.currentTheme == Themes.Dark {
-            return UIColor(named: "TextPrimaryDark", in: Bundle(for: PlacesCell.self), compatibleWith: nil)!
+            return UIColor.white
         }
         
-        return UIColor(named: "TextPrimary", in: Bundle(for: PlacesCell.self), compatibleWith: nil)!
+        return UIColor.black
     }()
     
     static let closedColor : UIColor = {

@@ -47,6 +47,12 @@ internal class PlacesCell: UICollectionViewCell, UIScrollViewDelegate {
         super.awakeFromNib()
         self.backgroundColor = FanFindConfiguration.backgroundColor
         
+        numbers.translatesAutoresizingMaskIntoConstraints = false
+        
+        if FanFindConfiguration.currentTheme == .Dark {
+            self.poweredBy.image = UIImage(named: "FanFindLogo", in: self.bundle, compatibleWith: nil)
+        }
+        
        self.cornerRadius = 8
         
         let tapGesture = UITapGestureRecognizer()

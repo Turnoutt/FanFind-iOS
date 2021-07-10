@@ -243,7 +243,7 @@ public class FanFindMapViewController: UIViewController {
         if isLocationShowing == false {
             isLocationShowing = true
             if placesVC == nil {
-                let placesHeight = CGFloat(280)
+                let placesHeight = CGFloat(240)
                 placesVC = PlacesCollectionVC(height: placesHeight)
                 placesVC?.placeArray = places
                 placesVC?.delegate = self

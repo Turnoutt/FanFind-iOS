@@ -48,4 +48,16 @@ extension UIImage {
         UIImage(cgImage: cgImage, scale: 1, orientation: imageOrientation).draw(in: breadthRect)
         return UIGraphicsGetImageFromCurrentImageContext()
     }
+    
+    func scaleToSize(aSize :CGSize) -> UIImage? {
+        if (self.size.equalTo(aSize)) {
+        return self
+      }
+
+      UIGraphicsBeginImageContextWithOptions(aSize, false, 0.0)
+        self.draw(in: CGRect(x: 0.0, y: 0.0, width: aSize.width, height: aSize.height))
+      let image = UIGraphicsGetImageFromCurrentImageContext()
+      UIGraphicsEndImageContext()
+      return image
+    }
 }

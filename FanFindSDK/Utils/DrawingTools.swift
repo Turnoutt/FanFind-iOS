@@ -112,4 +112,54 @@ internal class DrawingTools {
             text.draw(in: rect, withAttributes: attributes)
         }
     }
+    
+    static func drawNewBadge(wholeColor: UIColor?, diameter: Int = 30, isSelected: Bool, count: Int = 0) -> UIImage {
+        
+       
+        var primaryColorAdjusted = UIColor.init(hexString: "818181")!
+        var circleColor = UIColor.white
+        
+        if FanFindConfiguration.currentTheme == .Dark {
+            primaryColorAdjusted = UIColor.init(hexString: "1f2326")!
+            circleColor = UIColor.init(hexString: "434343")!
+        }
+        
+        if isSelected {
+            primaryColorAdjusted = FanFindConfiguration.primaryColor
+        }
+        
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: diameter + 4, height: diameter + 44))
+        return renderer.image { ctx in
+            
+            // Draw the rectangle first
+            let rectangle = CGRect(x: 0, y: 0, width: diameter, height: 32)
+            
+            
+            ctx.cgContext.setFillColor(primaryColorAdjusted.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.lightGray.cgColor)
+            ctx.cgContext.setLineWidth(0.5)
+            
+            let roundRect = UIBezierPath(roundedRect: rectangle, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 8, height: 8))
+            
+            ctx.cgContext.addPath(roundRect.cgPath)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            // Fill inner circle with white color
+            let circle = UIBezierPath(ovalIn: CGRect(x: 1, y: 16, width: diameter - 2, height: diameter - 2))
+            circle.lineWidth = 0
+            circleColor.setFill()
+            circle.fill()
+            UIColor.init(hexString: "3c3c3c")!.setStroke()
+            circle.lineWidth = 1
+            circle.stroke()
+            
+            let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
+                              NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)]
+            
+            let text = NumberAbbreviator().formatPoints(num: Double(count))
+            let size = text.size(withAttributes: attributes)
+            let rect = CGRect(x: CGFloat(diameter / 2) - size.width / 2, y: 2, width: size.width, height: size.height)
+            text.draw(in: rect, withAttributes: attributes)
+        }
+    }
 }
