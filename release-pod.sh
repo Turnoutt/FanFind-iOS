@@ -22,14 +22,13 @@ Pod::Spec.new do |spec|
     spec.author             = { "Chris Woolum" => "chris@turnoutt.com" }
 
     spec.ios.deployment_target = "12.1"
-    spec.swift_version = "4.2"
+    spec.swift_versions = ['5.0', '5.1', '5.2', '5.3']
 
-    spec.source        = { :git => "https://github.com/turnoutt/FanFind-iOS.git" }
+    spec.source        = { :http => "https://github.com/Turnoutt/FanFind-iOS/releases/download/$version/FanFind-iOS-$version.zip" }
 
-    spec.source_files = "${path}FanFind.framework/Headers/*.h"
-    spec.public_header_files = "${path}FanFind.framework/Headers/*.h"
-    spec.vendored_frameworks = "${path}FanFind.framework"
-    spec.platform = :ios, "9.0"
+    spec.source_files = "build/universal/FanFindSDK.framework/Headers/*.h"
+    spec.public_header_files = "build/universal/FanFindSDK.framework/Headers/*.h"
+    spec.vendored_frameworks = "build/universal/FanFindSDK.framework"
 
 end
 EOF
