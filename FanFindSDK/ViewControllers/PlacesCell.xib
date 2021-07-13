@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -26,49 +25,32 @@
                                     <constraint firstAttribute="height" constant="75" id="tGq-3g-8WF"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YoN-R7-9ek">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CafeHeader_Light" translatesAutoresizingMaskIntoConstraints="NO" id="YoN-R7-9ek">
                                 <rect key="frame" x="0.0" y="0.0" width="286" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="cVb-h9-xqE"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBu-YN-7pn" userLabel="logoImageWrapper">
-                                <rect key="frame" x="103" y="10" width="80" height="80"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D6f-G0-cuP" userLabel="logoImage">
-                                        <rect key="frame" x="2.5" y="2.5" width="75" height="75"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="OMM-Tc-VbU"/>
-                                            <constraint firstAttribute="width" constant="75" id="vxL-iP-Yd5"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D6f-G0-cuP" userLabel="logoImage">
+                                <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="2D6-jN-jdz"/>
-                                    <constraint firstAttribute="height" constant="80" id="R5j-CX-hoU"/>
-                                    <constraint firstItem="D6f-G0-cuP" firstAttribute="centerX" secondItem="TBu-YN-7pn" secondAttribute="centerX" id="Smb-yN-qj5"/>
-                                    <constraint firstItem="D6f-G0-cuP" firstAttribute="centerY" secondItem="TBu-YN-7pn" secondAttribute="centerY" id="iYh-Jr-w9K"/>
+                                    <constraint firstAttribute="height" constant="40" id="OMM-Tc-VbU"/>
+                                    <constraint firstAttribute="width" constant="40" id="vxL-iP-Yd5"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.96078050136566162" green="0.96078348159790039" blue="0.96078991889953613" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="YoN-R7-9ek" secondAttribute="bottom" id="246-as-I7w"/>
-                            <constraint firstItem="TBu-YN-7pn" firstAttribute="centerY" secondItem="5qf-6F-ujJ" secondAttribute="centerY" id="De4-YM-Gue"/>
                             <constraint firstItem="AQZ-yW-DEw" firstAttribute="centerY" secondItem="5qf-6F-ujJ" secondAttribute="centerY" id="K7L-ef-6Ku"/>
+                            <constraint firstItem="D6f-G0-cuP" firstAttribute="top" secondItem="5qf-6F-ujJ" secondAttribute="top" constant="10" id="Lcz-CK-ntp"/>
                             <constraint firstItem="AQZ-yW-DEw" firstAttribute="centerX" secondItem="5qf-6F-ujJ" secondAttribute="centerX" id="R7N-CK-eYv"/>
                             <constraint firstItem="YoN-R7-9ek" firstAttribute="top" secondItem="5qf-6F-ujJ" secondAttribute="top" id="Uc2-cV-Shy"/>
                             <constraint firstItem="YoN-R7-9ek" firstAttribute="leading" secondItem="5qf-6F-ujJ" secondAttribute="leading" id="ZAV-CX-f79"/>
+                            <constraint firstItem="D6f-G0-cuP" firstAttribute="leading" secondItem="5qf-6F-ujJ" secondAttribute="leading" constant="10" id="bGf-Jz-zWe"/>
                             <constraint firstItem="YoN-R7-9ek" firstAttribute="trailing" secondItem="5qf-6F-ujJ" secondAttribute="trailing" id="hoG-jf-eIa"/>
                             <constraint firstAttribute="height" constant="100" id="nGE-Xb-N9J"/>
-                            <constraint firstItem="TBu-YN-7pn" firstAttribute="centerX" secondItem="5qf-6F-ujJ" secondAttribute="centerX" id="qwV-fk-CKo"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" horizontalHuggingPriority="450" horizontalCompressionResistancePriority="850" translatesAutoresizingMaskIntoConstraints="NO" id="RDT-hd-fiC" userLabel="Fan Count" customClass="PeopleCountNumbers" customModule="FanFindSDK" customModuleProvider="target">
@@ -148,7 +130,6 @@
                 <outlet property="dealsEventsIndicator" destination="KgO-Ne-IQi" id="9vG-89-S1C"/>
                 <outlet property="imageView" destination="YoN-R7-9ek" id="mKX-gk-C9G"/>
                 <outlet property="logoImage" destination="D6f-G0-cuP" id="Ej5-iV-tlb"/>
-                <outlet property="logoImageWrapper" destination="TBu-YN-7pn" id="rMJ-9G-nCS"/>
                 <outlet property="navigateButton" destination="m9j-Oo-epE" id="VCC-i4-7Yx"/>
                 <outlet property="numbers" destination="RDT-hd-fiC" id="OyE-T5-zFh"/>
                 <outlet property="placeInfoHeader" destination="OXb-Oj-6EN" id="WCv-ng-NKk"/>
@@ -166,10 +147,8 @@
         </designable>
     </designables>
     <resources>
+        <image name="CafeHeader_Light" width="2697" height="2107"/>
         <image name="FanFindLogoBlack" width="325" height="64"/>
         <image name="placeholder" width="138" height="80"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

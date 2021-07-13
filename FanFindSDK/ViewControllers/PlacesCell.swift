@@ -23,7 +23,6 @@ internal class PlacesCell: UICollectionViewCell, UIScrollViewDelegate {
     @IBOutlet var placeInfoHeader: PlaceInfoHeaderView!
     
     @IBOutlet var logoImage: UIImageView!
-    @IBOutlet var logoImageWrapper: UIView!
     
     @IBAction func navigateClicked(_ sender: UIButton) {
         let locationCoords = CLLocationCoordinate2D(
@@ -77,22 +76,29 @@ internal class PlacesCell: UICollectionViewCell, UIScrollViewDelegate {
     func populateImagePager() {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        imageView.contentScaleFactor = 1.2
         
-        if let logoImageUrl = place?.logoUrl {
+        let isSponsoredPlace = place?.isSponsoredPlace ?? false
+        
+        if isSponsoredPlace, let logoImageUrl = place?.logoUrl {
             logoImage.imageFromURL(urlString: logoImageUrl)
-            logoImageWrapper.isHidden = false
+            logoImage.isHidden = false
         } else {
-            logoImageWrapper.isHidden = true
+            logoImage.isHidden = true
         }
         
         guard let place = self.place?.nearByPlace else { return }
         DispatchQueue.main.async {
             self.placeInfoHeader.setPlace(place: place)
             
+            if FanFindConfiguration.currentTheme == .Dark {
+                self.imageView.backgroundColor = UIColor.init(hexString: "171717")
+            }
+            
             if(place.primaryCategory == "Full-Service Restaurants"){
-                self.imageView.image = UIImage(named: "restaurant", in: self.bundle, compatibleWith: nil)
+                self.imageView.image = UIImage(named: "CafeHeader_" + FanFindConfiguration.currentTheme.rawValue, in: self.bundle, compatibleWith: nil)
             }else{
-                self.imageView.image = UIImage(named: "bar", in: self.bundle, compatibleWith: nil)
+                self.imageView.image = UIImage(named: "BarHeader_" + FanFindConfiguration.currentTheme.rawValue, in: self.bundle, compatibleWith: nil)
             }
         }
     }
