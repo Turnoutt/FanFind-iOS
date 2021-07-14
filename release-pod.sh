@@ -33,4 +33,4 @@ EOF
 
 cat FanFind.podspec
 
-pod repo push turnouttpods --allow-warnings
+pod trunk push FanFind.podspec --allow-warnings --verbose
