@@ -53,12 +53,10 @@
                             <constraint firstAttribute="height" constant="100" id="nGE-Xb-N9J"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" horizontalHuggingPriority="450" horizontalCompressionResistancePriority="850" translatesAutoresizingMaskIntoConstraints="NO" id="RDT-hd-fiC" userLabel="Fan Count" customClass="PeopleCountNumbers" customModule="FanFindSDK" customModuleProvider="target">
-                        <rect key="frame" x="226" y="64" width="50" height="28"/>
+                    <view contentMode="scaleToFill" horizontalHuggingPriority="450" horizontalCompressionResistancePriority="850" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RDT-hd-fiC" userLabel="Fan Count" customClass="PeopleCountNumbers" customModule="FanFindSDK" customModuleProvider="target">
+                        <rect key="frame" x="236" y="72" width="50" height="28"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="65" id="6Uk-Yv-gdo"/>
-                            <constraint firstAttribute="width" priority="500" constant="50" id="7Us-se-wCo"/>
                             <constraint firstAttribute="height" constant="28" id="aNv-vM-oBE"/>
                         </constraints>
                     </view>
@@ -69,10 +67,10 @@
                         </userDefinedRuntimeAttributes>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgO-Ne-IQi" customClass="DealsEventsIndicator" customModule="FanFindSDK" customModuleProvider="target">
-                        <rect key="frame" x="226" y="104" width="60" height="28"/>
+                        <rect key="frame" x="238" y="104" width="42" height="28"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="J0T-r1-1dJ"/>
+                            <constraint firstAttribute="width" constant="42" id="f6i-6Y-ZHj"/>
                             <constraint firstAttribute="height" constant="28" id="kw1-L9-nw1"/>
                         </constraints>
                     </view>
@@ -114,15 +112,15 @@
                 <constraint firstItem="OXb-Oj-6EN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="4eE-BL-6Qd"/>
                 <constraint firstAttribute="trailing" secondItem="5qf-6F-ujJ" secondAttribute="trailing" id="6ke-1c-ur0"/>
                 <constraint firstItem="OXb-Oj-6EN" firstAttribute="top" secondItem="5qf-6F-ujJ" secondAttribute="bottom" constant="6" id="A7A-2o-zjM"/>
-                <constraint firstAttribute="trailing" secondItem="KgO-Ne-IQi" secondAttribute="trailing" id="Hnk-jd-NyQ"/>
-                <constraint firstItem="RDT-hd-fiC" firstAttribute="trailing" secondItem="5qf-6F-ujJ" secondAttribute="trailing" constant="-10" id="Iob-Ih-l2D"/>
+                <constraint firstAttribute="trailing" secondItem="KgO-Ne-IQi" secondAttribute="trailing" constant="6" id="Hnk-jd-NyQ"/>
+                <constraint firstItem="RDT-hd-fiC" firstAttribute="trailing" secondItem="5qf-6F-ujJ" secondAttribute="trailing" id="Iob-Ih-l2D"/>
                 <constraint firstAttribute="trailing" secondItem="X1K-55-tAk" secondAttribute="trailing" constant="10" id="T0v-Ri-eNB"/>
                 <constraint firstItem="X1K-55-tAk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="VOl-xS-40w"/>
                 <constraint firstItem="5qf-6F-ujJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XkB-vN-Td8"/>
                 <constraint firstItem="5qf-6F-ujJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fFv-yc-XZc"/>
                 <constraint firstAttribute="bottom" secondItem="X1K-55-tAk" secondAttribute="bottom" constant="5" id="m2Y-E6-b1Q"/>
                 <constraint firstItem="5qf-6F-ujJ" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailing" id="mEP-yo-YX7"/>
-                <constraint firstItem="RDT-hd-fiC" firstAttribute="bottom" secondItem="5qf-6F-ujJ" secondAttribute="bottom" constant="-8" id="o3M-Uo-sGy"/>
+                <constraint firstItem="RDT-hd-fiC" firstAttribute="bottom" secondItem="5qf-6F-ujJ" secondAttribute="bottom" id="o3M-Uo-sGy"/>
                 <constraint firstAttribute="trailing" secondItem="OXb-Oj-6EN" secondAttribute="trailing" constant="10" id="pYQ-ym-Dvl"/>
                 <constraint firstItem="KgO-Ne-IQi" firstAttribute="top" secondItem="5qf-6F-ujJ" secondAttribute="bottom" constant="4" id="vWB-ar-IOc"/>
             </constraints>
@@ -147,7 +145,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="CafeHeader_Light" width="2697" height="2107"/>
+        <image name="CafeHeader_Light" width="3600" height="2107"/>
         <image name="FanFindLogoBlack" width="325" height="64"/>
         <image name="placeholder" width="138" height="80"/>
     </resources>

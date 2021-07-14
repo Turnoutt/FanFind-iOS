@@ -57,11 +57,11 @@ internal class DealsEventsIndicator: UIView {
         }
         
         dealsImageView = UIImageView(image: dealsImage!)
-        dealsImageView.frame = CGRect(x: 0, y: 0, width: 28, height: 28)
+        dealsImageView.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         self.addSubview(dealsImageView)
         
         eventsImageView = UIImageView(image: eventsImage!)
-        eventsImageView.frame = CGRect(x: 30, y: 0, width: 28, height: 28)
+        eventsImageView.frame = CGRect(x: 22, y: 0, width: 20, height: 20)
         self.addSubview(eventsImageView)
     }
     

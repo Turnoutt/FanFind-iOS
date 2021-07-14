@@ -71,9 +71,9 @@ internal class PlaceInfoHeaderView: UIStackView {
         self.alignment = .fill
         self.distribution = .fill
         
-        businessNameLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        businessNameLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         
-        categoryNameLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        categoryNameLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         
         addressLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
         addressLabel.lineBreakMode = .byWordWrapping
@@ -81,9 +81,9 @@ internal class PlaceInfoHeaderView: UIStackView {
         
         categoryNameLabel.insets = UIEdgeInsets(top: 0, left: 0, bottom: 4, right: 0)
         
-        phoneLabel.font = phoneLabel.font.withSize(14)
+        phoneLabel.font = phoneLabel.font.withSize(12)
         
-        websiteLabel.font = websiteLabel.font.withSize(14)
+        websiteLabel.font = websiteLabel.font.withSize(12)
         
         self.addArrangedSubview(businessNameLabel)
         self.addArrangedSubview(categoryNameLabel)

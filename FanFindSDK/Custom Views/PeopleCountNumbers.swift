@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 internal class PeopleCountNumbers: UIView {
-    @IBOutlet weak var totalBox: UIView!
+    @IBOutlet weak var totalBox: UIStackView!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var totalCountLabel: UILabel!
     @IBOutlet var contentView: UIView!
