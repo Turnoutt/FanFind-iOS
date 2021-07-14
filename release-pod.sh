@@ -8,14 +8,14 @@ cat > FanFind.podspec <<-EOF
 Pod::Spec.new do |spec|
     spec.name         = "FanFind"
     spec.version      = "$version"
-    spec.summary      = "FanFind is a tool for helping fands find each other anonymously i real time."
-
-    spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-    spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    spec.summary      = "FanFind is a tool for helping fands find each other anonymously in real time."
 
     spec.description  = <<-DESC
     This cocoapods library helps you easily integrate the FanFind API in your application.
                     DESC
+
+    spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
     spec.homepage     = "https://www.turnoutt.com"
     spec.license      = "MIT"
@@ -26,8 +26,6 @@ Pod::Spec.new do |spec|
 
     spec.source        = { :http => "https://github.com/Turnoutt/FanFind-iOS/releases/download/$version/FanFind-iOS-$version.zip" }
 
-    spec.source_files = "build/universal/FanFindSDK.framework/Headers/*.h"
-    spec.public_header_files = "build/universal/FanFindSDK.framework/Headers/*.h"
     spec.vendored_frameworks = "build/universal/FanFindSDK.framework"
 
 end

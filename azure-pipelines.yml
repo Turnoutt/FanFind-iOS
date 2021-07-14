@@ -85,11 +85,11 @@ jobs:
         env:
           COCOAPODS_TRUNK_TOKEN: $(CocoapodsToken)
 
-      - task: GitHubRelease@0
-        condition: failed()
-        displayName: Clean up Orphan Release
-        inputs:
-          gitHubConnection: "cwoolum"
-          repositoryName: "Turnoutt/FanFind-iOS"
-          action: "delete"
-          tag: "$(version)"
+      # - task: GitHubRelease@0
+      #   condition: failed()
+      #   displayName: Clean up Orphan Release
+      #   inputs:
+      #     gitHubConnection: "cwoolum"
+      #     repositoryName: "Turnoutt/FanFind-iOS"
+      #     action: "delete"
+      #     tag: "$(version)"
