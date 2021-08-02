@@ -18,6 +18,10 @@ internal class PlaceDetailsViewController : UIViewController{
     
     @IBOutlet var websiteButton: UIButton!
     
+    @IBOutlet var backButton: UIButton!
+    
+    var bundle = Bundle(for: PlaceDetailsViewController.self)
+    
     @IBAction func goBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -64,11 +68,11 @@ internal class PlaceDetailsViewController : UIViewController{
         self.deals = placeDetails.deals
         self.events = placeDetails.events
         
-        super.init(nibName: "PlaceDetailsViewController", bundle: Bundle(for: PlaceDetailsViewController.self))
+        super.init(nibName: "PlaceDetailsViewController", bundle: self.bundle)
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        super.init(nibName: "PlaceDetailsViewController", bundle: Bundle(for: PlaceDetailsViewController.self))
+        super.init(nibName: "PlaceDetailsViewController", bundle: self.bundle)
     }
     
     override var shouldAutorotate: Bool{
@@ -100,6 +104,10 @@ internal class PlaceDetailsViewController : UIViewController{
             hoursTableView.isHidden = true
         }
         
+        if(FanFindConfiguration.currentTheme == .Dark){
+            backButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        }
+        
         DispatchQueue.main.async {
             self.fanCount.setTotals(maleCount: self.place?.peopleCount ?? 0, femaleCount: 0, neutralCount: 0)
             
@@ -107,6 +115,16 @@ internal class PlaceDetailsViewController : UIViewController{
             self.placeInfoHeader.setPlaceDetails(place: self.placeDetails!)
         
             self.websiteButton.isHidden = true
+        }
+        
+        if(self.place?.primaryCategory == "Full-Service Restaurants"){
+            let restaurantImage = UIImage(named: "CafeHeader_" + FanFindConfiguration.currentTheme.rawValue, in: self.bundle, compatibleWith: nil)
+           
+            self.logo.image = restaurantImage
+        }else{
+            let barImage = UIImage(named: "BarHeader_" + FanFindConfiguration.currentTheme.rawValue, in: self.bundle, compatibleWith: nil)
+            
+            self.logo.image = barImage
         }
         
         dealsEventsView.register(UINib(nibName: "EventsTableViewCell", bundle: Bundle(for: EventsTableViewCell.self)), forCellReuseIdentifier: "eventsTableViewCell")

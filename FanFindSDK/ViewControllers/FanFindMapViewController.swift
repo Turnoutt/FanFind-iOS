@@ -83,8 +83,17 @@ public class FanFindMapViewController: UIViewController {
             self.tileOverlay = tileOverlay
         }
         
+        centerLocationButton.tintColor = FanFindConfiguration.primaryColor
+        
         self.searchBar.delegate = self
-        self.searchBar.backgroundImage = UIImage()
+       
+        searchBar.barTintColor = UIColor.clear
+        searchBar.backgroundColor = UIColor.clear
+        searchBar.isTranslucent = true
+        searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        if #available(iOS 13.0, *) {
+            searchBar.searchTextField.backgroundColor = .clear
+        }
         
         //var settingsImage: UIImage? = nil
         
@@ -101,12 +110,29 @@ public class FanFindMapViewController: UIViewController {
         redoSearchButton.layer.shadowOpacity = 1
         redoSearchButton.layer.shadowOffset = .init(width: 0, height: 2)
         redoSearchButton.layer.shadowRadius = 2
+        redoSearchButton.layer.cornerRadius = 5
+        
+        
         
         searchBarWrapper.layer.masksToBounds = false
         searchBarWrapper.layer.shadowColor = UIColor.gray.cgColor
         searchBarWrapper.layer.shadowOpacity = 1
         searchBarWrapper.layer.shadowOffset = .init(width: 0, height: 2)
         searchBarWrapper.layer.shadowRadius = 2
+        
+        
+        if FanFindConfiguration.currentTheme == .Dark {
+            redoSearchButton.backgroundColor = UIColor.init(hexString: "171717")
+            redoSearchButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+            searchBarWrapper.backgroundColor = UIColor.init(hexString: "171717")
+           
+            searchBar.tintColor = UIColor.init(hexString: "171717")
+            
+            let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+
+            textFieldInsideSearchBar?.textColor = .white
+            
+        }
         
         map.delegate = self
         map.mapType = .standard

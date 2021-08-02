@@ -61,7 +61,7 @@ public class FanFindClient: NSObject {
         
         self.userId = userId;
         
-        let request = Authenticate(clientUserId: self.userId!, apiKey: FanFindClient.apiKey, phoneSessionId: self.getSessionId())
+        let request = Authenticate(clientUserId: self.userId ?? "", apiKey: FanFindClient.apiKey, phoneSessionId: self.getSessionId())
         self.sendWithBody(request) { (res) in
             switch res {
             case .success(let tokenResponse):
@@ -185,7 +185,7 @@ public class FanFindClient: NSObject {
             let statusCode = (response as! HTTPURLResponse).statusCode
             
             if statusCode == 401 {
-                let authRequest = Authenticate(clientUserId: self.userId!, apiKey: FanFindClient.apiKey, phoneSessionId: self.getSessionId())
+                let authRequest = Authenticate(clientUserId: self.userId ?? "", apiKey: FanFindClient.apiKey, phoneSessionId: self.getSessionId())
                 self.sendWithBody(authRequest) { (res) in
                     switch res {
                     case .success(let tokenResponse):

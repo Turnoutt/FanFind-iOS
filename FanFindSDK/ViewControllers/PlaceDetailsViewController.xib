@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceDetailsViewController" customModule="FanFindSDK" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="qy7-2z-URs" id="ADY-aJ-N4F"/>
                 <outlet property="dealsEventsView" destination="Ig6-F9-Cka" id="mrd-6I-xfu"/>
                 <outlet property="fanCount" destination="YQu-mB-6Mj" id="WJu-GT-wCv"/>
                 <outlet property="hoursTableView" destination="ipg-74-G3x" id="z6P-aX-Bf0"/>
@@ -24,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="dME-EI-ujq">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CafeHeader_Light" translatesAutoresizingMaskIntoConstraints="NO" id="dME-EI-ujq">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="224" id="SUi-ew-iSp"/>
@@ -151,7 +152,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <state key="normal" title="〈 BACK">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
                         <action selector="goBack:" destination="-1" eventType="touchUpInside" id="2KA-rS-0ap"/>
@@ -195,6 +196,6 @@
         </designable>
     </designables>
     <resources>
-        <image name="restaurant" width="298" height="156.5"/>
+        <image name="CafeHeader_Light" width="3600" height="2107"/>
     </resources>
 </document>

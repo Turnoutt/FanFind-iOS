@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,7 +39,7 @@
                                         <constraint firstAttribute="width" id="D5f-Or-g24"/>
                                     </constraints>
                                 </view>
-                                <searchBar contentMode="redraw" placeholder="Find places to go..." backgroundImage="." translatesAutoresizingMaskIntoConstraints="NO" id="IbR-RQ-OGD">
+                                <searchBar contentMode="redraw" placeholder="Find places to go..." translucent="NO" backgroundImage="." translatesAutoresizingMaskIntoConstraints="NO" id="IbR-RQ-OGD">
                                     <rect key="frame" x="0.0" y="0.0" width="349" height="40"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,6 +48,11 @@
                                         <string>Title</string>
                                         <string>Title</string>
                                     </scopeButtonTitles>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </searchBar>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWy-nR-CSA" userLabel="CenterLocationButton">
                                     <rect key="frame" x="349" y="0.0" width="35" height="40"/>
@@ -54,11 +60,11 @@
                                         <constraint firstAttribute="width" constant="35" id="cA1-cH-3KK"/>
                                     </constraints>
                                     <state key="normal" image="location.fill" catalog="system">
-                                        <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="titleColor" name="TextPrimary"/>
                                     </state>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="sWy-nR-CSA" secondAttribute="trailing" constant="10" id="APQ-NQ-AVS"/>
                                 <constraint firstItem="sWy-nR-CSA" firstAttribute="top" secondItem="Y6b-e2-5cr" secondAttribute="top" id="Dc6-tW-aGW"/>
@@ -78,18 +84,26 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfi-Fn-28c">
-                            <rect key="frame" x="151.5" y="114" width="111" height="27"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfi-Fn-28c">
+                            <rect key="frame" x="143.5" y="114" width="127" height="31"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                             <state key="normal" title="Search Places Here">
-                                <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" name="TextPrimary"/>
+                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="redoSearchClicked:" destination="-1" eventType="touchUpInside" id="JUV-k2-tOB"/>
                             </connections>
                         </button>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="p2M-YL-P8c"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <gestureRecognizers/>
                     <constraints>
@@ -106,12 +120,12 @@
                         <constraint firstAttribute="trailing" secondItem="5NN-2E-xOY" secondAttribute="trailing" id="gyc-hC-kcj"/>
                         <constraint firstItem="Y6b-e2-5cr" firstAttribute="leading" secondItem="p2M-YL-P8c" secondAttribute="leading" constant="10" id="qiD-t3-0Zw"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="p2M-YL-P8c"/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="dyN-Ei-wJV" appends="YES" id="Kte-Vn-dNr"/>
                     </connections>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="h0R-uB-r9h" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="I3r-bF-el8"/>
@@ -119,7 +133,6 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="h0R-uB-r9h" secondAttribute="bottom" id="foZ-vN-xQE"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="h0R-uB-r9h" secondAttribute="trailing" id="r0o-ao-EiY"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="28" y="150"/>
         </view>
         <tapGestureRecognizer id="dyN-Ei-wJV">
@@ -129,7 +142,10 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="." width="16" height="16"/>
-        <image name="location.fill" catalog="system" width="128" height="115"/>
+        <image name="." width="128" height="128"/>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="TextPrimary">
+            <color red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
