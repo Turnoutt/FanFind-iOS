@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import os.log
 
 internal class RequestLocationViewController : UIViewController {
     @IBOutlet var mapHolder: UIView!
@@ -56,10 +57,11 @@ internal class RequestLocationViewController : UIViewController {
         
         controller.modalPresentationStyle = .overCurrentContext;
         
-        
         if let tabBarController = viewController.tabBarController {
+            os_log("Parent is TabController", log: OSLog.ui, type: .debug)
             tabBarController.present(controller, animated: true)
         } else {
+            os_log("Parent is ViewController", log: OSLog.ui, type: .debug)
             viewController.present(controller, animated: true)
         }
     }

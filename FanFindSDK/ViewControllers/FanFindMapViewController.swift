@@ -173,41 +173,53 @@ public class FanFindMapViewController: UIViewController {
     }
     
     func showLocationRequestModal(){
-        if CLLocationManager.locationServicesEnabled() {
-            if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-                fanFindClient.startUpdatingLocation()
-                fanFindClient.startUpdatingBackgroundLocation()
-                
-                if let lastLocation =  self.fanFindClient.lastLocation {
-                    loadInitialMap(lastLocation.coordinate)
-                }
-            } else if CLLocationManager.authorizationStatus() == .denied {
-                let alert = UIAlertController(title: "Need Authorization", message: "You have denied location access for this application. In order to use the fan map, please enable location access.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
-                    self.goBackToPreviousView()
-                }))
-                alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
-                    let url = URL(string: UIApplication.openSettingsURLString)!
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                    self.goBackToPreviousView()
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }             else{
-                RequestLocationViewController.show(on: self, action: { [weak self] (allowClicked, controller) in
-                    guard let self = self else { return }
-                    
-                    if allowClicked{
-                        self.fanFindClient.requestLocationAuthorization()
-                        controller.dismiss(animated: true)
-                        
-                    }else{
-                        self.goBackToPreviousView()
-                        
-                        controller.dismiss(animated: true)
-                    }
-                })
+       
+        if CLLocationManager.authorizationStatus() == .authorizedAlways ||
+            CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            os_log("Location Authorized.", log: OSLog.location, type: .info)
+            fanFindClient.startUpdatingLocation()
+            fanFindClient.startUpdatingBackgroundLocation()
+            
+            if let lastLocation =  self.fanFindClient.lastLocation {
+                loadInitialMap(lastLocation.coordinate)
+            } else {
+                os_log("Unable to fetch location. Falling back to default", log: OSLog.location, type: .error)
+           
+                loadInitialMap(CLLocationCoordinate2D(latitude: 29.7508, longitude: 95.3621))
             }
+        } else if CLLocationManager.authorizationStatus() == .denied {
+            os_log("Location Denied.", log: OSLog.location, type: .info)
+            let alert = UIAlertController(title: "Need Authorization", message: "You have denied location access for this application. In order to use the fan map, please enable location access.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+                self.goBackToPreviousView()
+            }))
+            alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
+                let url = URL(string: UIApplication.openSettingsURLString)!
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                self.goBackToPreviousView()
+            }))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            os_log("Showing location request modal.", log: OSLog.location, type: .info)
+            
+            RequestLocationViewController.show(on: self, action: { [weak self] (allowClicked, controller) in
+                guard let self = self else {
+                    os_log("Self is nil. Unable to continue.", log: OSLog.ui, type: .error)
+                    return
+                }
+                
+                if allowClicked{
+                    self.fanFindClient.requestLocationAuthorization()
+                    controller.dismiss(animated: true)
+                    
+                }else{
+                    self.goBackToPreviousView()
+                    
+                    controller.dismiss(animated: true)
+                }
+            })
         }
+        
     }
     
     private func goBackToPreviousView(){

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -49,7 +49,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQm-E5-Lfu">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQm-E5-Lfu">
                     <rect key="frame" x="30" y="797" width="354" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="V6o-Ht-PXt"/>
@@ -70,7 +70,7 @@
                         <action selector="goBackClicked:" destination="-1" eventType="touchUpInside" id="0v6-eX-QjJ"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8F-ci-Uk6" customClass="ThemedButton" customModule="FanFindSDK" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8F-ci-Uk6" customClass="ThemedButton" customModule="FanFindSDK" customModuleProvider="target">
                     <rect key="frame" x="30" y="742" width="354" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="4xh-A6-ZDq"/>
@@ -88,6 +88,7 @@
                     </connections>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="cQm-E5-Lfu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="0gh-7t-61Y"/>
@@ -106,10 +107,14 @@
                 <constraint firstAttribute="trailing" secondItem="vZe-17-y3s" secondAttribute="trailing" constant="30" id="pg4-yo-Y6O"/>
                 <constraint firstItem="cQm-E5-Lfu" firstAttribute="top" secondItem="Y8F-ci-Uk6" secondAttribute="bottom" constant="10" id="sSE-lh-JXw"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
+    <designables>
+        <designable name="Y8F-ci-Uk6">
+            <size key="intrinsicContentSize" width="88" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="TextPrimaryDark">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

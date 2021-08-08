@@ -125,7 +125,8 @@ public class FanFindClient: NSObject {
     }
     
     public func startUpdatingLocation() {
-        print("Starting Location Updates")
+        os_log("Starting Location Updates.", log: OSLog.location, type: .info)
+        
         if CLLocationManager.locationServicesEnabled() {
             if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
                 self.locationManager.startUpdatingLocation()
@@ -134,7 +135,8 @@ public class FanFindClient: NSObject {
     }
     
     public func startUpdatingBackgroundLocation() {
-        print("Starting Location Updates")
+        os_log("Starting Location Updates.", log: OSLog.location, type: .info)
+        
         if CLLocationManager.locationServicesEnabled() {
             if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
                 
@@ -144,7 +146,7 @@ public class FanFindClient: NSObject {
     }
     
     public func stopUpdatingLocation() {
-        print("Starting Location Updates")
+        os_log("Stopping Location Updates.", log: OSLog.location, type: .info)
         if CLLocationManager.locationServicesEnabled() {
             if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
                 self.locationManager.stopUpdatingLocation()
@@ -153,7 +155,7 @@ public class FanFindClient: NSObject {
     }
     
     public func stopUpdatingBackgroundLocation() {
-        print("Stop Location Updates")
+        os_log("Stopping Location Updates.", log: OSLog.location, type: .info)
         if CLLocationManager.locationServicesEnabled() {
             if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
                 self.locationManager.stopUpdatingLocation()
@@ -341,7 +343,7 @@ public class FanFindClient: NSObject {
 extension FanFindClient : CLLocationManagerDelegate{
     public func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
         FanFindClient.shared.trackLocation(latitude: visit.coordinate.latitude, longitude: visit.coordinate.longitude, accuracy: visit.horizontalAccuracy, altitude: manager.location?.altitude, speed: manager.location?.speed) { (err) in
-            
+            os_log("Error occurred tracking location. Error Message: %{public}@", log: OSLog.location, type: .info, err?.localizedDescription ?? "")
         }
     }
     
@@ -360,6 +362,7 @@ extension FanFindClient : CLLocationManagerDelegate{
         
         FanFindClient.shared.trackLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, accuracy: location.horizontalAccuracy, altitude: location.altitude, speed: location.speed) { (err) in
             //self.locationManager.stopUpdatingLocation()
+            os_log("Error occurred tracking location. Error Message: %{public}@", log: OSLog.location, type: .info, err?.localizedDescription ?? "")
         }
         
         self.delegate?.locationUpdated(location.coordinate)

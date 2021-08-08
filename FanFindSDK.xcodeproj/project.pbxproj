@@ -101,6 +101,7 @@
 		04C0BDF3235EAD460050683F /* RequestLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C0BDF2235EAD460050683F /* RequestLocationViewController.swift */; };
 		04C0BDF5235EAD5E0050683F /* RequestLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C0BDF4235EAD5E0050683F /* RequestLocationViewController.xib */; };
 		04CAA4C823BA6B7A00FF060E /* FacetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAA4C723BA6B7A00FF060E /* FacetResponse.swift */; };
+		04CFC65B26BF55BA009B26F4 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFC65A26BF55BA009B26F4 /* OSLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -204,6 +205,7 @@
 		04C0BDF2235EAD460050683F /* RequestLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationViewController.swift; sourceTree = "<group>"; };
 		04C0BDF4235EAD5E0050683F /* RequestLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestLocationViewController.xib; sourceTree = "<group>"; };
 		04CAA4C723BA6B7A00FF060E /* FacetResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacetResponse.swift; sourceTree = "<group>"; };
+		04CFC65A26BF55BA009B26F4 /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 				04A3511222D6E89700A1ACCD /* UIColorExtensions.swift */,
 				0428338822E0B4A80089E7AB /* DateExtensions.swift */,
 				043AD5D822E276560080D67A /* UIIMageViewExtensions.swift */,
+				04CFC65A26BF55BA009B26F4 /* OSLog.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				0411CACF22ED3B020006EA4A /* NavigateButton.swift in Sources */,
 				0487D20B22EA14DB006AB20F /* PlaceInfoHeaderView.swift in Sources */,
 				047CF2F622D63C2B00953CC1 /* TrackLocation.swift in Sources */,
+				04CFC65B26BF55BA009B26F4 /* OSLog.swift in Sources */,
 				047CF2EE22D63C2B00953CC1 /* TokenResponse.swift in Sources */,
 				04A3511F22D79FE100A1ACCD /* GoogleMapsStyle+ConvertedValues.swift in Sources */,
 				047CF2F822D63C2B00953CC1 /* GetPlaceDetails.swift in Sources */,
