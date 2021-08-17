@@ -54,7 +54,15 @@ internal class PeopleCountNumbers: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         
         frame.size.height = 40
-        totalBox.layer.backgroundColor = FanFindConfiguration.primaryColor.cgColor
+        
+        if #available(iOS 14.0, *) {
+            totalBox.backgroundColor = FanFindConfiguration.primaryColor
+            totalBox.layer.cornerRadius = 10
+        } else {
+            totalBox.addBackground(color: FanFindConfiguration.primaryColor)
+        }
+        
+        
         totalLabel.textColor = FanFindConfiguration.secondaryColor
         totalCountLabel.textColor = UIColor.white
         

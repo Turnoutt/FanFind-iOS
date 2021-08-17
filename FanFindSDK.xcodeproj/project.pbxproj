@@ -40,6 +40,7 @@
 		046448A222E00F5900EA9504 /* HoursTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046448A022E00F5900EA9504 /* HoursTableViewCell.swift */; };
 		046448A322E00F5900EA9504 /* HoursTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046448A122E00F5900EA9504 /* HoursTableViewCell.xib */; };
 		046448A522E0109600EA9504 /* BusinessHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046448A422E0109600EA9504 /* BusinessHour.swift */; };
+		046C2E1226CC7B900005133A /* UIStackViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C2E1126CC7B900005133A /* UIStackViewExtensions.swift */; };
 		0475219623B7B31D007F1133 /* GetPlacesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475219523B7B31D007F1133 /* GetPlacesResponse.swift */; };
 		0475219823B7B49B007F1133 /* Facet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475219723B7B49B007F1133 /* Facet.swift */; };
 		0475219A23B7BA65007F1133 /* FacetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475219923B7BA65007F1133 /* FacetVC.swift */; };
@@ -141,6 +142,7 @@
 		046448A022E00F5900EA9504 /* HoursTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursTableViewCell.swift; sourceTree = "<group>"; };
 		046448A122E00F5900EA9504 /* HoursTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HoursTableViewCell.xib; sourceTree = "<group>"; };
 		046448A422E0109600EA9504 /* BusinessHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessHour.swift; sourceTree = "<group>"; };
+		046C2E1126CC7B900005133A /* UIStackViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtensions.swift; sourceTree = "<group>"; };
 		0475219523B7B31D007F1133 /* GetPlacesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlacesResponse.swift; sourceTree = "<group>"; };
 		0475219723B7B49B007F1133 /* Facet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facet.swift; sourceTree = "<group>"; };
 		0475219923B7BA65007F1133 /* FacetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetVC.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				0428338822E0B4A80089E7AB /* DateExtensions.swift */,
 				043AD5D822E276560080D67A /* UIIMageViewExtensions.swift */,
 				04CFC65A26BF55BA009B26F4 /* OSLog.swift */,
+				046C2E1126CC7B900005133A /* UIStackViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				042927CF22ECB6D90057F759 /* Error.swift in Sources */,
 				04CAA4C823BA6B7A00FF060E /* FacetResponse.swift in Sources */,
 				047CF30322D63C2B00953CC1 /* PlacesCell.swift in Sources */,
+				046C2E1226CC7B900005133A /* UIStackViewExtensions.swift in Sources */,
 				047CF2F122D63C2B00953CC1 /* FanFindError.swift in Sources */,
 				047CF2E522D63C2B00953CC1 /* MkMapViewExtension.swift in Sources */,
 				042927CD22ECB5D60057F759 /* Mode.swift in Sources */,
