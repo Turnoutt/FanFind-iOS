@@ -19,7 +19,7 @@ internal class PlaceInfoHeaderView: UIStackView {
     @IBInspectable
     var showExtendedDetails : Bool = false {
         didSet {
-            print("This was just set")
+            
         }
     }
     

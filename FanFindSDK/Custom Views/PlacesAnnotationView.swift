@@ -19,7 +19,7 @@ internal class PlacesAnnotationView: MKAnnotationView {
     
     override func prepareForDisplay() {
         super.prepareForDisplay()
-        displayPriority = .defaultLow
+        displayPriority = .required
         
         guard let place = annotation as? Place
             else { return }

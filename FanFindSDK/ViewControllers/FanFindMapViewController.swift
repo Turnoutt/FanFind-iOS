@@ -177,16 +177,23 @@ public class FanFindMapViewController: UIViewController {
         if CLLocationManager.authorizationStatus() == .authorizedAlways ||
             CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             os_log("Location Authorized.", log: OSLog.location, type: .info)
-            fanFindClient.startUpdatingLocation()
+            fanFindClient.startUpdatingLocation(){ [self] (location)-> () in do {
+                os_log("Location callback hit", log: OSLog.location, type: .info)
+                
+                if let lastLocation =  self.fanFindClient.lastLocation {
+                    loadInitialMap(lastLocation.coordinate)
+                } else {
+                   
+                    os_log("Unable to fetch location. Falling back to default", log: OSLog.location, type: .error)
+               
+                    loadInitialMap(CLLocationCoordinate2D(latitude: 29.7508, longitude: 95.3621))
+                }
+            
+            }}
+            
             fanFindClient.startUpdatingBackgroundLocation()
             
-            if let lastLocation =  self.fanFindClient.lastLocation {
-                loadInitialMap(lastLocation.coordinate)
-            } else {
-                os_log("Unable to fetch location. Falling back to default", log: OSLog.location, type: .error)
-           
-                loadInitialMap(CLLocationCoordinate2D(latitude: 29.7508, longitude: 95.3621))
-            }
+            
         } else if CLLocationManager.authorizationStatus() == .denied {
             os_log("Location Denied.", log: OSLog.location, type: .info)
             let alert = UIAlertController(title: "Need Authorization", message: "You have denied location access for this application. In order to use the fan map, please enable location access.", preferredStyle: .alert)
@@ -374,6 +381,8 @@ extension FanFindMapViewController: MKMapViewDelegate {
                 PlacesAnnotationView(annotation: place, reuseIdentifier: PlacesAnnotationView.ReuseID)
         }
         
+        os_log("Place was nil", log: OSLog.map, type: .error)
+        
         return nil
     }
     
@@ -407,7 +416,7 @@ extension FanFindMapViewController: LocationUpdateDelegate{
         if (status == CLAuthorizationStatus.denied) {
             self.goBackToPreviousView()
         } else {
-            fanFindClient.startUpdatingLocation()
+            fanFindClient.startUpdatingLocation(handler: nil)
             fanFindClient.startUpdatingBackgroundLocation()
         }
     }

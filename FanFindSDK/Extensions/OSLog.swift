@@ -12,6 +12,7 @@ import os.log
 extension OSLog {
     private static var subsystem = Bundle.main.bundleIdentifier!
 
+    static let map = OSLog(subsystem: subsystem, category: "Map")
     static let ui = OSLog(subsystem: subsystem, category: "UI")
     static let location = OSLog(subsystem: subsystem, category: "Location")
 }

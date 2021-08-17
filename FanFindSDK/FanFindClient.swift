@@ -12,6 +12,7 @@ public class FanFindClient: NSObject {
     private static let apiKey = FanFindConfiguration.apiKey
     private var locationManager = CLLocationManager()
     private let userDefaults = UserDefaults.standard
+    private var locationHandler: ((_ location: CLLocation?) -> Void)? = nil
     
     internal var delegate: LocationUpdateDelegate?
     
@@ -124,8 +125,13 @@ public class FanFindClient: NSObject {
         }
     }
     
-    public func startUpdatingLocation() {
+    public func startUpdatingLocation(handler: ((_ location: CLLocation?) -> Void)?) {
         os_log("Starting Location Updates.", log: OSLog.location, type: .info)
+        
+        if(handler != nil){
+            self.locationHandler = handler
+        }
+        
         
         if CLLocationManager.locationServicesEnabled() {
             if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
@@ -353,12 +359,18 @@ extension FanFindClient : CLLocationManagerDelegate{
     }
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+        os_log("New Location received.", log: OSLog.location, type: .info)
         guard let location = locations.last else {
+            os_log("Location was invalid.", log: OSLog.location, type: .error)
             return
         }
         
         self.lastLocation = location
+        
+        if let locationHandler = self.locationHandler {
+            locationHandler(location)
+            self.locationHandler = nil
+        }
         
         FanFindClient.shared.trackLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, accuracy: location.horizontalAccuracy, altitude: location.altitude, speed: location.speed) { (err) in
             //self.locationManager.stopUpdatingLocation()
