@@ -111,27 +111,25 @@ public class FanFindMapViewController: UIViewController {
         redoSearchButton.layer.shadowOffset = .init(width: 0, height: 2)
         redoSearchButton.layer.shadowRadius = 2
         redoSearchButton.layer.cornerRadius = 5
-        
-        
-        
+
         searchBarWrapper.layer.masksToBounds = false
-        searchBarWrapper.layer.shadowColor = UIColor.gray.cgColor
-        searchBarWrapper.layer.shadowOpacity = 1
-        searchBarWrapper.layer.shadowOffset = .init(width: 0, height: 2)
-        searchBarWrapper.layer.shadowRadius = 2
-        
         
         if FanFindConfiguration.currentTheme == .Dark {
             redoSearchButton.backgroundColor = UIColor.init(hexString: "171717")
             redoSearchButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
             searchBarWrapper.backgroundColor = UIColor.init(hexString: "171717")
            
-            searchBar.tintColor = UIColor.init(hexString: "171717")
+            searchBar.tintColor = UIColor.init(hexString: "494949")
             
             let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
 
-            textFieldInsideSearchBar?.textColor = .white
+            textFieldInsideSearchBar?.textColor = UIColor.init(hexString: "494949")
             
+        } else {
+            searchBarWrapper.layer.shadowColor = UIColor.gray.cgColor
+            searchBarWrapper.layer.shadowOpacity = 1
+            searchBarWrapper.layer.shadowOffset = .init(width: 0, height: 2)
+            searchBarWrapper.layer.shadowRadius = 2
         }
         
         map.delegate = self

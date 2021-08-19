@@ -136,7 +136,7 @@ internal class DrawingTools {
             
             
             ctx.cgContext.setFillColor(primaryColorAdjusted.cgColor)
-            ctx.cgContext.setStrokeColor(UIColor.lightGray.cgColor)
+            ctx.cgContext.setStrokeColor(primaryColorAdjusted.cgColor)
             ctx.cgContext.setLineWidth(0.5)
             
             let roundRect = UIBezierPath(roundedRect: rectangle, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 8, height: 8))
