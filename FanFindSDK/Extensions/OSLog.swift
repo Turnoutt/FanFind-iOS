@@ -10,7 +10,7 @@ import Foundation
 import os.log
 
 extension OSLog {
-    private static var subsystem = Bundle.main.bundleIdentifier!
+    private static var subsystem = "com.turnoutt.FanFind"
 
     static let map = OSLog(subsystem: subsystem, category: "Map")
     static let ui = OSLog(subsystem: subsystem, category: "UI")

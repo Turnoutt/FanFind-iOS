@@ -8,9 +8,10 @@
 
 import Foundation
 import MapKit
+import os
 
 internal class PlacesAnnotationView: MKAnnotationView {
-    static let ReuseID = "placesAnnotation"
+    static let ReuseID = "FanFind_PlacesAnnotation"
     
     let brandsImageView = UIImageView()
 
@@ -35,6 +36,7 @@ internal class PlacesAnnotationView: MKAnnotationView {
                 }
             }
         }else{
+            os_log("Rendering annotation for placeId %@", log: OSLog.map, type: .debug, place.placeId)
             if(place.nearByPlace?.primaryCategory == "Full-Service Restaurants"){
                 let restaurantImage: UIImage?
                 

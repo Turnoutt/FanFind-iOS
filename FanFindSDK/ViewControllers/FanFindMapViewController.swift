@@ -375,6 +375,7 @@ public class FanFindMapViewController: UIViewController {
 extension FanFindMapViewController: MKMapViewDelegate {
     public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let place = annotation as? Place {
+            os_log("Returning saved annotation", log: OSLog.map, type: .info)
             return mapView.dequeueReusableAnnotationView(withIdentifier: PlacesAnnotationView.ReuseID) ??
                 PlacesAnnotationView(annotation: place, reuseIdentifier: PlacesAnnotationView.ReuseID)
         }
