@@ -1,5 +1,5 @@
 Pod::Spec.new do |spec|
-    spec.name         = "FanFind"
+    spec.name         = "FanFindSDK"
     spec.version      = "2.1.12"
     spec.summary      = "FanFind is a tool for helping fands find each other anonymously in real time."
 
@@ -22,7 +22,7 @@ Pod::Spec.new do |spec|
     spec.ios.deployment_target = "12.1"
     spec.swift_versions = ['5.0', '5.1', '5.2', '5.3']
 
-    spec.source        = { :git => "git@github.com:Turnoutt/FanFind-iOS.git", 
+    spec.source        = { :git => "https://github.com/Turnoutt/FanFind-iOS.git", 
         :tag => "#{spec.version}" }
 
 
