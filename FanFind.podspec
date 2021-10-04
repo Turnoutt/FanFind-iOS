@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name         = "FanFind"
-    spec.version      = "2.1.5"
+    spec.version      = "2.1.12"
     spec.summary      = "FanFind is a tool for helping fands find each other anonymously in real time."
 
     spec.description  = <<-DESC
@@ -14,11 +14,17 @@ Pod::Spec.new do |spec|
     spec.license      = "MIT"
     spec.author             = { "Chris Woolum" => "chris@turnoutt.com" }
 
+    spec.source_files = "FanFindSDK/**/*.{swift}"
+
+
+    spec.resources = "FanFindSDK/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+
     spec.ios.deployment_target = "12.1"
     spec.swift_versions = ['5.0', '5.1', '5.2', '5.3']
 
-    spec.source        = { :http => "https://github.com/Turnoutt/FanFind-iOS/releases/download/2.1.5/FanFind-iOS-2.1.5.zip" }
+    spec.source        = { :git => "git@github.com:Turnoutt/FanFind-iOS.git", 
+        :tag => "#{spec.version}" }
 
-    spec.vendored_frameworks = "build/universal/FanFindSDK.framework"
+
 
 end
