@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name         = "FanFindSDK"
-    spec.version      = "2.1.12"
+    spec.version      = "2.1.12-next"
     spec.summary      = "FanFind is a tool for helping fands find each other anonymously in real time."
 
     spec.description  = <<-DESC
